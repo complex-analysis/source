@@ -1,6 +1,6 @@
 # Source HTML files
 
-This repository contains the source html files for the website [https://complex-analysis.com](complex-analysis.com)
+This repository contains the source html files for the website [complex-analysis.com](https://complex-analysis.com)
 
 # ❤️ Support this project to keep it alive!
 
@@ -12,7 +12,7 @@ This repository contains the source html files for the website [https://complex-
 
 # Translations
 
-Currently there are versions in [https://complex-analysis.com](English) and [https://complex-analysis.com/ex.html](Spanish). 
+Currently there are versions in [English](https://complex-analysis.com) and [Spanish](https://complex-analysis.com/es.html). 
 If you are interested in making a translation to another language,
 let me know. Send me a message at <a href="mailto:jcponcemath@gmail.com">jcponcemath@gmail.com</a> 
 to get instructions on how to make a translation. Thanks!

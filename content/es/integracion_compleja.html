@@ -1,0 +1,416 @@
+<section data-type="chapter" id="complex-integration">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Integral de Contorno</a></li>
+            <li><a href="#section2">Exploración numérica 1</a></li>
+            <li><a href="#section3">Exploración numérica 2</a></li>
+            <li><a href="#section4">Antiderivadas</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Integración Compleja</h1>
+
+            <hr>
+
+            <div style="margin-right:0px;margin-left:100px">
+                <div>
+                    <p style="font-size:0.8em;font-weight:normal;">
+                        La magia y el poder del cálculo descansan en última instancia en el asombroso
+                        hecho de que la diferenciación y la integración son operaciones mutuamente
+                        inversas. Y, así como las funciones complejas disfrutan de notables
+                        propiedades de diferenciación que no comparten sus contrapartes reales,
+                        la sublime belleza de la integración compleja va mucho más allá de su progenitor real.
+                    </p>
+                </div>
+                <div style="font-size:0.8em;font-weight:normal;text-align: right;"><strong>Peter J. Oliver</strong>
+                </div>
+            </div>
+
+            <div id="section1">
+
+                <h2>Integral de Contorno</h2>
+
+                <p>
+                    Consideremos un contorno $C$ parametrizado por $z(t) = x(t) + i y(t)$ con $a\leq t\leq b.$
+                    Definimos la <em>integral</em>
+                    de la función compleja a lo largo de $C$ como el número complejo
+                    \begin{eqnarray}\label{contour-integral}
+                    \int_C f(z)\,dz = \int_a^bf\left(z(t)\right)z'(t)\,dt.
+                    \end{eqnarray}
+                    Aquí asumiremos que $f\left(z(t)\right)$ es continua por piezas en el intervalo
+                    $a \leq t \leq b$ y nos referimos a la función $f (z)$ como continua por piezas en $C.$
+                    Dado que $C$ es un contorno, $z'(t)$ es también continuo por piezas
+                    en $a \leq t \leq b$;
+                    y esto garantiza la existencia de la integral (\ref{contour-integral}).
+                </p>
+
+                <p>
+                    El lado derecho de (\ref{contour-integral}) es una integral real ordinaria
+                    de una función compleja; es decir, si $w(t) = u(t) + i v(t),$ entonces
+                    \begin{eqnarray}\label{integral-real-cv}
+                    \int_a^b w(t)\,dt = \int_a^b u(t)\,dt + i \int_a^b v(t)\,dt.
+                    \end{eqnarray}
+                </p>
+
+
+                <p>
+                    Ahora escribamos el integrando
+                    $$f(z)= u(x,y)+ iv(x,y)$$
+                    en términos de sus componentes real e imaginaria, así como su diferencial
+                    $$dz=\frac{dz}{dt}dt = \left(\frac{dx}{dt}+ i \frac{dy}{dt}\right)dt = dx+ i dy$$
+                    Entonces la integral compleja (\ref{contour-integral}) se divide
+                    en un par de integrales reales:
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{real-integrals}
+                    \int_C f(z)\,dz = \int_C\left(u+iv\right)\left(dx+idy\right) = \int_C\left(u\,dx-v\,dy\right) + i
+                    \int_C\left(v\,dx+u\,dy\right).
+                    \end{eqnarray}
+                </div>
+
+                </p>
+
+                <div class="practice">
+                    <p><strong>Ejemplo 1:</strong> Vamos a evaluar la integral $\int_C \overline{z}\, dz,$
+                        donde $C$ está dado por las ecuaciones paramétricas $x=3t,
+                        y=t^2,$
+                        con $-1\leq t\leq 4.$
+                    </p>
+
+                    <figure>
+                        <img src="../images/chp04/integral-example-1.gif" alt="Piecewise smooth curve"
+                            title="Piecewise smooth curve" style="width:45%;">
+                        <figcaption>
+                            $C$: $z(t)=3t+ it^2,$ with $-1\leq t\leq 4.$
+                        </figcaption>
+                    </figure>
+
+
+                    <p>
+                        Aquí tenemos que $C$ está definido como $z(t)=3t+ it^2 .$ Por lo tanto,
+                        con la identificación $f(z)=\overline{z}$
+                        tenemos
+                        $$f\left(z(t)\right)=\overline{3t+it^2}= 3t-it^2 .$$
+                        Mentras que $z'(t) = 3 + 2it,$ y así la integral es
+                        \begin{eqnarray*}
+                        \int_C \overline{z}\, dz&=& \int_{-1}^4 \left(3t-it^2\right)\left(3+ 2it\right)dt\\
+                        &=& \int_{-1}^4 \left(2t^3+9t + 3t^2i\right)dt\\
+                        &=& \int_{-1}^4 \left(2t^3+9t \right)dt + i\int_{-1}^4 3t^2dt\\
+                        &=& \Bigg. \left(\frac{1}{2}t^4 + \frac{9}{2} t^2\right)\Bigg|_{-1}^4 + i\Bigg.
+                        t^3\Bigg|_{-1}^4\\
+                        &=& 195+ 65 i.
+                        \end{eqnarray*}
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="practice">
+                    <p><strong>Ejemplo 2:</strong> Ahora evaluemos la integral $\displaystyle \int_C \dfrac{1}{z}\, dz,$
+                        donde $C$ es el círculo $x=\cos t, y=\sin t,$
+                        con $0\leq t\leq 2\pi .$
+                    </p>
+
+                    <figure>
+                        <img src="../images/chp04/integral-example-2.gif" alt="Piecewise smooth curve"
+                            title="Piecewise smooth curve" style="width:45%;">
+                        <figcaption>
+                            $C$: $z(t)=\cos t + i \sin t = e^{it},$ with $0\leq t\leq 2\pi .$
+                        </figcaption>
+                    </figure>
+
+                    <p>
+                        En este caso $C$ es $z(t)=\cos t + i\,\text{sen }t = e^{it}.$ Entonces
+                        $$f\left(z(t)\right)=\frac{1}{e^{it}}\quad \text{ y }\quad z'(t) = ie^{it}.$$
+                        De esta manera
+                        \begin{eqnarray*}
+                        \int_C \dfrac{1}{z}\, dz&=& \int_{0}^{2\pi} \left(e^{-it}\right)ie^{it}dt = i \int_{0}^{2\pi}
+                        dt= 2\pi
+                        \,i.
+                        \end{eqnarray*}
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Evaluación numérica de integrales complejas</h2>
+
+                <h3>Exploración 1</h3>
+
+                <p>
+                    Usa el siguietne applet para explorar numéricamente la integral
+                    $$\int_C \overline{z}\, dz$$
+                    con diferentes contornos $C$:
+                </p>
+                <ul>
+                    <li>Segmentos de línea.</li>
+                    <li>Semicírculos.</li>
+                    <li>Círculos, con orientación positiva y negativa.</li>
+                </ul>
+                <p>
+                    También puedes cambiar la opción de <a href="dominio_coloreado.html" target="_blank">domain
+                        coloring</a>.
+                    Mueve los puntos y observa con cuidad lo que sucede. Después resulve el Ejercicio 1 propuesto abajo.
+                </p>
+
+
+                <div class="ggbElement" id="ggb-element-1"></div>
+                <p style="text-align: center;margin-top: -10px;"><em>The arrows on the contours indicate direction.</em>
+                </p>
+
+
+                <div class="practice">
+                    p><strong>Ejercicio 1:</strong> Usa la definición (\ref{contour-integral}) para evaluar
+                    $\displaystyle \int_C \overline{z}\, dz,$ para los siguientes contornos
+                    $C$ desde $z_0=-2i$ a $z_1=2i$:
+
+                    </p>
+                    <ol>
+                        <li>Segmento de línea. Es decir, $z\left(t\right) = -2i(1-t)+ 2it,$ with $0\leq t\leq 1.$</li>
+                        <li>Semicírculo superior. Es decir,
+                            $z\left(\theta\right) = 2e^{i \theta}$ con $-\frac{\pi}{2}\leq \theta \leq \frac{\pi}{2}.$
+                        </li>
+                        <li>Semicírculo inferior. Es decir,
+                            $z\left(\theta\right) = -2ie^{-i \theta}$ con $0 \leq \theta \leq \pi.$</li>
+                    </ol>
+
+                    <p>Usa el applet para confirmar tus resultados.</p>
+
+                    <p>¿Qué conclusiones puedes deducir acerca de la función $\overline{z}$ en esta exploración?</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div id="section3">
+
+                <h3>Exploración 2</h3>
+
+                <p>
+                    Ahora usa el applet siguiente para explorar numéricamente las integral
+                    $$\int_C \left(z^2+z\right) dz;\qquad \int_C \frac{1}{z^2}\, dz$$
+                    con diferentes contornos $C$ (segmentos de línea, semicírculos y círculos).
+                    Mueve los puntos y observa con cuidad lo que sucede.
+                    Puedes seleccionar las funciones <code>z^2+z</code> o <code>1/z^2</code>
+                    de la lista en la exquina superior izquierda.
+                    Después resuelve los Ejercicios 2 y 3.
+                </p>
+
+
+
+
+                <div class="ggbElement" id="ggb-element-2"></div>
+
+
+                <div class="practice">
+                    $$I_1 =\int_C \left(z^2+z\right) dz.$$
+                    Usa el applet para analizar el valor de $I_1$ en los siguientes casos:</p>
+                    <ol>
+                        <li>$C$ es un contorno desde $z_0=-1-i$ a $z_1 = 1+i.$</li>
+                        <li>$C$ es el círculo con centro is the circle $z_0$ radio $r\gt 0,$
+                            $|z-z_0|= r$; con orientación positiva o negativa.
+                            En este caso selecciona <code>Circle ↺</code> o <code>Circle ↻</code>.
+                        </li>
+                    </ol>
+
+                    <p>¿Qué conclusiones puedes deducir acerca del valor de $I_1$ y la función $z^2+z$ en esta
+                        exploración?</p>
+
+
+                </div>
+
+                <div class="practice">
+                    <p><strong>Ejercicio 3:</strong> Ahora considera la integral
+                        $$I_2 =\int_C \dfrac{1}{z^2}dz.$$ Primero selecciona en el applet la función
+                        <code>f(z)=1/z^2</code>.
+                        Después analiza los valores de $I_2$ en los siguientes casos:
+                    </p>
+                    <ol>
+                        <li>$C$ es cualquier contorno desde $z_0=-i$ a $z_1 = i.$
+                            ¿Qué sucede cuando seleccionas <code>Line Segment</code> en el applet? ¿Qué sucede
+                            cuando seleccionas <code>Semicircles</code>?</li>
+                        <li>$C$ es el círculo con centro $z_0$ y radio $r\gt 0,$
+                            $|z-z_0|= r$; conorientación positiva o negativa.
+                            En este caso selecciona <code>Circle ↺</code> o <code>Circle ↻</code>.
+                            ¿Qué sucede si $z = 0$ está adento o afuera del círculo?
+                            ¿Qué sucede si $z=0$ está en el contorno, e.g. cuando $z_0=1$ y $r=1$?
+                        </li>
+                    </ol>
+
+                    <p>
+                        ¿Qué conclusiones puedes deducir acerca del valor de $I_2$ y la función $\dfrac{1}{z^2}$
+                        en esta exploración?
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section4">
+
+                <h2>Antiderivadas</h2>
+
+                <p>
+                    Aunque el valor de una integral de contorno de una función $f (z)$
+                    desde un punto fijo $z_0$ a otro punto fijo $z_1$ depende,
+                    en general, del camino que se toma, existen ciertas funciones
+                    cuyas integrales desde $z_0$ a $z_1$ tienen valores que
+                    son independientes del camino,
+                    como ya habrás notado en los Ejercicios 2 y 3.
+                    Estos ejemplos también ilustran el hecho de que
+                    los valores de las integrales alrededor de caminos cerrados simples
+                    son algunas veces, pero no siempre, cero.
+                    El siguiente teorema es útil para determinar
+                    cuando la integración es independiente del camino y, más aún,
+                    cuando una integral alrededor de un camino cerrado tiene un valor cero.
+                    Este es conocido como la versión compleja
+                    del <em>Teorema Fundamental dle Cálculo</em>.
+                </p>
+
+                <div class="theorem" id="FTC">
+                    Sea $f(z)=F'(z)$
+                    la derivada de una función compleja $F(z)$
+                    definida en un dominio $\Omega \subset \mathbb C.$
+                    Sea $C$ un contorno arbitrario
+                    contenido en $\Omega$ con punto inicial $z_0$ y punto final $z_1.$
+                    Entonces
+                    \begin{eqnarray*}
+                    \int_C f(z) dz = \bigg. F(z) \bigg|_{z_0}^{z_1} =F(z_1)- F(z_0).
+                    \end{eqnarray*}
+
+
+                </div>
+
+                <div class="proof">
+                    Esto se puede deducir de la definición
+                    (\ref{contour-integral}) y de la regla de la cadena. Es decir
+                    \begin{eqnarray*}
+                    \int_C f(z) dz &=& \int_C F'\left(z(t)\right) \frac{dz}{dt}dt \\
+                    &=& \int_{a}^{b} \frac{d}{dt} F \left(z(t)\right) dt \\
+                    &=& F\left(z(b)\right) - F\left(z(a)\right) \\
+                    &=& F\left(z_1\right) - F\left(z_0\right)
+                    \end{eqnarray*}
+                    donde $z_0= z(a)$ y $z_1= z(b)$ son los puntos finales del contorno $C.$
+                </div>
+
+                <p>
+                    Como consecuencia del <strong>Theorema 1</strong> tenemos que
+                    \begin{eqnarray}
+                    \int_{C} f\left(z\right)dz=\int_{C}F^{\prime}(z) dz=0.
+                    \end{eqnarray}
+                    para todo contorno $C,$ es decir, los puntos finales son iguales.
+                </p>
+
+                <p>
+                    Si la función $f(z)$ satisface la hipótesis del
+                    <strong>Theorem 1</strong>, entonces para todo
+                    contorno $C$ en el interior de $D$ que comienza en $z_1$ y termina en
+                    $z_2$ tenemos la expresión (\ref{FTC}).
+                    Por lo tanto el resultado demuestra
+                    que la integral es independiente del camino recorrido.
+                    Este hecho se ilustra en la
+                    Figura 3.
+                </p>
+
+                <figure>
+                    <img src="../images/chp04/equalpath.jpg" alt="Piecewise smooth curve" title="Piecewise smooth curve"
+                        style="width:50%;">
+                    <figcaption>
+                        Caminos independientes formando una curva cerrada.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Considerando la Figura 3, tenemos que
+                    $$\int_{C_1} f\left(z\right)dz=\int_{C_2} f\left(z\right)dz$$
+                    porque
+                <div class="w3-responsive">
+                    \begin{eqnarray*}
+                    \int_{C} f\left(z\right)dz=\int_{C_1} f\left(z\right)dz-\int_{C_2} f\left(z\right)dz=0
+                    \end{eqnarray*}
+                </div>
+                donde el contor cerrado es is $C = C_1 - C_2.$
+                </p>
+
+                <!---
+		<p>
+			<strong>Final remark:</strong>
+			Sometimes it is convenient to evaluate the complex integral by reducing it
+			to two real-line integrals in the $x, y$ plane. In the definition 
+			(\ref{contour-integral}) we consider $f(z) =
+			u(x, y) + iv(x, y)$ and $dz = dx + idy$ to obtain
+			\begin{eqnarray}
+			\int_C f(z)dz=\int_C\left[\left(udx-vdy\right)+ \left(vdx-udy\right)\right]
+			\end{eqnarray}
+		</p>-->
+
+
+                <br>
+
+            </div>
+
+
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+    <script>
+        let params1 = {
+            "width": 721,
+            "height": 451,
+            "material_id": "uye8xbbj",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let params2 = {
+            "width": 719,
+            "height": 449,
+            "material_id": "am4gsavs",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let ggbApplet1 = new GGBApplet(params1, true);
+        let ggbApplet2 = new GGBApplet(params2, true);
+        window.addEventListener("load", () => {
+            ggbApplet1.inject('ggb-element-1');
+            ggbApplet2.inject('ggb-element-2');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="integrales_de_funciones_con_cortes_de_ramas.html" style="text-decoration: none;">
+        <p class="nextPage">Integrales de Funciones con Cores de Rama <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

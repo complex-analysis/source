@@ -1,0 +1,281 @@
+<section data-type="chapter" id="integrals-branch-cuts">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contents</p>
+        <ul>
+            <li><a href="#section1">Example 1</a></li>
+            <li><a href="#section2">Example 2</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Integrals of Functions with Branch Cuts</h1>
+            <hr>
+
+            <p>
+                When we consider multiple-valued functions, the path in a contour integral
+                can contain a point on a branch cut of
+                the integrand involved. The next two examples illustrate this.
+            </p>
+
+            <div id="section1">
+
+                <h2>Example 1</h2>
+
+                <p>
+                    Let $C$ be the semicircular path from $z_0=3$ to $z_1=-3.$ That is
+                    $z(\theta) = 3 e^{i\theta},$ with $0\leq \theta \leq \pi.$
+                    Here we would like to evaluate the integral
+                    \begin{eqnarray}\label{ex-01}
+                    I = \int_C z^{1/2} dz.
+                    \end{eqnarray}
+                    To do so, we need to choose a particular branch of the multiple-valued function
+                    $z^{1/2}.$ For example, we will use the principal branch
+                    \begin{eqnarray}
+                    |z|> 0, \; -\pi \lt \textbf{Arg}\,(z)\lt \pi.
+                    \end{eqnarray}
+                </p>
+
+                <p>
+                    In this case, notice that although the principal branch of
+                    $z^{1/2}= \exp\left(\frac{1}{2}\text{Log}\, z\right)$
+                    is not defined at the end point $z_1=-3$ of the contour $C,$ the integral $I$
+                    nevertheless exists.
+                </p>
+
+                <p>
+                    Use the following applet to explore the value of $I$ for the given contour $C.$
+                    Just drag the points $z_0$ and $z_1$ to the corresponding values.
+                    You can also select other contours and explore what happens when they
+                    cross the branch cut $\{z\,:\, x =0 \text{ and } y \leq 0\}.$
+                </p>
+
+
+                <div class="ggbElement" id="ggb-element-1"></div>
+                
+
+                <p>
+                    As you already have figured it out, the integral (\ref{ex-01}) exists
+                    because the integrand is
+                    <a href="curves_in_the_complex_plane.html" target="_blank">piecewise continuous</a>
+                    on $C.$ To confirm this, observe that when $z(\theta)= 3e^{i\theta},$
+                    then
+                    $$
+                    f\left(z(\theta)\right)= \exp\left[\frac{1}{2} \left(\ln 3 + i \theta\right)\right] =
+                    \sqrt{3}e^{i\theta/2}.
+                    $$
+                </p>
+
+                <p>
+                    The left-hand limits of the real and imaginary components of the function
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    f\left(z(\theta)\right)z'(\theta) &=& \sqrt{3} e^{i\theta/2} \cdot 3ie^{i\theta } \\
+                    &=& 3 \sqrt{3} i \,e^{i3\theta/2} \\
+                    &=& -3\sqrt{3} \sin \frac{3\theta }{2} + i\, 3\sqrt{3} \cos \frac{3\theta }{2} \quad (0\leq \theta
+                    \lt
+                    \pi)\\
+                    \end{eqnarray*}
+                    </div>
+                    
+                    at $\theta = \pi $ exist. That is
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \lim_{\theta \rightarrow \pi-}-3\sqrt{3} \sin \frac{3\theta }{2}= 3\sqrt{3}
+                    \quad \text{ and } \quad \lim_{\theta \rightarrow \pi-} 3\sqrt{3} \cos \frac{3\theta }{2} = 0.\\
+                    \end{eqnarray*}
+                    </div>
+                    
+                    This means that $f\left(z(\theta)\right)z'(\theta)$ is continuous on the closed interval
+                    $0 \leq \theta \leq \pi$ when its value at $\theta = \pi $ is defined as $3\sqrt{3}.$
+                    Therefore
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    I &=& \int_C f\left(z(\theta)\right)z'(\theta)\, d\theta= 3\sqrt{3} i \int_0^{\pi} e^{i\theta /2}
+                    d\theta
+                    = 3\sqrt{3} i\Bigg[ \bigg.\frac{2}{3i}e^{i3\theta /2}\bigg|_{0}^{\pi} \Bigg] \\
+                    &=& 3\sqrt{3} i\Bigg[ -\frac{2}{3i}\left( 1+i\right)\Bigg]= -2\sqrt{3}(1+i).
+                    \end{eqnarray*}
+                    </div>
+                    
+                </p>
+
+                <div class="practice">
+                    <p><strong>Exercise 1:</strong> Evaluate $\int_C z^{1/2}\, dz$ for the
+                        contour $C: z(\theta)= e^{i\theta},$ with $-\pi\leq \theta \leq \pi.$
+                        You can use the applet to confirm your results.
+                    </p>
+                </div>
+
+                <!--<p><strong>Remark 1:</strong>
+			You can not evaluate the integral
+			for the contour $C: z(t)= e^{it},$ with $0 \leq t \leq 2\pi.$ Why?
+		</p>-->
+
+                <p><strong>Remark:</strong>
+                    Notice that $\int_C z^{1/2}\, dz=0$ for any
+                    circle not intersecting the branch cut $\{z\,:\, x =0 \text{ and } y \leq 0\}.$ Why?
+                </p>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Example 2</h2>
+
+                <p>
+                    Consider the principal branch
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}\label{br}
+                    f(z)=z^{i} = \exp \left[ i \,\text{Log } z \right]\; \text{ with }\; |z|>0,\, -\pi\lt \text{Arg } z
+                    \lt \pi
+                    \end{eqnarray}
+                    </div>
+                    
+                    and $C$ the upper half circle from $z=-1$ to $z=1$; that is, $z(t)=-e^{-i \pi t}$ with
+                    $0 \leq t \leq 1.$
+                </p>
+
+                <figure>
+                    <img src="../images/chp04/p-branch-semicircle.svg"
+                        alt="Upper half circle" title="Upper half circle" style="width:45%;">
+                    <figcaption>
+                        $C: z(t)=-e^{-i \pi t},$ with
+                        $0 \leq t \leq 1.$
+                    </figcaption>
+                </figure>
+
+                <p>
+                    It is not difficult to verify that
+                    \begin{eqnarray}\label{ex-02}
+                    I=\int_C z^{i}\,dz &=& \frac{1+e^{-\pi}}{2}\,(1-i).
+                    \end{eqnarray}
+                    Use the following applet to confirm this.
+                    You can also analyze $\int_C z^idz$
+                    for other contours.
+                </p>
+
+                <div class="ggbElement" id="ggb-element-2"></div>
+                
+
+                <p>
+                    <strong>Remark 3:</strong>
+                    Notice that $\int_C z^{i}\, dz=0$ for any
+                    circle not intersecting the branch cut $\{z\,:\, x =0, y \leq 0\}.$ Why?
+                </p>
+
+                <p>
+                    In general, we can calculate $\int_C z^i dz$ for
+                    any contour $C$ from $z=-1$ to $z=1$ lying above the real axis.
+                    We just need to find an antiderivative of $z^i.$
+                    Unfortunately, we <em>can not</em> use the principal branch, defined in (\ref{br}), since
+                    this branch is not even defined at
+                    $z=-1.$ But the integrand can be replaced by the branch
+                    <div class="scroll-wrapper">
+                        $$z^{i} = \exp \left[ i \,\text{log } z \right]\; \text{ with }\; |z|>0,\, -\frac{\pi}{2}\lt
+                    \text{arg } z \lt \frac{3\pi}{2}.$$
+                    </div>
+                    
+                    since it agrees with the integrand along $C.$
+                </p>
+
+                <div class="figure-container">
+                    <div id="p-branch" >
+                        <figure>
+                            <img src="../images/chp04/p-branch-everycontour.svg"
+                                alt="Smooth curve and Tangent vector" title="Smooth curve and Tangent vector"
+                                style="width:100%;">
+                            <figcaption>
+                                 Principal branch.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div id="s-branch">
+                        <figure >
+                            <img  src="../images/chp04/s-branch-everycontour.svg"
+                                alt="Non smooth" title="Non smooth" style="width:100%;">
+                            <figcaption>
+                                 An appropriate branch.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <p>
+                    Using an antiderivative of this new branch, we obtain
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}\label{value}
+                    \int_{-1}^{1} z^i dz&=& \Bigg.\frac{z^{i+1}}{i+1}\Bigg|_{-1}^{1} = \frac{1+e^{-\pi}}{2}\,(1-i),
+                    \end{eqnarray}
+                    </div>
+                    
+                    which is the same value as (\ref{ex-02}).
+                </p>
+
+                <div class="practice">
+                    <p><strong>Exercise 2:</strong> Evaluate $\bigg.\dfrac{z^{i+1}}{i+1}\bigg|_{-1}^{1} $ to confirm
+                        the value of (\ref{value}).
+                    </p>
+                </div>
+
+
+
+                <br>
+
+            </div>
+
+
+        </article>
+    </main>
+
+
+    <!--GeoGebra embeding-->
+    <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+    <script>
+        let params1 = {
+            "width": 721,
+            "height": 451,
+            "material_id": "jbs86spr",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let params2 = {
+            "width": 721,
+            "height": 451,
+            "material_id": "kzrkqta7",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let ggbApplet1 = new GGBApplet(params1, true);
+        let ggbApplet2 = new GGBApplet(params2, true);
+        window.addEventListener("load", function () {
+            ggbApplet1.inject('ggb-element-1');
+            ggbApplet2.inject('ggb-element-2');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="series.html" style="text-decoration: none;">
+        <p class="nextPage">Series <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

@@ -1,0 +1,241 @@
+<section data-type="chapter" id="complex-functions">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Funciones Complejas</a></li>
+            <li><a href="#section2">Ejemplos de funciones</a></li>
+            <li><a href="#section3">Exploración dinámica</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br>
+    <img src="../images/chp02/complex-f.jpg" alt="f(z)=z+1/z" title="f(z)=z+1/z">
+    <br />
+
+
+    <main>
+        <article>
+
+            <div id="section1">
+
+                <h1>Funciones Complejas</h1>
+
+                <hr>
+
+                <p>Sea $S$ un conjunto de números complejos. Una <em>función</em> $f$ definida en $S$ es
+                    una regla que asigna a cada $z$ en $S$ un número complejo $w.$ El número $w$ es llamado
+                    el <em>valor</em> de $f$ en $z$ y se denota por $f(z)$; esto es, $w = f (z).$
+                    El conjunto $S$ se llama el <em>domino de definición</em> de $f.$</p>
+
+                <p>Si solo un valor de $w$ corresponde a cada valor de $z,$ decimos que $w$
+                    es una función <em>valor-único</em> de $z$ o que $f(z)$ tiene un único valor.
+                    Si más de un valor de $w$ corresponde a cada valor de $z,$ decimos
+                    que $w$ es una función <em>multivaluada</em> de $z.$
+                </p>
+
+                <p>
+                    Una función <em>multivaluada</em> se puede considerar como una colección de
+                    funciones de valor-único, donde cada miembro es conocido como una <em>rama</em>
+                    de la función. En general, consideramos un elemento particular como una
+                    <em>rama principal branch</em> de la función multivaluada y el valor de
+                    la función correspondiente a esta rama como el <em>valor principal</em>.
+                </p>
+
+
+
+                <div class="practice">
+                    <p>
+                        <strong>Ejemplo 1:</strong> La expresión $w=z^2$ representa una función de valor-único.
+                        Por otra parte, si $w=z^{\frac{1}{2}},$ entonces para cada valor de $z$ existen
+                        dos valores de $w.$ Por lo tanto, la función $$w=z^{\frac{1}{2}}$$
+                        es multivaluada (en este caso con dos valores) de $z.$
+                    </p>
+                </div>
+
+                <p>Supongamos que $w=u+iv$ es el valor de una función $f$ en $z= x+iy,$ de tal forma que
+                    $$u+iv=f(x+iy)$$
+                    Cada uno de los números reales $u$ y $v$ dependen de las variables reales $x,$ $y.$
+                    En consecuencia $f(z)$ se puede expresar en términos de un de funciones con valores
+                    reales $x,$ $y$
+                    \begin{eqnarray}\label{eq1}
+                    f(z)= u(x,y)+iv(x,y).
+                    \end{eqnarray}
+                    Si consideramos las coordenadas polares $r$ y $\theta,$ en lugar de $x,$ $y.$ Entonces
+                    $$u+iv=f\left(re^{i\theta}\right)$$
+                    donde $w=u+iv$ y $z=re^{i\theta}.$ En este caso escribrimos
+                    \begin{eqnarray}\label{eq2}
+                    f(z)=u\left(r, \theta\right)+iv\left(r, \theta\right).
+                    \end{eqnarray}
+                </p>
+
+
+                <div class="practice">
+                    <p>
+                        <strong>Ejemplo 2:</strong> Si $f(z)= z^2$ entonces
+                        $$f(x+iy)=(x+iy)^2=x^2-y^2+i(2xy).$$
+                        Por lo tanto
+                        $$u(x,y)= x^2-y^2\quad \text{y}\quad v(x,y)= 2xy.$$
+                        Cuando usamos coordenadas polares tenemos que
+                        $$u\left(r, \theta\right)= r^2\cos 2\theta \quad \text{y}\quad v\left(r, \theta\right)=
+                        r^2\,\text{sen } 2\theta.$$
+                    </p>
+                </div>
+
+                <p><strong>Pregunta:</strong> ¿Qué sucede cuando en las ecuaciones definidas en (\ref{eq1}) y
+                    (\ref{eq2}) la función $v$ es zero?</p>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Ejemplos de funciones complejas</h2>
+
+                <h4 style="text-align:left">Polinomios</h4>
+                <p>Para constantes complejas $a_n, a_{n-1}, \ldots, a_0$ definimos
+                    $$p(z) = a_n z^n + a_{n-1} z^{n-1} +\cdots +a_{1}z + a_0$$
+                    donde $a_n\neq 0$ y $n$ es un entero positivo
+                    conocido como el <em>grado</em> del polinomio $p(z).$
+                </p>
+
+                <p><em>Funciones racionales:</em> Razones
+                    $$\frac{p(z)}{q(z)}$$
+                    donde $p(z)$ y $q(z)$ son polinomios y $q(z)\neq 0.$
+                </p>
+
+                <h4 style="text-align:left">Función exponencial</h4>
+
+                <p><em>Función exponencial:</em> Si $z=x+iy,$ la función
+                    exponencial $e^z$ se define como
+                    \begin{eqnarray*}
+                    e^z=e^xe^{iy}.
+                    \end{eqnarray*}
+                    Esto es porque
+                    \begin{eqnarray*}
+                    e^{iy}=\cos y +i\,\text{sen } y,
+                    \end{eqnarray*}
+                    entonces tenemos que
+                    \begin{eqnarray*}
+                    e^z=e^x\left(\cos y +i\,\text{sen } y\right).
+                    \end{eqnarray*}
+                </p>
+
+                <h4 style="text-align:left">Función logaritmo</h4>
+
+                <p> En forma similar, el logaritmo complejo es una extensión compleja del
+                    logaritmo natural con valores reales (i.e., con base $e$).
+                    En términos de coordenadas polares
+                    $z = r e^{i\theta},$ el logaritmo complejo tiene la forma
+                    $$\log z = \log\left(r e^{i\theta}\right) = \log r + \log e^{i\theta}= \log r + i \theta.$$
+                    Exploraremos en detalle esta función más adelante.
+                </p>
+
+                <h4 style="text-align:left" id="trig-functions">Funciones trigonométricas</h4>
+
+                <p> El seno y coseno de variable compleja se definen como:
+                    \begin{eqnarray*}
+                    \,\text{sen } z=\frac{e^{i z}-e^{-iz}}{2i}\quad \text{y}\quad \cos z=\frac{e^{iz} +e^{-i z}}{2}.
+                    \end{eqnarray*}
+
+                    Las otras cuatro funciones trigonométricas
+                    se definen a partir del seno y coseno complejos
+                    con base en las siguientes relaciones: with the following relations:
+                    \begin{align*}
+                    \tan z&=\frac{\,\text{sen } z}{\cos z} & \cot z&=\frac{\cos z}{\,\text{sen } z} \\
+                    \sec z&=\frac{1}{\cos z} & \csc z&=\frac{1}{\,\text{sen } z}.
+                    \end{align*}
+                </p>
+
+                <h4 style="text-align:left">Funciones trigonométircas hiperbólicas</h4>
+
+                <p>El seno y coseno hiperbólico de variable compleja se definen de forma similar
+                    a su versión de variable real; es decir,
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \text{senh}\, z=\frac{e^{z}-e^{-z}}{2}\quad \text{and}\quad \cosh z=\frac{e^{z} +e^{- z}}{2}.
+                    \end{eqnarray*}
+                </div>
+
+                Las otras cuatro funciones hiperbólicas se definen en términos del seno y coseno hiperbólico
+                complejo con las siguientes relaciones:
+                <div class="scroll-wrapper">
+                    \begin{align*}
+                    \tanh z&=\frac{\text{senh}\, z}{\cosh z} & \coth z&=\frac{\cosh z}{\text{senh}\, z} \\
+                    \text{sech } z&=\frac{1}{\cosh z} & \text{csch } z&=\frac{1}{\text{senh}\, z}.
+                    \end{align*}
+                </div>
+
+                </p>
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h2>Explora las componentes real e imaginaria</h2>
+
+                <p>Usa el siguiente applet para explorar las componentes real e imaginaria de 
+                    algunas funciones complejas.</p>
+
+                <div class="ggbElement" style="display:block" id="ggb-element"></div>
+
+                <div class="practice">
+                    <details>
+                        <summary><strong>Código</strong></summary>
+
+                        <p>Usa el siguiente script en <a href="https://www.geogebra.org/classic#3d" target="_blank">GeoGebra</a> 
+                            para explorar. Abre la vista 3D. El símbolo
+                            <code>#</code> indica comentarios.
+                        </p>
+
+                        <pre><code>#Define función compleja
+f(z) := z + 1/z
+
+#Define componentes
+Re = Surface(u, v, real( f(u + ί v) ), u, -5, 5, v, -5, 5)
+Im = Surface(u, v, imaginary( f(u + ί v) ), u, -5, 5, v, -5, 5)
+</code></pre>
+                    </details>
+                </div>
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params = {
+            "width": 772,
+            "height": 541,
+            "material_id": "q8cagcc5",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="limites.html" style="text-decoration: none;">
+        <p class="nextPage">Límites <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

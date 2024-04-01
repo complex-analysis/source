@@ -1,0 +1,234 @@
+<section data-type="chapter" id="mapping-1overz">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">La Transformación $w = 1/z$</a></li>
+            <li><a href="#section2">Mapeos de $1/z$</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <div id="section1">
+
+                <h1>La Transformación $w=1/z$</h1>
+                <hr>
+
+                <p>Consideremos la ecuación
+                    $$w=\frac{1}{z}$$
+                    la cual establece una correspondencia uno a uno de
+                    los puntos diferentes de cero entre los planos $z$ y
+                    $w.$ Dado que $z\overline{z} = |z|^2,$ el mapeo
+                    se puede describir por medio de transformaciones sucesivas
+                    $$g(z)=\frac{z}{|z|^2},\quad f(z)=\overline{g(z)}.$$
+                    La primera transformación $g(z)$ se trata de una inversión
+                    con respecto al círculo unitario $|z| = 1.$ Es decir, la
+                    imagen de un punto diferente de cero $z$ es el punto $g(z)$
+                    con las propiedades
+                    $$|g(z)| = \frac{1}{|z|}\quad\text{and}\quad \textbf{arg } g(z) = \textbf{arg } z.$$
+                    De esta manera los puntos exteriores al círuclo $|z| = 1$
+                    son mapeados a los puntos en su interior, e inversamente.
+                    Cualquier punto en el círculo es mapeado a sí mismo.
+                    La segunda transformación $f(z)=\overline{g(z)}$
+                    es simplemente una reflección en el eje real.
+                </p>
+
+                <div class="ggbElement" id="ggb-element-01"></div>
+
+                <p>Si consideramos la función
+                    \begin{eqnarray*}
+                    T(z)=\frac{1}{z}, \quad z\neq 0,
+                    \end{eqnarray*}
+                    podemos definir $T$ en el origen y el punto al infinito
+                    de tal forma que esta sea continua en el plano complejo
+                    <em>extendido</em>. Para hacer $T$ continua en el plano extendido, entonces
+                    escribimos
+                    \begin{eqnarray*}
+                    T(0)=\infty,\quad T(\infty)=0, \quad \text{y}\quad T(z)=\frac{1}{z}
+                    \end{eqnarray*}
+                    para los demás valores $z.$
+                </p>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Mapeos de $1/z$</h2>
+
+
+                <p>Una propiedad interesante del mapeo $w = 1/z$ es que transforma
+                    círculos y líneas rectas en círculos y rectas.</p>
+
+                <p>Puedes observar esto de manera intuitiva en el siguietne applet.
+                <ul>
+                    <li>Selecciona una <code>Línea</code> o <code>Círculo</code>.</li>
+                    <li>Mueve los puntos en la vista gráfica de la izquierda.
+                        Puedes cambiar la posición de la línea o el círculo al mover los
+                        puntos grises.</li>
+                </ul>
+                </p>
+
+                <div class="ggbElement" id="ggb-element-02"></div>
+
+                <p>
+                    Observa con cuidado lo que sucede
+                    a los puntos $w_1, w_2$ (la imagen de $z_1$ y $z_2,$ respectivamente)
+                    en el plano $uv,$ mostrado en la vista gráfica de la derecha.
+                <ul>
+                    <li>¿Qué puedes notar cuando la línea en el plano $xy$ cruza el origen?</li>
+                    <li>¿Qué sucede cuando el círculo en el plano $xy$ cruza el origen?</li>
+                </ul>
+                </p>
+
+
+                <!--<p>If a point $w = u + iv$ is the image of a nonzero point $z = x + iy$ in the finite
+plane under the transformation $w = 1/z,$ and considering the equation
+\begin{eqnarray*}
+w=\frac{\overline{z}}{z\overline{z}}=\frac{\overline{z}}{|z|^2},
+\end{eqnarray*}
+we can obtain the following
+\begin{eqnarray*}
+x=\frac{u}{u^2+v^2},\quad y=\frac{-v}{u^2+v^2}.
+\end{eqnarray*}
+On the other hand, since
+\begin{eqnarray*}
+z=\frac{1}{w}=\frac{\overline{w}}{w|w|^2}=\frac{\overline{w}}{|w|^2}
+\end{eqnarray*}
+we can see that
+\begin{eqnarray*}
+u=\frac{x}{x^2+y^2},\quad v=\frac{-y}{x^2+y^2}.
+\end{eqnarray*}
+</p>-->
+
+                <p>Cuando $A,$ $B,$ $C$ y $D$ son numeros reales y sarifacen la condición
+                    $B^2+C^2>4AD,$ la ecuación
+                    \begin{eqnarray}\label{circle01}
+                    A\left(x^2+y^2\right)+Bx+Cy+D=0
+                    \end{eqnarray}
+                    representa un círculo o una línea en general. En el caso de
+                    $A\neq 0,$ se define un círculo. Mientras que cuando $A=0,$ se define una línea.</p>
+
+
+
+                <p>Usando el método de completar cuadrados perfectos,
+                    podemos re-escribir la ecuación (\ref{circle01}) de la siguiente manera
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}\label{circle02}
+                    \left(x+\frac{B}{2A}\right)^2+\left(y+\frac{C}{2A}\right)^2=\left(\frac{\sqrt{B^2+C^2-4AD}}{2A}\right)^2
+                    \end{eqnarray*}
+                </div>
+                Esto hace evidente la necesidad de la condición $B^2+C^2>4AD$ cuando
+                $A\neq 0.$ Ahora, si $A = 0,$ la condición se convierte en
+                $B^2 + C^2 &gt; 0,$ la cual significa que $B$ y $C$ deben ser
+                diferentes de cero.
+                </p>
+
+
+
+                <p>Ahora, usando las relaciones
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{exp01}
+                    x=\frac{z+\overline{z}}{2},\quad y=\frac{z-\overline{z}}{2i},
+                    \end{eqnarray}
+                </div>
+                podemos re-escribir la ecuación (\ref{circle01}) en la forma
+                \begin{eqnarray}\label{circle03}
+                2Az\overline{z}+(B-iC)z+(B+iC)\overline{z}+2D=0.
+                \end{eqnarray}
+                Dado que $w=1/z,$ la ecuación (\ref{circle03}) se convierte en
+                \begin{eqnarray*}
+                2Dw\overline{w}+(B+iC)w+(B-iC)\overline{w}+2A=0
+                \end{eqnarray*}
+                y usando las relaciones
+                \begin{eqnarray}\label{exp02}
+                u=\frac{w+\overline{w}}{2},\quad v=\frac{w-\overline{w}}{2i},
+                \end{eqnarray}
+                obtenemos
+                \begin{eqnarray}\label{circle04}
+                D(u^2+v^2)+Bu-Cv+A=0
+                \end{eqnarray}
+                la cual representa también un círculo o una línea recta.
+                </p>
+
+
+                <p>Ahora es claro, a partir de las ecuaciones (\ref{circle01}) y (\ref{circle04}) que
+                <ol>
+                    <li>un círculo ($A \neq 0$) que no pase por el origen
+                        ($D \neq 0$) en el plano $z$ se transforma en un círculo
+                        que no pasa por el origen en el plano $w$;</li>
+                    <li>un círculo ($A \neq 0$) que pasa por el origen ($D = 0$)
+                        en el plano $z$ se transforma en una línea que no pasa por el origen
+                        en el plano $w$;</li>
+                    <li>una línea recta ($A = 0$) que no pase por el origen ($D \neq 0$) en el plano $z$
+                        se transforma en un círculo que pasa por origen en el
+                        plano $w$;</li>
+                    <li>una línea recta ($A = 0$) que pasa por el origen $(D = 0)$ en el plano $z$
+                        se transforma en una línea recta que pasa por el origen en el plano $w.$</li>
+                </ol>
+                </p>
+
+
+                <div class="practice">
+                    <p><strong>Ejercicio:</strong> Verifica que la expresión 
+                        \(D(u^2+v^2)+Bu-Cv+A=0\) se puede obtener de las ecuaciones 
+                        definidas en (\ref{circle01}) usando las relaciones
+                        (\ref{exp01}) y (\ref{exp02}).
+                    </p>
+                </div>
+
+                <br>
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params01 = {
+            "width": 562,
+            "height": 435,
+            "material_id": "xmsy8qvh",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "showResetIcon": true
+        };
+        let params02 = {
+            "width": 800,
+            "height": 435,
+            "material_id": "bf4p8vtm",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "showResetIcon": true
+        };
+        let ggbApplet01 = new GGBApplet(params01, true);
+        let ggbApplet02 = new GGBApplet(params02, true);
+        window.addEventListener("load", () => {
+            ggbApplet01.inject('ggb-element-01');
+            ggbApplet02.inject('ggb-element-02');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="superficies_analiticas.html" style="text-decoration: none;">
+        <p class="nextPage"> Superficies Analíticas <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

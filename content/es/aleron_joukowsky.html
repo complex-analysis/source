@@ -1,0 +1,187 @@
+<section data-type="chapter" id="joukowsky-airfoil">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">El mapeo de Joukowsky</a></li>
+            <li><a href="#section2">Flujo alrededor del aleron de Joukowsky </a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+
+    <main>
+        <article>
+
+            <h1>Alerón de Joukowsky</h1>
+            <hr>
+
+            <div id="section1">
+
+                <h2>El mapeo de Joukowsky</h2>
+
+                <p>Un ejemplo bien conocido de función conforme es el <em>mapeo de Joukowsky</em>
+                    \begin{eqnarray}\label{jouk}
+                    w= z+ 1/z.
+                    \end{eqnarray}
+                    Fue utilizado por primera vez en el estudio del flujo alrededor de las alas de
+                    los aviones por el pionero investigador ruso de aero e hidrodinámica
+                    <a href="http://mathshistory.st-andrews.ac.uk/Biographies/Zhukovsky.html" target="_blank">Nikolai
+                        Zhukovskii</a> (Joukowsky).
+                </p>
+
+                <p>Dado que
+                <div class="scroll-wrapper">
+                    $$\frac{d}{dz}w=1-\frac{1}{z^2}=0\quad \text{if and only if}\quad z=\pm 1,$$
+                </div>
+                la función (\ref{jouk}) es conforme excepto en sus puntos críticos
+                $z = \pm 1$ y en su singularidad $z = 0,$ donde la función no está definida.
+                </p>
+
+                <p>Si $z = e^{i\theta}$
+                    pertenece al círculo unitario, entonces
+                    $$w =e^{i\theta}+e^{-i\theta}=2\cos \theta,$$
+                    pertenece al eje real, con $-2\leq w\leq 2.$ De esta forma,
+                    el mapeo de Joukowsky comprime el círculo unitario
+                    al segmento $[-2, 2].$ Las imágenes de los puntos fuera del
+                    círculo unitario llenan el reso del plano $w,$
+                    así como las imágenes de los puntos (diferentes de cero)
+                    dentro del círuclo unitario. En realidad,
+                    si resolvemos (\ref{jouk}) para $z,$ tenemos
+                    $$z=\frac{1}{2}\left(w\pm \sqrt{w^2-4}\right).$$
+                    Podemos observar que cada $w$ excepto $\pm 2$ proviene de dos puntos diferentes
+                    $z$; para $w$ que no está en el segmento $[-2, 2],$
+                    un punto (con el signo menos) se encuentra dentro y el otro
+                    (con el signo más) se encuentra fuera del círuclo unitario,
+                    mientras que si $-2 \lt w \lt 2,$
+                    ambos puntos pertenecen al círculo unitario y a una línea vertical en común.
+                </p>
+
+                <p>Por lo tanto, el mapeo de Joukowski
+                    define un mapeo conforme uno-a-uno de conjunto $| z | > 1,$ al exterior
+                    del círculo unitario, al exterior del segmento $[-2, 2],$ i. e.
+                    $\mathbb C \setminus [-2, 2].$
+                </p>
+
+                <p>En la Figura 4 podemos observar que los círuclo concentricos
+                    $|z|= r > 1$
+                    son mapeados a elipses con focos en $\pm 2$ en el plano $w.$
+                </p>
+
+                <figure>
+                    <img src="../images/chp06/map-circle.png" alt="MapJ" title="JMap" style="width:90%;">
+                    <figcaption>
+                        El mapeo de Joukowsky aplicado a $|z|=r \geq 1.$
+                    </figcaption>
+                </figure>
+
+                <p>
+                    El efecto sobre los círculos que no están centrados en el origen es más interesante.
+                    Las curvas de la imagen adoptan una amplia variedad de formas.
+                    Cuando el círculo pasa por el punto singular $z = 1,$ entonces su imagen ya no
+                    es suave, sino que tiene una cúspide en $w = 2$ y cuando el círculo pasa
+                    por $z = -1,$ la cúspide está en $w = -2.$ Algunas de las curvas de la imagen
+                    asumen la forma de la famosa sección transversal a través de un ala o <em>alerón</em>
+                    aerodinámico idealizado de un avión, también conocido como el <em>alerón de Joukowsky</em>.
+                </p>
+
+                <p>
+                    Puedes explorar el mapa de Joukowsky en el applet a continuación.
+                    Arrastra el centro del círculo.
+                    Usa los controles deslizantes para aplicar el mapeo o cambiar el radio. Haz clic en el botón
+                    para ver valores predefinidos.
+                </p>
+
+                <div class="ggbElement" id="ggb-element"></div>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Flujo alrededor del alerón de Joukowsky</h2>
+
+                <p>Consideremos ahora el flujo alrededor de un círculo unitario con
+                    circulación $C$ y velocidad $U>0$ dado por el potencial complejo
+                    \begin{eqnarray}\label{eq1}
+                    F(z)=Uz+\frac{U}{z}-\frac{i C}{2\pi}\log z.
+                    \end{eqnarray}
+                </p>
+
+
+                <p>Podemos usar la transformación lineal
+                    $$T(z)=-0.15+0.23i + 0.23\sqrt{13\cdot 2} z$$
+                    para mapear este fllujo alrededor de $|z|=1$ a un flujo alrededor
+                    del círculo $c_1$ con centro $z_1=-0.15+0.23i$ y
+                    radio $r=0.23\sqrt{13\cdot 2}.$ </p>
+
+                <p>Finalmente, al aplicar el mapeo de Joukowsky
+                    (\ref{jouk}), podemos obtener un flujo uniforme con circulación
+                    alrededor el <em>alerón de Joukowsky</em>.
+                </p>
+
+                <p>La siguiente simulación muestra el
+                    flujo que pasa alrededor de un círculo
+                    $c_1$ y su transformación en el <em>alerón de Joukowsky</em>.
+                    Mueve los controles deslizantes para explorar:</p>
+                <ul>
+                    <li>Deslizador U = velocidad.</li>
+                    <li>Deslizador C = circulación.</li>
+                    <li>Deslizador T = aplica transformación.</li>
+                </ul>
+
+                <p>Presiona el botón <code>Trace</code> para mostrar las <em>líneas de flujo</em>.</p>
+
+                <div class="hide-small hide-medium">
+                    <iframe name="JoukAirfoil" src="../applets/p5js/joukowsky/index.html" width="800px" height="500px"
+                        style="border:none;" style="overflow:hidden;"></iframe>
+
+                    <div style="text-align: center;">
+                        <button onclick="var ifr=document.getElementsByName('JoukAirfoil')[0]; ifr.src=ifr.src;"
+                            style="cursor: pointer;font-weight: bold;">Reset</button>
+                    </div>
+                </div>
+
+                <div class="hide-large ">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+            </div>
+
+
+        </article>
+    </main>
+
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params = {
+            "width": 728,
+            "height": 531,
+            "material_id": "ukwamarf",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="bibliografia.html" style="text-decoration: none;">
+        <p class="nextPage">Bibliografía <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

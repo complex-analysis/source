@@ -1,0 +1,126 @@
+<section data-type="chapter" id="principal-argument">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+
+
+            <h1>El Argumento Principal</h1>
+
+            <hr>
+
+            <p>En este texto la notación $\textbf{arg} (z)$ se usa para designar un
+                argumento arbitrario de $z,$ lo cual significa que $\textbf{arg} (z)$ es un conjunto de números. En
+                particular,
+                la relación $$\textbf{arg} (z_1) = \textbf{arg} (z_2)$$ no es una ecuación, sino que expresa una
+                igualdad entre dos conjuntos.</p>
+
+            <p>Como consecuencia, dos números complejos $r_1 (\cos \varphi_1 + i \,\text{sen }\varphi_1)$ y $r_2
+                (\cos \varphi_2 + i \,\text{sen }\varphi_2)$
+                son iguales si y sólo si
+            <div class="scroll-wrapper">
+                $$r_1=r_2,\quad \text{and}\quad \varphi_1 = \varphi_2+ 2 k \pi,$$
+            </div>donde $k \in \mathbb Z.$
+            </p>
+
+            <p>Para hacer que el argumento de $z$ sea un número bien definido, es conveniente
+                restringir su valor al intervalo $(-\pi, \pi].$ Esta elección especial se
+                denomina <em>argumento principal</em> o la
+                <em>rama principal</em> del argumento y se denota como $\textbf{Arg}(z).$
+            </p>
+
+            <p>Notemos que no existe una convención general acerca de la definitión del valor principal,
+                algunas veces sus valores se consideran definidos en el intervalo $[0, 2\pi).$
+                Esta ambigüedad es una fuente perpetua de mal entendidos y errores. En este libro siempre
+                utilizaremos
+                el intervalo $(-\pi, \pi].$
+            </p>
+
+
+
+
+            <hr>
+
+
+
+            <p>El argumento principal $\textbf{Arg}(z)$ de un número complejo $z=x+iy$ normalmente está dado por
+                $$\Theta=\arctan\left(\frac{y}{x}\right),$$
+                donde $y/x$ es la pendiente, y $\arctan$ convierte la pendiente en ángulo. Pero esto es correcto solo
+                cuando $x > 0,$
+                cuando el cociente está definido y el ángulo está entre $-\pi/2$ and $\pi/2.$
+                Necesitamos extender esta definición a los casos donde
+                $x$ no es positivo, considerando el valor principal del argumento de forma separada en los cuatro
+                cuadrantes del plano complejo.</p>
+
+
+            <p>La función $\textbf{Arg}(z)$ $:\mathbb C \setminus \{0\} \rightarrow \left(-\pi,\pi\right]$ está definida
+                como:
+            <div class="scroll-wrapper">
+                \begin{eqnarray*}
+                \textbf{Arg}(z)= \left\{\def\arraystretch{1.2}%
+                \begin{array}{@{}c@{\quad}r@{}}
+                \arctan \frac{y}{x} & \;\text{if $x>0,$ $y\in \mathbb R$}\\
+                \arctan \frac{y}{x}+\pi & \;\text{if $x &lt;0,$ $y\geq 0$}\\
+                \arctan \frac{y}{x}-\pi & \;\text{if $x &lt; 0,$ $y &lt; 0$}\\
+                \frac{\pi}{2} & \;\text{if $x=0,$ $y> 0$}\\
+                -\frac{\pi}{2} & \;\text{if $x=0,$ $y &lt; 0$}\\
+                \text{undefined}& \;\text{if $x=0,$ $y=0$}\\
+                \end{array}\right.
+                \end{eqnarray*}
+            </div>
+            De esta forma, si $z=r(\cos \Theta +i\,\text{sen } \Theta),$ con $r>0$ y $-\pi &lt; \Theta \leq \pi,$
+            entonces
+            <div class="scroll-wrapper">
+                \begin{eqnarray*}
+                \textbf{arg}(z)= \textbf{Arg}(z)+2n\pi, \quad n \in \mathbb Z.
+                \end{eqnarray*}
+            </div>
+            </p>
+
+            <p>Podemos visualizar los multiples valores de $\textbf{arg}(z)$ al usar <a
+                    href="http://mathworld.wolfram.com/RiemannSurface.html" target="_blank">superficies de Riemann</a>.
+                El siguiente applet interactivo muestra algunas ramas (o valores) de $\textbf{arg}(z).$
+                Cada rama se identifica con un color diferente.</p>
+
+            <div class="ggbElement" id="ggb-element"></div>
+
+
+
+
+
+
+
+        </article>
+    </main>
+
+    <!-- GeoGebra -->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params = {
+            "width": 797,
+            "height": 494,
+            "material_id": "bp3pprjp",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+
+    <a href="raices_numeros_complejos.html" style="text-decoration: none;">
+        <p class="nextPage">Raíces de Números Complejos <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

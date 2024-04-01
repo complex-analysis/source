@@ -1,0 +1,238 @@
+<section data-type="chapter" id="geometric-interpretation">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Adición y Sustracción</a></li>
+            <li><a href="#section2">Multiplicación</a></li>
+            <li><a href="#section3">Estiramiento y rotación</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Interpretación Geométrica</h1>
+            <h1 style="font-size:1.8em;text-align: center;margin-top: -20px;"><span>de las Operaciones
+                    Aritméticas</span>
+            </h1>
+
+            <hr>
+
+            <div id="section1">
+
+                <h2>Adición y Sustracción</h2>
+
+                <p>Geométricamente, la adición de dos números complejos $Z_1$ y $Z_2$ se puede visualizar como
+                    la adición de vectores usando la <em>ley del paralelogramo</em>. El vector suma
+                    $Z_1+Z_2$ se representa con la diagonal del paralelogramo formado por los dos vectores originales.
+                </p>
+
+                <p>La forma más fácil de representar la diferencia $Z_1-Z_2$ es al interpretarla en términos
+                    de la adición con un vector negativo, $Z_1 + \left(-Z_2\right).$ El vector negativo es el mismo
+                    que su versión positiva, solo está dirigido en dirección opuesta.</p>
+
+                <p>Usa el siguiente applet para explorar esta interpretación geométrica. Activa las casillas de abajo
+                    para
+                    mostrar la adición y sustracción. También puedes mover los puntos $Z_1$ y $Z_2$ con el mouse.
+                </p>
+
+                <div class="ggbElement" id="ggb-element-01"></div>
+
+                <div class="practice">
+                    <p><strong>Ejercicio 1:</strong> ¿Puedes proponer una interpretación geométrica de la
+                        adición de tres números complejos? En general, ¿cómo sería una interpretación geométrica de
+                        la adición de $n$ números complejos?</p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Multiplicación</h2>
+
+
+                <div class="w3-resposive">
+                    <p>En la sección anterior definimos la multiplicación de dos números complejos $Z_1 $ y $Z_2$ como
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        Z_1 Z_2 &amp;=&amp; \left( x_1 + i y_1 \right) \left( x_2 + i y_2 \right)\\
+                        &amp;=&amp; (x_1x_2-y_1y_2) + i(x_1y_2+x_2y_1).
+                        \end{eqnarray*}
+                    </div>
+
+                    En este caso, para apreciar lo que sucede geométricamente necesitamos considerar la forma polar de
+                    $Z_1 $ y $Z_2.$ Es decir
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        Z_1 &amp;=&amp; r_1 \left( \cos \phi_1 + i \sin \phi_1 \right) \\
+                        Z_2 &amp;=&amp; r_2 \left( \cos \phi_2 + i \sin \phi_2 \right)
+                        \end{eqnarray*}
+                    </div>
+
+
+                    Entonces el producto se puede escribir de la forma
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        Z_1 Z_2 &amp;=&amp; r_1 r_2 \big[ \left(\cos \phi_1 \cos\phi_2 - \sin \phi_1 \sin \phi_2\right)
+                        \big.\\
+                        &amp;+&amp; \big. i\left(\sin \phi_1 \cos\phi_2 + \cos \phi_1 \sin \phi_2\right)\big].
+                        \end{eqnarray*}
+                    </div>
+
+                    Ahora, utilizando los teoremas de adición de las funciones seno y coseno, esta expresión se puede
+                    reescribir como
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        Z_1 Z_2 &amp;=&amp; r_1 r_2 \big[ \cos \left( \phi_1 +\phi_2 \right) + i \sin \left( \phi_1
+                        +\phi_2 \right)\big].
+                        \end{eqnarray*}
+                    </div>
+
+                    De esta forma, el producto $Z_1Z_2$ tiene como módulo $r_1r_2$ y su argumento es $\phi_1+\phi_2.$
+                    </p>
+                </div>
+
+
+                <p>En el siguiente applet puedes apreciar lo que sucede con el argumento del producto.
+                    Mueve los puntos $Z_1$ y $Z_2$ y observa el comportamiento de los ángulos.
+                    Después mueve el deslizador en la vista gráfica inferior.</p>
+
+                <div class="ggbElement" id="ggb-element-02"></div>
+
+                <div class="practice">
+                    <p><strong>Ejercicio 2:</strong>
+                        Considera ahora
+                        \begin{eqnarray*}
+                        Z_1 &amp;=&amp; r_1 \left( \cos \phi_1 + i \,\text{sen } \phi_1 \right) \\
+                        Z_2 &amp;=&amp; r_2 \left( \cos \phi_2 + i \,\text{sen } \phi_2 \right)
+                        \end{eqnarray*}
+                        tales que $Z_2\neq 0.$ Calcula la representación polar de $Z_1/Z_2.$
+                        ¿Cuál es la interpretación geométrica de esta expresión?
+                    </p>
+                </div>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+
+                <h3>Multiplicación de números complejos como dilataciones, expansiones y rotaciones</h3>
+
+                <p>En el siguiente applet se grafican un conjunto de puntos definidos aleatoriamente en el plano
+                    complejo.
+                    Después cada punto es multiplicado por un número complejo $z.$
+                    En el lado derecho de la vista gráfica, mueve el punto $z$ al rededor y analiza el comportamiento
+                    de los puntos (⭕) multiplicados por $z$ y trata de responder las siguientes preguntas:
+                <ul>
+                    <li>¿Qué sucede cuando $z$ está adentro, o afuera, del círculo unitario?</li>
+                    <li>¿Qué sucede si $z$ se mueve solo sobre el círculo unitario?</li>
+                </ul>
+
+                <strong>Nota: </strong>También puedes estudiar el comportamiento de los puntos (⚫) multiplicados por
+                $1/z$ al activar
+                la casilla <code>Multiplica por 1/z</code>.
+                </p>
+
+                <div class="ggbElement" id="ggb-element-03"></div>
+
+                <p>Como ya habrás notado la interpretación geométrica de la multiplicación de números complejos se trata
+                    de una dilatación
+                    (o, expansión) y rotación de vectores en el plano.</p>
+
+                <p>En el applet anterior, con la opción <code>Multiplica por z</code>, define <code>n = 1</code>
+                    moviendo el
+                    deslizador a la izquierda.
+                    En este caso, el applet muestra los tres números complejos
+                    $$z_0, z \text{ y } z_1 = z_0\cdot z,$$
+                    representados como vectores.
+                    Cuando $z_0$ y $z$ son diferentes de zero, entonces
+                <ul>
+                    <li>el módulo de $z_1$ es igual a $|z_0 \cdot z|,$ y</li>
+                    <li>el argumento de $z_1$ es igual a $\text{Arg }(z_0+z).$</li>
+                </ul>
+                Si $|z| &gt; 1,$ tenemos una expansión. Si $|z| &lt; 1,$ entonces tenemos una dilatación.</p>
+
+                <div class="practice">
+                    <p><strong>Ejercicio 3:</strong>
+                        Usa el mismo applet, con la opción <code>Multiplica por 1/z</code>, para investigar
+                        qué sucede cuando multiplicamos por $1/z.$
+                        Define <code>n = 1</code> moviendo el deslizador a la izquierda para mostrar
+                        los tres números complejos
+                        $$z_0, \; z \; \text{ y } \; z_2 = z_0\cdot \frac{1}{z}.$$
+                        ¿Qué sucede con el módulo y el argumento de $z_2$?
+                    </p>
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </article>
+    </main>
+
+
+    <!-- GeoGebra -->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params01 = {
+            "width": 791,
+            "height": 520,
+            "material_id": "yf3vghuw",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let params02 = {
+            "width": 666,
+            "height": 556,
+            "material_id": "hqj7cumq",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let params03 = {
+            "width": 791,
+            "height": 469,
+            "material_id": "nefcpuam",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let applet01 = new GGBApplet(params01, true);
+        let applet02 = new GGBApplet(params02, true);
+        let applet03 = new GGBApplet(params03, true);
+        window.addEventListener("load", () => {
+            applet01.inject('ggb-element-01');
+            applet02.inject('ggb-element-02');
+            applet03.inject('ggb-element-03');
+        });
+    </script>
+
+    <a href="argumento_principal.html" style="text-decoration: none;">
+        <p class="nextPage">El Argumento Principal <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

@@ -1,0 +1,118 @@
+<section data-type="chapter" id="principal-argument">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>The Principal Argument</h1>
+
+
+            <hr>
+
+            <p>In this text the notation $\textbf{arg} (z)$ is used to designate an
+                arbitrary argument of $z,$ which means that $\textbf{arg} (z)$ is a set rather than a number. In
+                particular,
+                the relation $$\textbf{arg} (z_1) = \textbf{arg} (z_2)$$ is not an equation, but expresses equality
+                of two sets.</p>
+
+            <p>As a consequence, two non-zero complex numbers $r_1 (\cos \varphi_1 + i \sin\varphi_1)$ and $r_2
+                (\cos \varphi_2 + i \sin\varphi_2)$
+                are equal if and only if
+            <div class="scroll-wrapper">
+                $$r_1=r_2,\quad \text{and}\quad \varphi_1 = \varphi_2+ 2 k \pi,$$
+            </div>
+            where $k \in \mathbb Z.$
+            </p>
+
+            <p>In order to make the argument of $z$ a well-defined number, it is sometimes
+                restricted to the interval $(-\pi, \pi].$ This special choice is called the <em>principal value</em>
+                or the
+                <em>main branch</em> of the argument and is written as $\textbf{Arg}(z).$
+            </p>
+
+            <p>Note that there is no general convention about the definition of the principal value, sometimes its
+                values
+                are supposed to be in the interval $[0, 2\pi).$ This ambiguity is a perpetual source of
+                misunderstandings and errors.</p>
+
+
+
+
+            <hr>
+
+
+
+            <p>The principal value $\textbf{Arg}(z)$ of a complex number $z=x+iy$ is normally given by
+                $$\Theta=\arctan\left(\frac{y}{x}\right),$$
+                where $y/x$ is the slope, and $\arctan$ converts slope to angle. But this is correct only when $x >
+                0,$ so the
+                quotient is defined and the angle lies between $-\pi/2$ and $\pi/2.$ We need to extend this
+                definition to cases
+                where $x$ is not positive, considering the principal value of the argument separately on the four
+                quadrants.</p>
+
+
+            <p>The function $\textbf{Arg}(z)$ $:\mathbb C \setminus \{0\} \rightarrow \left(-\pi,\pi\right]$ is
+                defined as follows:
+            <div class="scroll-wrapper">
+                \begin{eqnarray*}
+                \textbf{Arg}(z)= \left\{\def\arraystretch{1.2}%
+                \begin{array}{@{}c@{\quad}r@{}}
+                \arctan \frac{y}{x} & \;\text{if $x>0,$ $y\in \mathbb R$}\\
+                \arctan \frac{y}{x}+\pi & \;\text{if $x &lt;0,$ $y\geq 0$}\\
+                \arctan \frac{y}{x}-\pi & \;\text{if $x &lt; 0,$ $y &lt; 0$}\\
+                \frac{\pi}{2} & \;\text{if $x=0,$ $y> 0$}\\
+                -\frac{\pi}{2} & \;\text{if $x=0,$ $y &lt; 0$}\\
+                \text{undefined}& \;\text{if $x=0,$ $y=0$}\\
+                \end{array}\right.
+                \end{eqnarray*}
+            </div>
+            Thus, if $z=r(\cos \Theta +i\sin \Theta),$ with $r>0$ and $-\pi &lt; \Theta \leq \pi,$ then
+            <div class="scroll-wrapper">
+                \begin{eqnarray*}
+                \textbf{arg}(z)= \textbf{Arg}(z)+2n\pi, \quad n \in \mathbb Z.
+                \end{eqnarray*}
+            </div>
+            </p>
+
+            <p>We can visualize the multiple-valued nature of $\textbf{arg}(z)$ by using <a
+                    href="http://mathworld.wolfram.com/RiemannSurface.html" target="_blank">Riemann surfaces</a>.
+                The following interactive shows some of the infinite values of $\textbf{arg}(z).$ Each branch is
+                identified with a
+                different color.</p>
+
+            <div class="ggbElement" id="ggb-element"></div>
+
+        </article>
+    </main>
+
+    <!-- GeoGebra -->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params = {
+            "width": 797,
+            "height": 494,
+            "material_id": "bp3pprjp",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+
+    <a href="roots_complex_numbers.html" style="text-decoration: none;">
+        <p class="nextPage">Roots of Complex Numbers <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

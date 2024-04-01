@@ -1,0 +1,373 @@
+<section data-type="chapter" id="topology">
+
+    <!-- Starts main content -->
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contents</p>
+        <ul>
+            <li><a href="#section1">Neighborhoods</a></li>
+            <li><a href="#section2">Classification of points</a></li>
+            <li><a href="#section3">Topological space</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Topology of the Complex Plane</h1>
+
+            <hr />
+
+            <div id="section1">
+
+                <h2>Neighborhoods</h2>
+
+
+                <p>
+                    An $\varepsilon$ <em id="neighborhood">neighborhood</em>, also called
+                    <em>open ball</em> or <em>open disk</em>, of a complex number $z_0$ consists of all points
+                    $z$ lying inside but not on a circle centred at $z_0$ and with radius
+                    $\varepsilon>0$ and is expressed by
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    B_{\varepsilon}(z_0)=\{z:|z-z_0| \lt \varepsilon\}.
+                    \end{eqnarray}
+                </div>
+                The <em id="closed-neighborhood">closed</em> $\varepsilon$ <em>neighborhood</em>
+                of $z_0$ is expressed by
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    \overline{B}_{\varepsilon}(z_0)=\{z:|z-z_0|\leq \varepsilon\}.
+                    \end{eqnarray}
+                </div>
+                And finally, a <em id="deleted-neighborhood">deleted</em> $\varepsilon$ <em>neighborhood</em>
+                of $z_0,$ also called <em>punctured balls or disks</em>, is expressed by
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    B_{\varepsilon}(z_0)\setminus \{z_0\}=\{z:0 \lt |z-z_0| \lt \varepsilon\}.
+                    \end{eqnarray}
+                </div>
+                Figure 1 shows the geometrical representation of the following examples:
+                </p>
+
+                <div class="scroll-wrapper">
+                    <ol>
+                        <li>$B_{1}(0)=\{z:|z|\lt 1\}$</li>
+                        <li> $\overline{B}_{\frac{7}{8}}\left(-1-\sqrt{2}i\right)=\left\{z:|z-\left(-1-\sqrt{2}i\right)|\leq
+                            \frac{7}{8}\right\}$</li>
+                        <li>$\overline{B}_{\frac{1}{2}}\left(2+\sqrt{3}i\right)\setminus
+                            \left\{2+\sqrt{3}i\right\}=\left\{z:0
+                            \lt |z-\left(2+\sqrt{3}i\right)|\leq\frac{1}{2}\right\}$</li>
+                    </ol>
+                </div>
+
+
+                <figure>
+                    <img src="../images/chp01/balls.svg" alt="Neighborhoods" title="Neighborhoods" style="width:60%;">
+                    <figcaption>
+                        Geometrical representation of neighborhoods.
+                    </figcaption>
+                </figure>
+
+
+
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Classification of points</h2>
+
+                <p>
+                    A point $z_0$ is said to be an <em id="interior-point">interior point</em>
+                    of a set $S\subset \mathbb C$ whenever there is some neighborhood
+                    of $z_0$ that contains only points of $S$; it is called an
+                    <em id="exterior-point">exterior point</em> of $S$ when
+                    there exists a neighborhood of it containing no
+                    points of $S.$ If $z_0$ is neither of these, it is a
+                    <em id="boundary-point">boundary point</em> of $S.$ A
+                    boundary point is, therefore, a point all of whose
+                    neighborhoods contain at least one point in $S$ and at
+                    least one point not in $S.$ The totality of all boundary points is called the
+                    <em id="boundary">boundary</em> of $S.$
+                </p>
+
+
+                <p>
+                    In this text we will use the following notation:
+
+                </p>
+                <div class="scroll-wrapper">
+                    <ol>
+                        <li>$\text{Int } S=\left\{z: z \text{ is an interior point of } S \right\}$</li>
+                        <li>$\text{Ext } S=\left\{z: z \text{ is an exterior point of } S \right\}$</li>
+                        <li>$\partial S=\left\{z: z \text{ is a boundary point of } S \right\}$</li>
+                    </ol>
+                </div>
+
+
+                <figure>
+                    <img src="../images/chp01/classification.svg" alt="Interior, boundary, and exterior S"
+                        title="Interior, boundary, and exterior S" style="width:50%;">
+                    <figcaption>
+                        Interior, boundary, and exterior of set $S.$
+                    </figcaption>
+                </figure>
+
+
+                <p>
+                    Considering the previous examples of neighborhoods, let
+                <div class="scroll-wrapper">
+                    $$
+                    S_1=B_1(0),\;
+                    S_2=\overline{B}_{\frac{7}{8}}\left(-1-\sqrt{2}i\right) \text{ and }
+                    S_3=\overline{B}_{\frac{1}{2}}\left(2+\sqrt{3}i\right)\setminus \left\{2+\sqrt{3}i\right\}.
+                    $$
+                </div>
+                Thus, for $S_1$ we have:
+                <ul>
+                    <li>$\text{Int } S_1=B_1(0)$</li>
+                    <li>$\text{Ext } S_1=\{z: |z|>1 \}$</li>
+                    <li>$\partial S_1=\{z: |z|=1 \}$</li>
+                </ul>
+                </p>
+
+
+
+                <p>
+                    For $S_2$ we have:
+
+                </p>
+                <div class="scroll-wrapper">
+                    <ul>
+                        <li>$\text{Int } S_2=B_{\frac{7}{8}}\left(-1-\sqrt{2}i\right)$</li>
+                        <li>$\text{Ext } S_2=\left\{z:|z-\left(-1-\sqrt{2}i\right)|>\frac{7}{8}\right\}$</li>
+                        <li>$\partial S_2=\left\{z:| z-\left(-1-\sqrt{2}i\right)| =\frac{7}{8}\right\}$</li>
+                    </ul>
+                </div>
+
+
+
+                <p>
+                    And finally, for $S_3$ we have:
+
+                </p>
+                <div class="scroll-wrapper">
+                    <ul>
+                        <li>$\text{Int } S_3=B_{\frac{1}{2}}\left(2+\sqrt{3}i\right)\setminus \{2+\sqrt{3}i\}$</li>
+                        <li>$\text{Ext } S_3=\left\{z:|z-\left(2+\sqrt{3}i\right)|>\frac{1}{2}\right\}$</li>
+                        <li>$\partial S_3=\left\{z:|z-\left(2+\sqrt{3}i\right)|=\frac{1}{2}\right\}\cup\{2+\sqrt{3}i\}$
+                        </li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h2>Topological space</h2>
+
+                <p>
+                    <!--
+			Topology is, in essence, the study of the properties that 
+			are preserved through continuous deformations of "objects",
+			such as twisting, stretching or bending, but not tearing or 
+			gluing.
+
+The "objects" of study in topology are formally defined as topological spaces,
+which are sets endowed with a structure, called a topology. 
+This topology allows to define continuous deformations of 
+subspaces, and, more generally, all kinds of continuity.
+
+In particulartopology In the case of the set of complex numbers $\mathbb C$
+The "" In topology the main objects of study are called topological spaces.  
+We can think of topological spaces as sets of points together with some 
+notion of continuity. This notion of continuity, in this case, comes in the form
+of a mathematical gadget called topology that determines which funtions mapping out
+
+The technical definition of topology is a bit unintuitive.
+
+https://www.youtube.com/watch?v=pSjahcOnJvU
+                        -->
+
+                    A set $S$ is <em id="open-set">open</em> if for every $z\in S,$ exits
+                    $\varepsilon>0$ such that
+                    $$B_{\varepsilon}(z)\subset S.$$
+                    That is, $\text{Int } S= S.$
+
+                    A set $S$ is <em id="closed-set">closed</em> if it contains all of its
+                    boundary points, that is
+                    $$\partial S\subseteq S.$$
+                    The set $\mathbb C$ is both open and closed since it has no boundary points.
+                </p>
+
+                <p>
+
+                    The set $\mathbb C,$ together with the collection
+                    $\tau =\{S\subseteq \mathbb C: S \text{ is open} \}$ is a
+                    <a href="https://encyclopediaofmath.org/index.php?title=Topological_space"
+                        target="_blank">topological
+                        space</a>, and this is expressed by the pair $\left(\mathbb C, \tau\right).$
+
+                    The topological space $\left(\mathbb C, \tau\right)$ satisfies the following:
+                <ol>
+                    <li>$\emptyset$ and $\mathbb C$ are open.</li>
+                    <li>Whenever two or more sets are open, then so is their union.</li>
+                    <li>Whenever sets $S_1$ and $S_2$ are open, then so is $S_1\bigcap S_2.$</li>
+                </ol>
+
+                </p>
+
+                <p><strong>Remark:</strong> The technical definition of topological space
+                    is a bit unintuitive, particularly
+                    if you haven't studied topology. In essence, it states that the geometric
+                    properties of subsets of $\mathbb C$ will be preserved when continuous
+                    transformations (functions or mappings) are applied.</p>
+
+                <!--
+		<p>
+			On the other hand, considering closed sets, we have the following properties:
+			<ol>
+				<li>$\emptyset$ and $\mathbb C$ are closed.</li>
+				<li>Whenever two or more sets are closed, then so is their union.</li>
+				<li>Whenever sets $S_1$ and $S_2$ are closed, then so is $S_1\bigcap S_2.$</li>
+			</ol>
+
+
+			
+
+		</p>
+	-->
+
+                <p>
+                    The <em id="closure">closure</em> of a set $S$ is the closed set
+                    consisting of all points in $S$ together
+                    with the boundary of $S.$ In other words
+                    $$\overline{S}=S\cup \partial S.$$
+                </p>
+
+                <p>
+                    In general, an set is connected if it cannot be expressed as the union of
+                    two disjoint nonempty open sets.
+                    An open set $S$ is <em id="connected-set">pollygonally connected</em> if each pair of
+                    points $z_1$ and $z_2$ in it can be
+                    joined by a polygonal line, consisting of a finite number of
+                    line segments joined end to end,
+                    that lies entirely in $S.$
+                    A open set $S$ is connected if and only if
+                    $S$ is pollygonally connected.
+                </p>
+
+                <br />
+                <figure>
+                    <img src="../images/chp01/connected-set.gif" alt="Connected set" title="Connected set"
+                        style="width:50%;">
+                    <figcaption>
+                        Pollygonally connected open set.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Notice for example that the open set $|z| \lt 1$ is connected.
+                    The <em id="annulus">annulus</em> $1 \lt |z| \lt 2$ is open and
+                    also connected, see Figures 4 and 5.
+                </p>
+
+                <br />
+
+                <div class="figure-container">
+                    <figure id="open-connected">
+                    <img src="../images/chp01/unit-ball.svg" alt="Open connected set" title="Open connected set"
+                        style="width:95%;">
+                    <figcaption>
+                        $|z| \lt 1.$
+                    </figcaption>
+                </figure>
+                <br />
+                <figure id="annulus">
+                    <img src="../images/chp01/annulus.svg" alt="Annulus" title="Annulus" style="width:95%;">
+                    <figcaption>
+                        $1 \lt |z| \lt 2.$
+                    </figcaption>
+                </figure>
+                </div>
+                
+
+                <p>
+                    A nonempty open set that is
+                    connected is called a
+                    <em id="domain">domain</em>. In this context, any neighbourhood is a
+                    domain. A domain together with some,
+                    none, or all of its boundary points is referred to as a
+                    <em id="region">region</em>. In other
+                    words, a set whose interior is a domain is called a <em>region</em>.
+                    A set $S$ is bounded if there is
+                    $R>0$ such that
+                    $$S\subset B_R(0)=\{z\in \mathbb C: |z|\lt R\}.$$
+                </p>
+                <br />
+                <figure>
+                    <img src="../images/chp01/bounded.svg" alt="Bounded set" title="Bounded set" style="width:55%;">
+                    <figcaption>
+                        Bounded set.
+                    </figcaption>
+                </figure>
+
+                <!--
+			<p>
+			A point $z\in \mathbb C$ is an <em id="accumulation
+			point">accumulation point</em> of $S\subseteq \mathbb C$ if every 
+			deleted neighbourhood of $z$
+			intersects $S.$ It follows that if a set $S$ is closed, then it contains 
+			each of its accumulation
+			points. For if an accumulation point $z_0$ were not in $S,$ it would 
+			be a boundary point of $S$; but
+			this contradicts the fact that a closed set contains all of its 
+			boundary points. It is left as an
+			exercise to show that the converse is, in fact, true. Thus a set 
+			is closed if and only if it
+			contains all of its accumulation points. Evidently, a point $z_0$ 
+			is not an accumulation point of a
+			set S whenever there exists some deleted neighbourhood of $z_0$ 
+			that does not contain at least one
+			point of $S.$ Note that the origin is the only accumulation point 
+			of the set $z_n=i/n$ with $n=1, 2,
+			3,\ldots $ </p>
+		-->
+
+                <div class="practice">
+                    <p><strong>Exercise:</strong> Sketch the set $S$ of points in
+                        the complex plane satisfying the
+                        given inequality.
+                        Determine whether the set is (<em>a</em>) open, (<em>b</em>) closed,
+                        (<em>c</em>) a domain, (<em>d</em>) bounded, or (<em>e</em>) connected.</p>
+                    <ul>
+                        <li>$\text{Im}(z)\lt 0$</li>
+                        <li>$-1\lt \text{Re(z)} \lt 1$</li>
+                        <li>$|z|>1$</li>
+                        <li>$2\le |z - 3+4i |\le 5$</li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+
+        </article>
+    </main>
+
+    <a href="complex_functions.html" style="text-decoration: none;">
+        <p class="nextPage">Complex Functions <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

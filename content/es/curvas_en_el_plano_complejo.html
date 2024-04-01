@@ -1,0 +1,304 @@
+<section data-type="chapter" id="curves-complex-plane">
+
+    <!-- Starts main content -->
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Curvas en el Plano Complejo</a></li>
+            <li><a href="#section2">Contornos</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <div id="section1">
+
+                <h1>Curvas en el Plano Complejo</h1>
+
+                <hr>
+
+                <p>
+                    Supongamos que las funciones de valor real $x = x(t),$ $y = y(t),$ $a \leq t \leq b,$
+                    son ecuacione paramétricas de una curva $C$ en el
+                    plano complejo. Si usamos estas ecuaciones como las partes
+                    reales e imaginarias en $z = x+iy,$ podemos describir los puntos
+                    $z$ en $C$ por medio de la función de valor complejo de una variable
+                    real $t.$ Esto determina una <em>parametrizaciónn</em> de $C$:
+                    \begin{equation}\label{parcurve}
+                    z(t) = x(t) + i y(t), \quad a\leq t\leq b.
+                    \end{equation}
+                </p>
+
+                <p>
+                    El punto $z(a) = x(a) + i y(a)$ or $z_0 = (x(a), y(a))$ se denomina como <em>punto inicial</em> de
+                    $C$ y $z(b) = x(b) + iy(b)$
+                    o $z_1 = (x(b), y(b))$ es el <em>punto final</em>.
+                    La expresión $z(t) = x(t) + iy(t)$ se puede interpretar como
+                    una función vectorial de dos dimensiones.
+                    Consecuentemente, $z(a)$ y $z(b)$ se pueden interpretar como
+                    los vectores posición. Así que cuando $t$ varía desde $t = a$ a
+                    $t = b$ podemos observar la curva $C$
+                    trazada por el moviento de la punta del vector $z(t).$
+                    Esto se puede apreciar en el siguiente appletcon $0 \leq t\leq 1.$
+                </p>
+
+                <div class="ggbElement" id="ggb-element-01"></div>
+                <p style="text-align: center;margin-top: -10px;">
+                    <em>Clic</em> <code>Start</code> <em>para animar.
+                        También puedes mover los puntos
+                        para cambiar la curva.</em>
+                </p>
+
+                <p>
+                    Por ejemplo, las ecuaciones paramétricas $x = \cos t,$ $y = \,\text{sen } t,$ $0 \leq t \leq 2\pi,$
+                    describen un círuclo de radio unitario con centro en el origen.
+                    Una parametrización de este círculo es
+                    $z(t) = \cos t + i \,\text{sen } t,$ o
+                    $z(t) = e^{it},$ $0 \leq t \leq 2\pi.$
+                </p>
+
+                <div class="ggbElement" id="ggb-element-02"></div>
+                <p style="text-align: center;margin-top: -10px;"><em>Clic</em> <code>Start</code> <em>para animar.</em>
+                </p>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Contornos</h2>
+
+                <p>
+                    Las nociones de curvas en el plano complejo que son suaves, suaves por piezas, simple,
+                    cerradas, y simplemente cerradas, se pueden formular fácilmente en términos de la
+                    función vectoria (\ref{parcurve}).
+                    Supongamos que la derivada de (\ref{parcurve}) es
+                    $z'(t) = x'(t) + iy'(t).$ Decimos que una curva $C$
+                    en el plano complejo es <em>suave</em> si $z'(t)$
+                    es continua y differente de zero en el intervalo
+                    $a \leq t \leq b.$ Como se muestra en la Figura 1,
+                    dado que el vector $z'(t)$ no es cero en ningún punto $P$ de
+                    $C,$ el vector
+                    $z'(t)$ es tangente a $C$ en $P.$ De esta forma, una curva suave
+                    tiene una tangente que gira contínuamente; o en otras palabras,
+                    una curva suave no puede tener esquinas ni cúspides afiladas,
+                    como se muestra en la Figura 2.
+                </p>
+
+                <div class="figure-container">
+                    <div id="smooth">
+                        <figure>
+                            <img src="../images/chp04/smooth.svg" alt="Smooth curve and Tangent vector"
+                                title="Smooth curve and Tangent vector" style="width:100%;">
+                            <figcaption>
+                                $z'(t)=x'(t) + iy(t)$ como un vector tangente.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div id="not-smooth">
+                        <figure>
+                            <img src="../images/chp04/not-smooth.svg" alt="Non smooth" title="Non smooth"
+                                style="width:100%;">
+                            <figcaption>
+                                La curva $C$ no es suave dado que tiene una cúspide.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <p>
+                    Una <em>curva suave por piezas</em> $C$
+                    tiene una tangente que gira contínuamente, excepto posiblemente en
+                    los puntos donde las componentes
+                    de las curvas suaves
+                    $C_1, C_2, \ldots, C_n$ se conectan.
+
+                </p>
+
+                <figure>
+                    <img src="../images/chp04/piecewise-smooth.svg" alt="Piecewise smooth curve"
+                        title="Piecewise smooth curve" style="width:65%;">
+                    <figcaption>
+                        Una curva suave por piezas.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Una curva $C$ en el plano complejo se dice ser <em>simple</em> si $z(t_1) \neq z(t_2)$ para
+                    $t_1 \neq t_2,$ excepto posiblemente para $t = a$ y $t = b.$ $C$ es una <em>curva cerrada</em> si
+                    $z(a) = z(b).$
+                </p>
+
+                <div class="figure-container">
+                    <div>
+                        <figure>
+                            <img src="../images/chp04/simple-curve.svg" alt="Simple curve" title="Simple curve"
+                                style="width:100%;">
+                            <figcaption>
+                                Curva simple.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="../images/chp04/non-simple-curve.svg" alt="Non simple curve"
+                                title="Non simple curve" style="width:100%;">
+                            <figcaption>
+                                Curva no simple.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <p>
+                    $C$ es una <em>curva cerrada simple</em> si $z(t_1)\neq z(t_2)$ para $t_1\neq t_2$ y $z(a) = z(b).$
+
+                </p>
+
+                <div class="figure-container">
+                    <div>
+                        <figure>
+                            <img src="../images/chp04/simple-closed-curve.svg" alt="Simple curve"
+                                title="Simple closed curve" style="width:100%;">
+                            <figcaption>
+                                Curva cerrada simple.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="../images/chp04/non-simple-closed-curve.svg" alt="Non simple curve"
+                                title="Non simple closed curve" style="width:100%;">
+                            <figcaption>
+                                Curva cerrada no simple.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <p>
+                    En Análisis Complejo, una curva suave por piezas $C$ se denomina <em>contorno</em> o
+                    <em>camino</em>.
+                    Definimos la <em>dirección positiva</em> en un contorno $C$
+                    como la dirección en la curva correspondiente
+                    a los valores incrementados del parámetro $t.$
+                    También decimos que la curva $C$ tiene una <em>orientación positiva</em>.
+                    En el caso de un contorno cerrado simple $C,$
+                    la dirección <em>positiva</em> corresponde a la dirección del
+                    moviento <em>opuesto a las manecillas del reloj</em>.
+                    Por ejemplo, el círculo $z(t) = e^{it},$ $0 \leq t \leq 2\pi,$
+                    tiene una orientación positiva. La <em>dirección negativa</em> de un contorno
+                    $C$ es la dirección opuesta a la dirección positiva. Si $C$ tiene una orientación,
+                    la <em>curva opuesta</em>, es decir, una curva con orientación opuesta, se denota como $−C.$
+                    En una curva cerrada simple, la dirección opuesta corresponde al <em>movimiento de las
+                        manecillas del reloj</em>. Por ejemplo, el círculo $z(t) = e^{-it},$ $0 \leq t \leq 2\pi,$
+                    tiene una orientación negativa.
+                </p>
+
+                <div class="figure-container">
+                    <div>
+                        <figure>
+                            <img src="../images/chp04/simple-closed-curve-pos.gif" alt="Simple curve"
+                                title="Simple curve" style="width:100%;">
+                            <figcaption>
+                                Orientación positiva.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="../images/chp04/simple-closed-curve-neg.gif" alt="Non simple curve"
+                                title="Non simple curve" style="width:100%;">
+                            <figcaption>
+                                Orientación negativa.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="ggbElement" id="ggb-element-03"></div>
+                <p style="text-align: center;margin-top: 0px;"><em>Clic</em> <code>Start</code> <em>para animar.</em>
+                    <em>También puedes cambiar la dirección de $C.$</em>
+                </p>
+
+
+
+                <div class="practice">
+                    <p><strong>Ejercicio:</strong> No existe una únca parametrización para 
+                        un contorno dado $C.$
+                        Deberías verificar que las siguientes expresiones 
+                        \begin{eqnarray*}
+                        z(t)&=&e^{it} =\cos t+i \,\text{sen }  t,\; 0\leq t\leq 2\pi \\
+                        z(t)&=& e^{2\pi it} =\cos \left(2 \pi t\right) +i  \,\text{sen} \left(2 \pi t\right),\; 0\leq t\leq 1\\
+                        z(t)&=&e^{\pi/2 it} =\cos \left( \frac{\pi}{2} t\right)+i  \,\text{sen}  \left( \frac{\pi}{2} t\right),\; 0\leq t
+                        \leq 4
+                        \end{eqnarray*}
+                        son parametrizaciones, orientadas positivamente, para el círculo unitario $|z| = 1.$
+        
+                    </p>
+                </div>
+
+                <br>
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params01 = {
+            "width": 576,
+            "height": 419,
+            "material_id": "tncpryrm",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "showResetIcon": true
+        };
+        let params02 = {
+            "width": 450,
+            "height": 419,
+            "material_id": "nc34pddp",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "showResetIcon": true
+        };
+        let params03 = {
+            "width": 449,
+            "height": 419,
+            "material_id": "gsejmuxj",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "showResetIcon": true
+        };
+        let ggbApplet01 = new GGBApplet(params01, true);
+        let ggbApplet02 = new GGBApplet(params02, true);
+        let ggbApplet03 = new GGBApplet(params03, true);
+        window.addEventListener("load", () => {
+            ggbApplet01.inject('ggb-element-01');
+            ggbApplet02.inject('ggb-element-02');
+            ggbApplet03.inject('ggb-element-03');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="integracion_compleja.html" style="text-decoration: none;">
+        <p class="nextPage">Integración Compleja <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

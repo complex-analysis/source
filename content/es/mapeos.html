@@ -1,0 +1,89 @@
+<section data-type="chapter" id="mappings">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Mapeos</h1>
+            <hr>
+
+            <p>
+                Una función compleja $w = f (z)$ se puede considerar como un <em>mapeo</em> o <em>transformación</em>
+                de los puntos en el plano $z = x + iy $ a los puntos en el plano $w = u + iv.$
+                Para el contexto de funciones de variable real de una dimensión,
+                esta noción corresponde con la idea de la gráfica de $y = f (x),$ es decir,
+                el mapeo de puntos $x$ a $y = f (x).$
+            </p>
+
+            <p>
+                En variable compleja la situación es diferente debido al hecho de que
+                tenemos cuatro dimensiones. De esta manera, una representación gráfica
+                similar al caso real de una dimensión no es posible.
+                En su lugar, consideramos los dos planos complejos,
+                $z$ y $w,$ de forma separada y nos preguntamos
+                cómo se tranforma, o mapea, una región en el plano $z$
+                a una región correspondiente, o imagen, en el plano $w.$
+
+            </p>
+
+            <p>El siguiente applet visualiza la acción de
+                una función compleja como un mapeo de un subconjunto en el plano $z$ al plano $w.$
+                Por ejemplo, las regiones moradas corresponden al dominio y al rango de la función,
+                respectivamente. Cualquier punto $z$ del domino es mapeado al correspondiente punto
+                $f(z)=w$ en el rango. Por supuesto, podemos elegir un dominio diferente
+                (i.e. un triángulo o un cuadrado) para aplicar el mapeo.
+                De esta manera la función mapea (transforma) los objetos coloreados del dominio
+                al rango.
+                Mueve el triángulo y el cuadrado (o los puntos) definidos en el plano
+                $z$ para observar el efecto de la transformación
+                en el plano $w.$
+            </p>
+            </p>
+
+            <div class="ggbElement" id="ggb-element"></div>
+
+            <p><strong>Observación:</strong> 
+                En análisis complejo la noción de dominio tiene dos
+                significados diferentes. El primero alude al dominio (conjunto) de una función,
+                mientras que el segundo se identifica con el concepto topológico de subconjunto
+                abierto y conexo del plano complejo o de la esfera de Riemann.
+                La mayoría de los dominios de funciones complejas que se usan en este libro
+                serán dominios en el sentido topológico.
+            </p>
+
+            <br>
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params = {
+            "width": 800,
+            "height": 445,
+            "material_id": "jj4sef6w",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="mapeo_1sobrez.html" style="text-decoration: none;">
+        <p class="nextPage">La Transformación $1/z$ <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

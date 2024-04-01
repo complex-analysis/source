@@ -1,0 +1,247 @@
+<section data-type="chapter" id="complex-functions">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contents</p>
+        <ul>
+            <li><a href="#section1">Complex Functions</a></li>
+            <li><a href="#section2">Examples of functions</a></li>
+            <li><a href="#section3">Dynamic exploration</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br>
+    <img src="../images/chp02/complex-f.jpg" alt="f(z)=z+1/z" title="f(z)=z+1/z">
+    <br />
+
+
+    <main>
+        <article>
+
+            <div id="section1">
+
+                <h1>Complex Functions</h1>
+
+                <hr>
+
+                <p>Let $S$ be a set of complex numbers. A <em>function</em> $f$ defined on $S$ is a rule that assigns to
+                    each $z$ in $S$ a complex number $w.$ The number $w$ is called the value of $f$ at $z$ and is
+                    denoted by $f (z)$; that is, $w = f (z).$ The set $S$ is called the domain of definition of $f.$</p>
+
+                <p>If only one value of $w$ corresponds to each value of $z,$ we say that $w$ is
+                    a <em>single-valued</em> function of $z$ or that $f(z)$ is single-valued.
+                    If more than one value of $w$ corresponds to each value of $z,$ we say
+                    that $w$ is a <em>multiple-valued</em> or <em>many-valued</em> function of $z.$
+                </p>
+
+                <p>
+                    A <em>multiple-valued</em> function can be considered as a collection of
+                    single-valued functions, each member of which is called a <em>branch</em>
+                    of the function. In general, we consider one particular member as a
+                    <em>principal branch</em> of the multiple-valued function and the value
+                    of the function corresponding to this branch as the <em>principal value</em>.
+                </p>
+
+                <div class="practice">
+                    <p>
+                        <strong>Example 1:</strong> The function $w=z^2$ is a single-valued function of $z.$ On the
+                        other hand, if $w=z^{\frac{1}{2}},$ then to each value of $z$ there are two values of $w.$
+                        Hence, the function $$w=z^{\frac{1}{2}}$$ is a multiple-valued (in this case two-valued)
+                        function of $z.$
+                    </p>
+                </div>
+
+                <p>Suppose that $w=u+iv$ is the value of a function $f$ at $z= x+iy,$ so that
+                    $$u+iv=f(x+iy)$$
+                    Each of the real numbers $u$ and $v$ depends on the real variables $x$ and $y,$ and it
+                    follows that $f(z)$ can be expressed in terms of a pair of real-valued functions of
+                    the real variables $x$ and $y$:
+                    \begin{eqnarray}\label{eq1}
+                    f(z)= u(x,y)+iv(x,y).
+                    \end{eqnarray}
+                    If the polar coordinates $r$ and $\theta,$ instead of $x$ and $y$ , are used, then
+                    $$u+iv=f\left(re^{i\theta}\right)$$
+                    where $w=u+iv$ and $z=re^{i\theta}.$ In this case, we write
+                    \begin{eqnarray}\label{eq2}
+                    f(z)=u\left(r, \theta\right)+iv\left(r, \theta\right).
+                    \end{eqnarray}
+                </p>
+
+                <div class="practice">
+                    <p>
+                        <strong>Example 2:</strong> If $f(z)= z^2$ then
+                        $$f(x+iy)=(x+iy)^2=x^2-y^2+i(2xy).$$
+                        Hence
+                        $$u(x,y)= x^2-y^2\quad \text{and}\quad v(x,y)= 2xy.$$
+                        When we use polar coordinates, we have
+                        $$u\left(r, \theta\right)= r^2\cos 2\theta \quad \text{and}\quad v\left(r, \theta\right)=
+                        r^2\sin 2\theta.$$
+                    </p>
+                </div>
+
+                <p><strong>Question:</strong> What happens when in either of equations (\ref{eq1}) and (\ref{eq2}) the
+                    function $v$ always has a value zero?</p>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Examples of complex functions</h2>
+
+                <h4 style="text-align:left">Polynomial functions</h4>
+                <p> For $a_n, a_{n-1}, \ldots, a_0$ complex constants we define
+                    <div class="scroll-wrapper">
+                        $$p(z) = a_n z^n + a_{n-1} z^{n-1} +\cdots +a_{1}z + a_0$$
+                    </div>
+                    where $a_n\neq 0$ and $n$ is a positive integer
+                    called the <em>degree</em> of the polynomial $p(z).$
+                </p>
+
+                <p><em>Rational functions:</em> Ratios
+                    $$\frac{p(z)}{q(z)}$$
+                    where $p(z)$ and $q(z)$ are polynomials and $q(z)\neq 0.$
+                </p>
+
+                <h4 style="text-align:left">Exponential function</h4>
+
+                <p><em>Exponential function:</em> If $z=x+iy,$ the exponential
+                    function $e^z$ is defined by writing
+                    \begin{eqnarray*}
+                    e^z=e^xe^{iy}.
+                    \end{eqnarray*}
+                    Because
+                    \begin{eqnarray*}
+                    e^{iy}=\cos y +i\sin y,
+                    \end{eqnarray*}
+                    then we have
+                    \begin{eqnarray*}
+                    e^z=e^x\left(\cos y +i\sin y\right).
+                    \end{eqnarray*}
+                </p>
+
+                <h4 style="text-align:left">Logarithmic function</h4>
+
+                <p> In a similar fashion, the complex logarithm is a complex extension
+                    of the usual real natural (i.e., base $e$) logarithm. In terms of polar coordinates
+                    $z = r e^{i\theta},$ the complex logarithm has the form
+                    $$\log z = \log\left(r e^{i\theta}\right) = \log r + \log e^{i\theta}= \log r + i \theta.$$
+                    We will explore in detail this function soon.
+                </p>
+
+                <h4 style="text-align:left" id="trig-functions">Trigonometric functions</h4>
+
+                <p> The sine and cosine of a complex variable
+                    $z$ are defined as follows:
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \sin z=\frac{e^{i z}-e^{-iz}}{2i}\quad \text{and}\quad \cos z=\frac{e^{iz} +e^{-i z}}{2}.
+                    \end{eqnarray*}
+                    </div>
+                    
+
+                    The other four trigonometric functions are defined in terms of the sine and cosine functions with
+                    the following relations:
+                    <div class="scroll-wrapper">
+                        \begin{align*}
+                    \tan z&=\frac{\sin z}{\cos z} & \cot z&=\frac{\cos z}{\sin z} \\
+                    \sec z&=\frac{1}{\cos z} & \csc z&=\frac{1}{\sin z}.
+                    \end{align*}
+                    </div>
+                    
+                </p>
+
+                <h4 style="text-align:left">Hyperbolic trigonometric functions</h4>
+
+                <p>The hyperbolic sine and the hyperbolic cosine of a complex variable are defined as
+                    they are with a real variable; that is,
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \sinh z=\frac{e^{z}-e^{-z}}{2}\quad \text{and}\quad \cosh z=\frac{e^{z} +e^{- z}}{2}.
+                    \end{eqnarray*}
+                    </div>
+                    
+
+
+                    The other four hyperbolic functions are defined in terms of the hyperbolic sine and cosine functions
+                    with the relations:
+                    <div class="scroll-wrapper">
+                        \begin{align*}
+                    \tanh z&=\frac{\sinh z}{\cosh z} & \coth z&=\frac{\cosh z}{\sinh z} \\
+                    \text{sech } z&=\frac{1}{\cosh z} & \text{csch } z&=\frac{1}{\sinh z}.
+                    \end{align*}
+                    </div>
+                    
+                </p>
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h2>Explore the real and imaginary components</h2>
+
+                <p>Use the following applet to explore the real and 
+                    imaginary components of some complex functions:
+                </p>
+
+                <div  class="ggbElement"  style="display:block" id="ggb-element"></div>
+
+                <div class="practice">
+                    <details>
+                        <summary><strong>Code</strong></summary>
+
+                        <p>Enter the following scripts in <a href="https://www.geogebra.org/classic#3d"
+                                target="_blank">GeoGebra</a> to explore it yourself. Open the 3D view. The symbol
+                            <code>#</code> indicates comments.
+                        </p>
+
+                        <pre><code>#Define complex function
+f(z) := z + 1/z
+
+#Define components
+Re = Surface(u, v, real( f(u + ί v) ), u, -5, 5, v, -5, 5)
+Im = Surface(u, v, imaginary( f(u + ί v) ), u, -5, 5, v, -5, 5)
+</code></pre>
+                    </details>
+                </div>
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params = {
+            "width": 772,
+            "height": 541,
+            "material_id": "q8cagcc5",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="limits.html" style="text-decoration: none;">
+        <p class="nextPage">Limits <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

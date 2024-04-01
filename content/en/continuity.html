@@ -1,0 +1,266 @@
+<section data-type="chapter" id="continuity">
+
+    <!-- Starts main content -->
+
+    <br />
+    <img src="../images/chp02/continuity.jpg" alt="f(z)=log((-z+4.5)^(0.85))-log((z+4.5)^(0.85))-4.9*arctan(z)" title="f(z)=log((-z+4.5)^(0.85))-log((z+4.5)^(0.85))-4.9*arctan(z)">
+    <br />
+
+    <main>
+        <article>
+
+            <h1>Continuity</h1>
+            <hr>
+
+
+            <p>A function $f$ is <strong>continuous at a point</strong> $z_0$ if the following
+                conditions are
+                satisfied:
+            </p>
+            <ol style="font-weight: bold;">
+                <li >
+                    $\ds\lim_{z\rightarrow z_0}f(z)$ exists,
+                </li>
+                <li>
+                    $f(z_0)$ exists, and
+                </li>
+                <li>
+                    $\ds\lim_{z\rightarrow z_0}f(z) = f(z_0).$
+                </li>
+            </ol>
+
+            <p>
+                Notice that <strong>statement 3</strong> actually contains 
+                <strong>statement 1</strong> and <strong>2</strong>, since the
+                existence of the quantity on each side of the equation there is needed.
+            </p>
+
+            <p>
+                <strong>Statement 3</strong>
+                says that for each positive number $\epsilon,$ there is a positive number $\delta$ such
+                that
+            </p>
+            <div class="scroll-wrapper">
+                \begin{eqnarray}\label{continuouscondition}
+                \left|f (z) - f(z_0)\right| \lt \epsilon \quad \text{whenever}\quad 0 \lt |z - z_0| \lt \delta
+                \end{eqnarray}
+            </div>
+
+            <p>
+                A function of a complex variable is said to be <strong>continuous in a region</strong> $R$ if it is
+                continuous at each point in $R.$
+            </p>
+
+            <p>
+                If a function $f$ is not continuous at a point $z_0$ 
+                then we say that $f$ is discontinuous at $z_0.$
+                For example, the function
+                \[
+                f(z)=\frac{1}{1+z^2}
+                \]
+                is discontinuous at $z=i$ and $z=-i.$
+            </p>
+
+            <div class="practice">
+                <p>
+                    <strong>Example 1:</strong>
+                    We claim that the function $f(z)=\dfrac{1}{z}$ is continuous for every $z\neq 0.$
+
+                </p>
+                <p>
+                    To prove this fix $z_0\in \C\setminus\{0\}.$ If $z\in \C\setminus\{0\},$
+                    then
+                    \[
+                    \abs{\frac{1}{z}-\frac{1}{z_0}} = \frac{\abs{z-z_0}}{\abs{z} \abs{z_0}}.
+                    \]
+                    If $\abs{z-z_0}\lt \dfrac{\abs{z_0}}{2},$ then
+                    <div class="scroll-wrapper">
+                    \[
+                    \abs{z}= \abs{z_0+z-z_0} \geq \abs{z_0}-\abs{z-z_0} \gt \frac{\abs{z}}{2}
+                    \]
+                    </div>
+                    and therefore
+                    <div class="scroll-wrapper">
+                        \[
+                    \abs{\frac{1}{z}-\frac{1}{z_0}} \lt \frac{2}{\abs{z_0}^2}\abs{z-z_0}.
+                    \]
+                    </div>
+                    
+                </p>
+                <p>
+                    Thus, by choosing $\delta = \min\left\{ \dfrac{\abs{z_0}^2}{2}\epsilon, \dfrac{\abs{z_0}}{2}
+                    \right\}$
+                    then we have that
+                    $$
+                    \abs{z-z_0}\lt \delta \implies \left| \frac{1}{z}-\frac{1}{z_0}\right|\lt\epsilon.
+                    $$
+                </p>
+            </div>
+
+            <p>
+                <strong>Remark:</strong>
+                A <em>useful strategy</em> for showing that $f(z)$ is continuous at $z_0$ is
+                to obtain an estimate of the form
+                <div class="scroll-wrapper">
+                    $$|f(z)-f(z_0)|\leq C|z-z_0|\;\; \text{for }\, z \;\;\text{near}\;\; z_0.$$
+                </div>
+                This guarantees that $|f(z)-f(z_0)|\lt\epsilon $ whenever $|z-z_0|\lt\dfrac{\epsilon}{C},$
+                so that we can take $\delta=\dfrac{\epsilon}{C}$ in the formal definition of limit.
+
+            </p>
+
+            <p>
+                In the previous example we showed that a function is continuous
+                at every point $z\in \C\setminus\{0\}.$ The following example shows
+                how to determine continuity at a point using properties of limits.
+            </p>
+
+            <div class="practice">
+                <p>
+                    <strong>Example 2:</strong>
+                   
+                    Consider the function $f(z) = z^2 - iz+ 2.$ 
+                    In order to show that $f$ is continuous at, say, $z_0=1-i,$
+                    we must find $\ds \lim_{z\to z_0} f(z)$ and $f(z_0),$ then
+                    check to see whether these two complex values are equal.
+                </p>
+                <p>
+                    Using the <a href="license.html#limits-properties">properties of limits</a>
+                    we have that
+                    <div class="scroll-wrapper">
+                        \[
+                    \lim_{z\to z_0} f(z) = \lim_{z\to 1-i } \left(z^2 - iz+ 2\right) = \left(1-i\right)^2-i(1-i)+ 2 = 1-3i.
+                    \]
+                    </div>
+                    
+
+                </p>
+                <p>
+                    Furthermore, for $z_0=1-i$ we have
+                    <div class="scroll-wrapper">
+                        \[
+                    f(z_0) = f(1-i) =  \left(1-i\right)^2-i(1-i)+ 2 = 1-3i.
+                    \]
+                    </div>
+                    
+                </p>
+                <p>
+                    Since $ \ds\lim_{z\to z_0} f(z) = f(z_0),$ we conclude that 
+                    $f(z) = z^2 - iz+ 2$ is continuous at $z_0 = 1-i.$ 
+                </p>
+            </div>
+
+            <br>
+
+            <div class="theorem">
+                A composition of continuous functions is itself continuous.
+            </div>
+
+            <div class="proof">
+                Let $w = f (z)$ be a function that is defined for all $z$ in a neighborhood
+                $|z - z_0 | \lt \delta_1$ of a point $z_0,$ and let
+                $W=g(w)$ be a function whose domain of definition contains the
+                image of that neighborhood under $f.$
+                Then the composition $W=g\big(f(z)\big)$ is defined for all $z$ in the
+                neighborhood $|z - z_0 | \lt \delta_1.$
+
+                
+
+                <p>
+                    Suppose now that $f$ is continuous at $z$ and that $g$ is
+                    continuous at the point $f (z )$ in the $w$-plane.
+                    Since $g$ is continuous at $f (z ),$ for each
+                    $\epsilon\gt 0$ there is $\delta_2\gt 0 $ such that
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{composition}
+                    \abs{g\big(f(z)\big)- g\big(f(z_0)\big)}\lt \epsilon \;\;\text{whenever}\;\; \abs{f(z)- f(z_0)}\lt
+                    \delta_2.
+                    \end{eqnarray}
+
+                </div>
+
+                <figure>
+                    <img src="../images/chp02/composition.svg" alt="Composition" title="Composition" style="width:100%;">
+                    <figcaption>
+                        Geometric interpretation of composition of functions.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Since $f$ is continuous at $z_0,$ this ensures that the neighborhood
+                    $\abs{z-z_0}\lt\delta_1$ can be made small enough such that the
+                    inequalities given in (\ref{composition}) hold. Therefore,
+                    the compostion $g\big(f(z)\big)$ is continuous.
+                </p>
+            </div>
+
+            <br />
+
+            <div class="theorem">
+                If a function $f$ is continuous and nonzero at a point $z_0,$ then
+                $f(z)\neq 0$ throughout some neighborhood of that point.
+            </div>
+
+            <div class="proof">
+                
+                Suppose that $f$ is continuous and $f(z_0)\neq 0.$
+                Then for every $\epsilon\gt 0$ there exists a $\delta\gt 0$
+                such that $|z-z_0|\lt\delta$ implies
+                <div class="scroll-wrapper">
+                    $$|f(z)-f(z_0)|\lt\epsilon.$$
+                </div>
+
+                <p>
+                    Since $f(z_0)\neq 0$, we can take $\epsilon=\dfrac{|f(z_0)|}{2}.$
+                    So we have
+                    <div class="scroll-wrapper">
+                        $$|f(z)-f(z_0)|\lt\frac{\abs{f(z_0)}}{2}\quad \text{whenever}\quad |z-z_0|\lt\delta.$$
+                    </div>
+
+                    Now, if there is a point $z$ in the neighborhood 
+                    $|z - z_0| \lt\delta$ at which $f(z)=0,$
+                    we have that
+                    $$|f(z_0)|\lt\frac{f(z_0)}{2},$$
+                    which is a contradiction.
+                    Hence the theorem is proved.
+                </p>
+
+            </div>
+
+            <p>
+                The algebraic <a href="limits.html#limits-properties">properties of limits</a> can also be 
+                restated in terms of continuity of complex functions. The proof of the 
+                following theorem is left as an
+                exercise.
+            </p>
+
+            <div class="theorem" id="contuity-properties">
+                Suppose that $f$ and $g$ are continous at $z_0,$ then the following
+                are continuous functions at $z_0:$
+                <ol class="roman-list">
+                    <li>$c\cdot f,$ with $c$ a complex constant,</li>
+                    <li>$f \pm g,$</li>
+                    <li>$f\cdot g,$ and</li>
+                    <li>$\dfrac{f}{g},$ if $g(z_0)\neq 0.$</li>
+                </ol>
+            </div>
+
+            <div class="practice">
+                <p>
+                    <strong>Exercise:</strong>
+                    Prove that polynomial functions are continuous
+                    on the entire complex plane $\C.$
+                </p>
+            </div>
+            <br/>
+
+        </article>
+    </main>
+
+    <a href="complex_differentiation.html" style="text-decoration: none;">
+        <p class="nextPage">Complex Differentiation <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

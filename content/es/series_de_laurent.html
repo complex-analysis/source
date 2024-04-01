@@ -1,0 +1,242 @@
+<section data-type="chapter" id="laurent-series">
+
+    <!-- Starts main content -->
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Series de Laurent</h1>
+
+            <hr>
+
+            <p>
+                Recordemos que una función $f$ de variable compleja $z$ es <em>analítica</em> en
+                un punto $z_0$ si tiene una derivada en cada punto dentro de una becindad
+                de $z_0.$
+                Una función <em>entera</em> aquella que es analítca en cada punto del plano complejo.
+                Si una función $f$ no es analítica en un punto $z_0$ pero es analítica
+                en cada vecindad de $z_0,$ entonces $z_0$ se llama
+                <em>punto singular</em>, o <em>singularidad</em>, de $f.$
+
+            </p>
+
+            <p>
+                Suponiendo que $f(z)$ es analítica en la región
+                $0\lt|z-z_0|\lt R$
+                y no en el punto $z_0$ (o cualquier rama de $f$ si esta es multivaluada).
+                Entonces el punto $z_0$ se denomina
+                <em>singularidad aislada</em> de $f(z).$
+
+            </p>
+
+            <p>
+                Ahora, recordemos que cada función que es analítica
+                en un disco
+                $|z -z_0|\lt R_0$ debe tener una representación de Taylor alrededor $z_0.$
+                Si la función falla ser analítica en un punto $z_0,$
+                frecuentemente se puede encontrar una representación en series para
+                $f(z)$ la cual involucra potencias positivas y negativas de $z - z_0.$
+                Formalmente hablando tenemos el siguiente resultado:
+
+            </p>
+
+            <div class="theorem" id="laurent-series-theorem">
+                Supongamos que una función $f$ es analítica
+                en una región anular
+                $R_1 \lt |z - z_0| \lt R_2,$ con centro en $z_0,$ y sea $C$ cualquier contorno cerrado
+                simple orientado positivamente al rededor de $z_0$ y contenido en la region anular mencionada.
+                Entonces, en cada punto del dominio, $f (z)$ tiene la representación
+                en series
+                \begin{eqnarray}\label{laurentfunction}
+                f(z)=\sum_{n=0}^{\infty} a_n(z-z_0)^n+\sum_{n=1}^{\infty}\frac{b_n}{(z-z_0)^n},
+                \end{eqnarray}
+                donde
+                \begin{eqnarray}\label{non-principalpart}
+                a_n=\frac{1}{2\pi i}\oint_C \frac{f(z)dz}{(z-z_0)^{n+1}},\quad n=0,1,2,\ldots
+                \end{eqnarray}
+                y
+                \begin{eqnarray}\label{principalpart}
+                b_n=\frac{1}{2\pi i}\oint_C \frac{f(z)dz}{(z-z_0)^{-n+1}},\quad n=1,2,\ldots
+                \end{eqnarray}
+
+            </div>
+
+
+
+
+            <figure>
+                <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/1304482/images/7253947/diagram-laurent.svg"
+                    alt="Annulus" title="Annulus" style="width:55%;">
+                <figcaption>
+                    $f(z)$ es analítica en la región anular
+                    $R_1 \lt |z - z_0| \lt R_2.$
+                </figcaption>
+            </figure>
+
+            <p>
+                Como un ejemplo simple de (\ref{laurentfunction}) consideremos la función
+                \[
+                f(z) = \frac{1}{z-1}.
+                \]
+                Como puedes apreciar, el punto $z = 1$ es una singularidad aislada de
+                $f$ y consecuentemente la función no se puede expandir en una serie de Taylor
+                alrededor de ese punto. Sin embargo,  $f$ se puede expandir en 
+                una serie de la forma dada en (\ref{laurentfunction})
+                la cual es válidad para todo  $z$ cercano a $1:$
+            </p>
+            <div class="scroll-wrapper">
+                \begin{eqnarray}\label{simple-example}
+                f(z) = \cdots + 0 \cdot (z-1)^2 + 0 \cdot (z-1) + 0 + \frac{1}{(z-1)} + \frac{0}{(z-1)^2} + \cdots
+                \end{eqnarray}
+            </div>
+            <p>
+                Esta representación en series es válidad para $0 \lt |z - 1| \lt \infty.$
+            </p>
+
+            <p>
+                La serie en el lado derecho de (\ref{laurentfunction})
+                tiene nombres específicos. La parte que consiste de las potencias no negativas
+                de $z - z_0,$
+                \begin{eqnarray}\label{analytic-part}
+                \sum_{n=0}^{\infty} a_n(z-z_0)^n
+                \end{eqnarray}
+                se denomina como la <span id="analytic-part"><strong>parte analítica</strong></span>
+                de la serie (\ref{laurentfunction}) y converge para
+                $|z - z_0| \lt R_2.$
+                La parte de potencias  negativas de $z - z_0,$ es decir,
+                \begin{eqnarray}\label{principal-part}
+                \sum_{n=1}^{\infty}\frac{b_n}{(z-z_0)^n}
+                \end{eqnarray}
+                se denomina como la <span id="principal-part"><strong>parte principal</strong></span> 
+                de la serie (\ref{laurentfunction})
+                y convege para 
+            <div class="scroll-wrapper">
+                $$\abs{\frac{1}{z-z_0}}\lt \frac{1}{R_1} \quad
+                \text{o equivalentemente }\quad
+                R_1 \lt \abs{z-z_0}.$$
+            </div>
+
+            </p>
+
+            <p>
+                Por lo tanto, la suma de  (\ref{analytic-part}) y (\ref{principal-part})
+                converge cuando $z$ satisface ambas desigualdades $R_1 \lt \abs{z-z_0}$ <em>y</em>
+                $\abs{z-z_0}\lt R_2,$ esto es, cuando $z$ es
+                un punto en un dominuo anular definido por $R_1 \lt |z - z_0| \lt R_2.$
+            </p>
+
+            <p>
+                La parte principal de la serie (\ref{simple-example})
+                consiste de exactamente un término diferente de cero,
+                mientras que su parte analítica consiste de todos los 
+                términos iguales a cero.
+                El siguiente ejemplo ilustra el caso de una serie de la forma (laurentfunction)
+                en la cual la parte principal consite de un número infinito de términos,
+                pero esta vez la parte analítica consiste de un número infinito de 
+                términos distintos de cero.
+            </p>
+
+
+            <div class="practice">
+                <p>
+                    <strong>Ejemplo 1: </strong>
+                    La fución $f(z) = \dfrac{\sin z}{z^4}$ no es
+                    analítica en la singularidad aislada $z = 0 $
+                    y por lo tanto no se puede representa como una serie de Maclaurin.
+                    Sin emmbargo, $\sin z$ es una función entera, 
+                    y sabemos que la serie de Maclaurin,
+                </p>
+                <div class="scroll-wrapper">
+                    $$\sin z = z - \frac{z^3}{3!}+ \frac{z^5}{5!} - \frac{z^7}{7!} + \frac{z^9}{9!}- \cdots,$$
+                </div>
+                <p>
+                    converge para $|z|\lt \infty.$ Al dividir esta serie de potencias por 
+                    $z^4$ obtenemos una serie para $f$ 
+                    con potencias positivas y negativas de  $z:$
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{example-1}
+                    f(z) = \dfrac{\sin z}{z^4} = \overbrace{\frac{1}{z^3} - \frac{1}{3!z} }^{\large \textbf{Parte principal}} \underbrace{+ \frac{z}{5!} - \frac{z^3}{7!} + \frac{z^5}{9!}- \cdots}_{\large
+                    \textbf{Parte analítica}}
+                    \end{eqnarray}
+                </div>
+                <p>
+                    La parte analítica de la serie en (\ref{example-1})
+                    converge para $|z|\lt \infty.$ (¡Verifícalo!)
+                    La parte principal es válidad para $|z|>0.$ 
+                    De esta forma la expresion en (\ref{example-1})
+                    converge para todo $z$ excepto en $z=0;$
+                    es decir, la representación en series es valida para $0 \lt |z| \lt \infty.$
+                </p>
+
+            </div>
+
+
+
+            <p>
+                En práctica, las fórmulas integrales (\ref{non-principalpart}) y
+                (\ref{principalpart}) del <strong>Teorema 1</strong>
+                no ofrecen un método práctico para calcular los coeficientes
+                $a_n$ and $b_n$ para una función dada
+                $f(z)$; en su lugar, se construyen las piezas de las series de Laurent series al combinar
+                expansiones de Taylor conocidas, como hicimos en el
+                <strong>Ejemplo 1</strong>. Dado que la expansión de series de Laurent
+                de una función es única cuando esta existe, cualquier expresión de esta forma
+                que sea igual a la función dada $f(z)$ en una región anular debe ser en realidad
+                la expansión de Laurent de $f(z).$
+            </p>
+
+            <div class="practice">
+                <p><strong>Example 2: </strong>
+                    Consideremos la función
+                    $$f(z)=\frac{1}{z(1+z^2)}$$
+                    la cual tiene singulares aisladas en $z=0$
+                    y $z=\pm i.$
+                    En este caso, existe una serie de Laurent para el dominio
+                    $0\lt |z|\lt 1$ y también para el dominio $1\lt |z|\lt \infty,$
+                    el cual es exterior al círuclo $|z|=1.$
+                    Para encontrar cada serie de Laurent,
+                    recordemos la serie de Maclaurin
+                    $$\frac{1}{1-z}=\sum_{n=0}^{\infty}z^n,\quad |z|\lt 1.$$
+                    Para el dominio $0\lt |z|\lt 1,$ tenemos
+                    \begin{eqnarray*}
+                    f(z)&=&\frac{1}{z}\frac{1}{1+z^2}=\frac{1}{z}\sum_{n=0}^{\infty}\left(-z^2\right)^n \\
+                    &=&\sum_{n=0}^{\infty}(-1)^nz^{2n-1}\\
+                    &=&\frac{1}{z}+\sum_{n=1}^{\infty}(-1)^nz^{2n-1} \\
+                    &=& \sum_{n=0}^{\infty}(-1)^{n+1}z^{2n+1}+\frac{1}{z}.
+                    \end{eqnarray*}
+                    Por otra parte, cuando $1\lt |z|\lt \infty,$
+                    \begin{eqnarray*}
+                    f(z)&=&\frac{1}{z^3}\frac{1}{1+\frac{1}{z^2}}=\frac{1}{z^3}\sum_{n=0}^{\infty} \left(-\frac{1}{z^2}
+                    \right)^n\\
+                    & =&\sum_{n=0}^{\infty}\frac{(-1)^n}{z^{2n+3}}\\
+                    &=&\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^{2n+1}}
+                    \end{eqnarray*}
+                    En esta última parte usamos el hecho de que
+                    $(-1)^{n-1}=(-1)^{n-1}(-1)^2=(-1)^{n+1}.$
+                </p>
+
+            </div>
+
+
+            <div class="practice">
+                <p><strong>Ejercicio:</strong> Expande $f(z)=e^{3/z}$ en una serie de Laurent válida para
+                    $0\lt |z| \lt \infty.$
+                </p>
+            </div>
+
+
+            <br>
+
+
+        </article>
+    </main>
+
+    <a href="clasificacion_de_singularidades.html" style="text-decoration: none;">
+        <p class="nextPage">Clasificación de Singularidades<i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

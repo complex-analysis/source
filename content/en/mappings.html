@@ -1,0 +1,81 @@
+<section data-type="chapter" id="mappings">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Mappings</h1>
+            <hr>
+
+            <p>
+                A complex function $w = f (z)$ can be regarded as a <em>mapping</em> or <em>transformation</em> of the
+                points in the $z = x + iy $ plane to the points of the $w = u + iv$ plane. In real variables in one
+                dimension, this notion amounts to understanding the graph $y = f (x),$ that is, the mapping of the
+                points $x$ to $y = f (x).$
+            </p>
+
+            <p>
+                In complex variables the situation is more difficult due to the fact that we have four dimensions. Thus
+                a graphical depiction such as in the real one-dimensional case is not feasible. Rather, one considers
+                the two complex planes, $z$ and $w,$ separately and asks how a region in the $z$ plane transforms or
+                maps to a corresponding region or image in the $w$ plane.
+
+            </p>
+
+            <p>The applet below visualizes the action of a complex function as
+                a mapping from a subset of the $z$-plane to the $w$-plane. For example, the light purple regions are the
+                domain set and the range of the function, respectively. Any point $z$ of
+                the domain set is mapped to the corresponding point $f(z)=w$ in the range. Of course, we can also choose
+                a different domain (i.e. a triangle or square) to apply the mapping. In this manner the function maps
+                (transforms) the colored objects from the domain to
+                the range. Drag the triangle and square (or points) defined on the $z$-plane to observe the effect of
+                the transformation in the $w$-plane.
+            </p>
+
+            <div  class="ggbElement"  id="ggb-element"></div>
+
+            <p><strong>Remark:</strong> In complex analysis the notion of domain has two different meanings. The first
+                one alludes to the domain set of a function, while the second pertains to any open and connected subset
+                of the complex plane or the Riemann sphere. Most domain sets of complex functions we shall encounter in
+                this book will indeed be domains in the topological sense.
+            </p>
+
+
+
+            <br>
+
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+         let params = {
+            "width": 800,
+            "height": 445,
+            "material_id": "jj4sef6w",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="mapping_1overz.html" style="text-decoration: none;">
+        <p class="nextPage">The Transformation $1/z$ <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

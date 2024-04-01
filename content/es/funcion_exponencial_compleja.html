@@ -1,0 +1,263 @@
+<section data-type="chapter" id="power-function">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <br><br>
+
+    <!-- Cindy.js -->
+    <script type="text/javascript" src="../applets/cindyjs/assets/Cindy.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/CindyGL.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/symbolic.js"></script>
+
+    <main>
+        <article>
+
+            <h1>La Función Exponencial Compleja</h1>
+
+            <hr>
+
+
+            <p>La <em>función potencia generalizada</em> se define como:
+                \begin{eqnarray}\label{gcp}
+                f(z) = z^c = \exp(c\log z), \quad \text{with}\quad z\neq 0.
+                \end{eqnarray}
+            </p>
+
+
+            <p>Debido a la naturaleza multivaluada de $\log z$, se sigue que la
+                función definida en (\ref{gcp})
+                también es multivaluada para cualquier valor no entero de
+                $c$, con un punto de corte en $z=0.$ En otras palabras
+            <div class="scroll-wrapper">
+                \begin{eqnarray*}
+                f(z) = z^c&= &\exp\left(c \log z\right) = \exp\left[c \left( \text{Log}\,z + 2n\pi i \right)\right],
+                \end{eqnarray*}
+            </div>
+            con $n\in \mathbb Z.$
+            </p>
+            <p>Por otra parte, tenemos que la <em>función exponencial generalizada</em>,
+                para $c \neq 0 $, se define como:
+            <div class="scroll-wrapper">
+                \begin{eqnarray}\label{gef}
+                f(z)=c^z=\exp(z\log c)=\exp\left[z \left(\text{Log}\,c +2 n \pi \, i\right)\right],
+                \end{eqnarray}
+            </div>
+            con $n\in \mathbb Z.$
+            </p>
+
+            <p>
+                Notemos que la expresión (\ref{gef}) no posee un punto de corte
+                (ni tampoco ningún tipo de singularidad) en el
+                plano complejo extendido $z.$ De esta forma, podemos considerar
+                la ecuación (\ref{gef}) como la definción de un conjunto de
+                funciones de valor único independientes para cada
+                valor de $n.$</p>
+
+
+            <p>Esta es la razón por la cual la <em>naturaleza multivaluada </em> de la función
+                $f(z)=z^c$ difiere en contraste con la función $f(z)=c^z.$</p>
+
+
+            <p>Tipicamente, el caso $n=0$ es el más usado, en el cual simplemente
+                definimos:
+                $$w=c^z=\exp(z\log c)=\exp(z\,\text{Log}\,c),$$
+                con $c\neq 0.$</p>
+
+
+            <p>Esto concuerda con la definición de la función
+                exponencial
+                $$e^z=e^x(\cos y +i\sin y )$$
+                donde $c = e$ (la constante de Euler).</p>
+
+            <p>Usa el siguiente applet para explorar las funciones
+                (\ref{gcp}) y (\ref{gef}) definidas en la región
+                $[-3,3]\times[-3,3].$ En este applet se muestra
+                el retrato fase mejorado con curvas de nivel
+                del módulo y fase.
+                Mueve los puntos para cambiar el valor de $c$ en cada caso.
+                También puedes desactivar las curvas de nivel, si así lo
+                deseas.</p>
+
+
+            <div class="hide-small hide-medium">
+                <div id="applet">
+
+                    <script id="csinit" type="text/x-cindyscript">
+                            grid1=true;
+                            grid2=true;
+                        </script>
+
+                    <script id="csdraw" type="text/x-cindyscript">
+
+            N.y = -2.5;
+            n = round(5*(N.x+4));
+            //n = min(-17)
+            n = max(-22, n);
+            N.x = n/5-4;
+            
+            hsvToRGB(h, s, v) := (
+				regional(j, p, q, t, f);
+
+				h = (h-floor(h))*6;
+
+				j = floor(h);
+				f = h - j;
+
+				p = 1 - s;
+				q = 1 - s*f;
+				t = 1 - s*(1-f);
+
+				if(j == 0, [1, t, p],
+				if(j == 1, [q, 1, p],
+				if(j == 2, [p, 1, t],
+				if(j == 3, [p, q, 1],
+				if(j == 4, [t, p, 1],
+				if(j == 5, [1, p, q]))))))*v
+			);
+            
+            color(z) := ( //what color should be given to a complex number z?
+				regional(n0, grey1, grey2);
+				n0 = 12;
+                         z = log(z)/2/pi;// + i * N.x * pi;
+
+				zfract = n0*z - floor(n0*z); //value of n*z in C mod Z[i]
+
+				//grey1 = im(zfract);
+				//grey2 = re(zfract);
+                         
+                grey1 = if(grid1, im(zfract), 1);
+                grey2 = if(grid2, re(zfract), 1);
+
+				hsvToRGB(im(z), 1.0, .6+.5*re(sqrt(grey1 * grey2)))
+			);
+		
+		t(z) := (A.x + i*A.y)^z;
+        u(z) := z^(B.x + 6 + i * B.y);
+
+		colorplot(
+			//z = zoom*complex(#);
+            z = complex(#);
+			color(t(z));
+			,
+			(-3,-3),(3,3)
+		);
+		
+		colorplot(
+			z = (complex(#)+6);
+			color(u(z));
+			,
+			(-9,-3),(-3,3)
+		);
+		
+        
+        shape1 = polygon([(-9,2.5), (-6,2.5), (-6,3), (-9,3)]);
+        fill(shape1,color->(0.9,0.9,0.9));
+        draw(shape1, color->(0.9,0.9,0.9));
+        
+        shape2 = polygon([(-3,2.5), (0,2.5), (0,3), (-3,3)]);
+        fill(shape2,color->(0.9,0.9,0.9));
+        draw(shape2, color->(0.9,0.9,0.9));
+		
+        drawtext((-2.9,2.7), "$c^z,$ $c = (" + round(A.x  * 100)/100 + " , " + round(A.y * 100)/100 + ")$", color->(0,0,0));
+		drawtext((-8.9,2.7), "$z^c,$ $c = (" + round((B.x + 6 ) * 100)/100 + " , " + round(B.y * 100)/100 + ")$", color->(0,0,0));
+        
+        
+        linesize(3);
+		draw((-3,-3),(-3,3), color->[0,0,0]);
+		
+        
+        drawtext((A.x+0.15,A.y+0.15),"$c$", color->(0.098,0.098,0.098));
+        drawtext((B.x+0.15,B.y+0.15),"$c$", color->(0.098,0.098,0.098));
+        
+        if(A.x < -3, A.x=-3);
+        if(A.y < -3, A.y=-3);
+        if(A.x > 3, A.x=3);
+        if(A.y > 3, A.y=3);
+        
+        if(B.x < -9, B.x=-9);
+        if(B.y < -3, B.y=-3);
+        if(B.x > -3, B.x=-3);
+        if(B.y > 3, B.y=3);
+        
+        //draw((-8.5,-2.5),(2.5,-2.5), color->[0,0,0]);
+        
+        //drawtext((N.x-0.2,N.y+0.3),"$n = " + n + "$", color->(0.98,0.98,0.98));
+		
+		</script>
+
+                    <div id="CSCanvas" style="border:2px solid black"></div>
+                    <input id="ch1" onclick="check1()" checked type="checkbox">Fase&nbsp;&nbsp;&nbsp;
+                    <input id="ch2" onclick="check2()" checked type="checkbox">Módulo
+
+                    <script type="text/javascript">
+                        var cdy = CindyJS({
+                            canvasname: "CSCanvas",
+                            scripts: "cs*",
+                            geometry: [
+                                { name: "A", type: "Free", pos: [1.2, 0.8], color: [0, 0.9, 1], size: 8 },
+                                { name: "B", type: "Free", pos: [-4.5, 0.6], color: [0, 0.9, 1], size: 8 },
+                                //{name:"N", type:"Free", pos:[-4, -2], color:[0.9,0.9,1], size:8}
+                            ],
+                            animation: { autoplay: true },
+                            ports: [{
+                                id: "CSCanvas",
+                                width: 800,
+                                height: 400,
+                                transform: [{ visibleRect: [-9, -3, 3, 3] }]
+                            }],
+                            use: ["CindyGL", "katex"]
+                        });
+
+                        var check1 = function () {
+                            if (document.getElementById("ch1").checked) {
+                                cdy.evokeCS('grid1=true;');
+                            } else {
+                                cdy.evokeCS('grid1=false;');
+
+                            }
+                        }
+
+                        var check2 = function () {
+                            if (document.getElementById("ch2").checked) {
+                                cdy.evokeCS('grid2=true;');
+                            } else {
+                                cdy.evokeCS('grid2=false;');
+
+                            }
+                        }
+
+                    </script>
+
+                </div><!--ends applet-->
+
+            </div><!--end hidesmall-->
+
+            <div class="hide-large ">
+                <div w3-include-html="fixed_applets_message.html"></div>
+            </div>
+
+            <br>
+
+            <hr>
+
+            <p><strong>Observación final: </strong> En práctica, muchos textos tratan
+                la <em>función exponencial generalizada</em> como una función de valor único,
+                $c^z=\exp(z\,\text{Log } c )$, solo cuando $c$ es un número real positivo.
+                Para cualquier otro valor de $c$, es preferible usar la función multivaluada 
+                $c^z=\exp(z \log c ).$
+            </p>
+
+            <br>
+
+
+        </article>
+    </main>
+
+    <a href="curvas_en_el_plano_complejo.html" style="text-decoration: none;">
+        <p class="nextPage">Curvas en el Plano Complejo <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

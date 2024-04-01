@@ -1,0 +1,276 @@
+<section data-type="chapter" id="integrals-branch-cuts">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Ejemplo 1</a></li>
+            <li><a href="#section2">Ejemplo 2</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Integrales de Funciones con Cortes de Ramas</h1>
+            <hr>
+
+            <p>
+            <p>
+                Cuando consideramos funciones de multiples valores,
+                el camino en la integral de contorno
+                puede contener un punto en una rama de corte de integrando
+                involucrado. Los siguientes ejemplos ilustran esto.
+            </p>
+            </p>
+
+            <div id="section1">
+
+                <h2>Ejemplo 1</h2>
+
+                <p>
+                    Sea $C$ el camino semicírcular desde $z_0=3$ a $z_1=-3.$ Esto es
+                    $z\left(\theta\right) = 3 e^{i\theta}$, with $0\leq \theta \leq \pi.$
+                    Aquí nos gustaría evaluar la integral
+                    \begin{eqnarray}\label{ex-01}
+                    I = \int_C z^{1/2} dz.
+                    \end{eqnarray}
+                    Para hacer esto, necesitamos elegir una rama en particular
+                    de la función multi-valuada
+                    $z^{1/2}.$ Por ejemplo, usaremos la rama princial
+                    \begin{eqnarray}
+                    |z|> 0, \; -\pi \lt \textbf{Arg}\,(z)\lt \pi.
+                    \end{eqnarray}
+                </p>
+                <p>
+                    En este caso, notemos que a pesar de que la rama principal de
+                    $z^{1/2}= \exp\left(\frac{1}{2}\text{Log}\, z\right)$
+                    no está definida al final del punto $z_1=-3$ del contorno $C$, la integral $I$
+                    todavía existe.
+                </p>
+
+                <p>
+                    Usa el siguiente applet para explorar el valor de $I$ para el contor dado $C.$
+                    Mueve los puntos $z_0$ y $z_1$ a los valores correspondientes.
+                    También puedes selecciona otros contornos y
+                    explorar lo que sucede cuando cruzan el corte de rama
+                    $\{z\,:\, x =0 \text{ and } y \leq 0\}.$
+                </p>
+
+
+                <div class="ggbElement" id="ggb-element-1"></div>
+
+
+                <p>
+                    Como ya habrás notado, la integral (\ref{ex-01}) existe
+                    porque el integrando es
+                    <a href="curvas_en_el_plano_complejo.html" target="_blank">continuo por piezas</a>
+                    en $C.$ Para cofirmar esto, observa que cuando $z(\theta)= 3e^{i\theta}$, entonces
+                    $$
+                    f\left(z(\theta)\right)= \exp\left[\frac{1}{2}\left( \ln 3 + i \theta\right)\right] =
+                    \sqrt{3}e^{i\theta/2}.
+                    $$
+                </p>
+
+                <p>
+                    Los límites del lado izquierdo de las componente real e imaginaria
+                    de la función
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    f\left(z(\theta)\right)z'(\theta) &=& \sqrt{3} e^{i\theta/2} \cdot 3ie^{i\theta } \\
+                    &=& 3 \sqrt{3} i \,e^{i3\theta/2} \\
+                    &=& -3\sqrt{3} \sin \frac{3\theta }{2} + i\, 3\sqrt{3} \cos \frac{3\theta }{2} \quad (0\leq \theta
+                    \lt
+                    \pi)\\
+                    \end{eqnarray*}
+                </div>
+                en $\theta = \pi $ existen. Esto es
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \lim_{\theta \rightarrow \pi-}-3\sqrt{3} \sin \frac{3\theta }{2}= 3\sqrt{3}
+                    \quad \text{ and } \quad \lim_{\theta \rightarrow \pi-} 3\sqrt{3} \cos \frac{3\theta }{2} = 0.\\
+                    \end{eqnarray*}
+                </div>
+                Lo cual significa que $f\left(z(\theta)\right)z'(\theta)$ es continua en el intervalo cerrado
+                $0 \leq \theta \leq \pi$ when its value at $\theta = \pi $ is defined as $3\sqrt{3}.$
+                Por lo tanto
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    I &=& \int_C f\left(z(\theta)\right)z'(\theta)\, d\theta= 3\sqrt{3} i \int_0^{\pi} e^{i\theta /2}
+                    d\theta
+                    = 3\sqrt{3} i\Bigg[ \bigg.\frac{2}{3i}e^{i3\theta /2}\bigg|_{0}^{\pi} \Bigg] \\
+                    &=& 3\sqrt{3} i\Bigg[ -\frac{2}{3i}\left( 1+i\right)\Bigg]= -2\sqrt{3}(1+i).
+                    \end{eqnarray*}
+                </div>
+
+                </p>
+
+                <div class="practice">
+                    <p><strong>Ejercicio 1:</strong> Evalua la integral $\int_C z^{1/2}\, dz$ para el
+                        contorno $C: z(\theta)= e^{i\theta}$, with $-\pi\leq \theta \leq \pi.$
+                        Puedes usar el applet para confirma tus resultados.
+                    </p>
+                </div>
+
+                <!--<p><strong>Remark 1:</strong>
+			You can not evaluate the integral
+			for the contour $C: z(t)= e^{it},$ with $0 \leq t \leq 2\pi.$ Why?
+		</p>-->
+
+                <p><strong>Observación:</strong>
+                    Nota que $\int_C z^{1/2}\, dz=0$ para cada
+                    círculo que no intersecte a la rama de corte $\{z\,:\, x =0 \text{ and } y \leq 0\}.$ ¿Por qué?
+                </p>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Ejemplo 2</h2>
+
+                <p>
+                    Considera la rama principal
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{br}
+                    f(z)=z^{i} = \exp \left[ i \,\text{Log } z \right]\; \text{ with }\; |z|>0,\, -\pi\lt \text{Arg } z
+                    \lt \pi
+                    \end{eqnarray}
+                </div>
+                y $C$ el círculo superior desde $z=-1$ a $z=1$; es decir, $z(t)=-e^{-i \pi t}$ con
+                $0 \leq t \leq 1.$
+                </p>
+
+                <figure>
+                    <img src="../images/chp04/p-branch-semicircle.svg" alt="Upper half circle" title="Upper half circle"
+                        style="width:45%;">
+                    <figcaption>
+                        $C: z(t)=-e^{-i \pi t}$ para
+                        $0 \leq t \leq 1.$
+                    </figcaption>
+                </figure>
+
+                <p>
+                    No es difícil verificar que
+                    \begin{eqnarray}\label{ex-02}
+                    I=\int_C z^{i}\,dz &=& \frac{1+e^{-\pi}}{2}\,(1-i).
+                    \end{eqnarray}
+                    Usa el siguiente applet para confirmar esto.
+                    También puedes analizar $\int_C z^idz$
+                    para otros contornos.
+                </p>
+
+                <div class="ggbElement" id="ggb-element-2"></div>
+
+
+                <p>
+                    <strong>Observación 3:</strong>
+                    Nota que $\int_C z^{i}\, dz=0$ para cada
+                    círculo que no intersecte al corte de rama $\{z\,:\, x =0, y \leq 0\}.$ ¿Por qué?
+                </p>
+
+                <p>
+                    En general, podemos calcular $\int_C z^i dz$ para
+                    cualquier contorno $C$ desde $z=-1$ a $z=1$ que se encuentra arriba del eje real.
+                    En este caso solo necesitamos encontrar una antiderivada de $z^i.$
+                    Desafortunadamente, <em>no podemos</em> usar la rama principal, definida en (\ref{br}), dado
+                    que en esta rama no está definida la función en
+                    $z=-1.$ Pero el integrando se puede reemplazar con la rama
+                <div class="scroll-wrapper">
+                    $$z^{i} = \exp \left[ i \,\text{log } z \right]\; \text{ with }\; |z|>0,\, -\frac{\pi}{2}\lt
+                    \text{arg } z \lt \frac{3\pi}{2}.$$
+                </div>
+                dado que esta corresponde con el integrando a lo largo de $C.$
+                </p>
+
+                <div class="figure-container">
+                    <div id="p-branch">
+                        <figure>
+                            <img src="../images/chp04/p-branch-everycontour.svg" alt="Smooth curve and Tangent vector"
+                                title="Smooth curve and Tangent vector" style="width:100%;">
+                            <figcaption>
+                                Rama principal.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div id="s-branch">
+                        <figure>
+                            <img src="../images/chp04/s-branch-everycontour.svg" alt="Non smooth" title="Non smooth"
+                                style="width:100%;">
+                            <figcaption>
+                                Una rama apropiada.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <p>
+                    Usando una antiderivada de esta nueva rama, obtenemos
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{value}
+                    \int_{-1}^{1} z^i dz&=& \Bigg.\frac{z^{i+1}}{i+1}\Bigg|_{-1}^{1} = \frac{1+e^{-\pi}}{2}\,(1-i),
+                    \end{eqnarray}
+                </div>
+                cuyo valor es el mismo que encontramos en (\ref{ex-02}).
+                </p>
+
+                <div class="practice">
+                    <p><strong>Ejercicio 2:</strong> Evalua $\bigg.\frac{z^{i+1}}{i+1}\bigg|_{-1}^{1} $ para confirmar
+                        el valor dado en la expresión (\ref{value}).
+                    </p>
+                </div>
+
+                <br>
+
+            </div>
+
+        </article>
+    </main>
+
+
+    <!--GeoGebra embeding-->
+    <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+    <script>
+        let params1 = {
+            "width": 721,
+            "height": 451,
+            "material_id": "jbs86spr",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let params2 = {
+            "width": 721,
+            "height": 451,
+            "material_id": "kzrkqta7",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let ggbApplet1 = new GGBApplet(params1, true);
+        let ggbApplet2 = new GGBApplet(params2, true);
+        window.addEventListener("load", function () {
+            ggbApplet1.inject('ggb-element-1');
+            ggbApplet2.inject('ggb-element-2');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="series.html" style="text-decoration: none;">
+        <p class="nextPage">Series <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

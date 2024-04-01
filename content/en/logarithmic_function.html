@@ -1,0 +1,409 @@
+<section data-type="chapter" id="template">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contents</p>
+        <ul>
+            <li><a href="#section1">The Logarithmic Function</a></li>
+            <li><a href="#section2">Branches of logarithms</a></li>
+            <li><a href="#section3">Final remark</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <div id="section1">
+
+                <h1>The Logarithmic Function</h1>
+
+                <hr>
+
+                <p>Consider $z$ any nonzero complex number. We would like to solve for $w,$ the equation
+                    \begin{eqnarray}\label{log1}
+                    e^w=z.
+                    \end{eqnarray}
+                    If $\Theta=\textbf{Arg} (z)$ with $-\pi &lt; \Theta \leq \pi,$ then $z$ and $w$ can be written
+                    as follows
+                    \begin{eqnarray*}
+                    z=re^{i\Theta} \quad \text{and}\quad w=u+iv.
+                    \end{eqnarray*}
+                    Then equation (\ref{log1}) becomes
+                    $$e^ue^{iv}=re^{i\Theta}.$$
+                    Thus, we have
+                    \begin{eqnarray*}
+                    e^u=r\quad\text{and}\quad v=\Theta +2n\pi
+                    \end{eqnarray*}
+                    where $n\in \mathbb Z .$ Since $e^u=r$ is the same as $u=\ln r,$ it follows that equation
+                    (\ref{log1}) is satisfied if and only if $w$ has one of the values
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    w=\ln r +i(\Theta + 2n\pi )\quad (n\in \mathbb Z ).
+                    \end{eqnarray*}
+                    </div>
+                    
+                </p>
+
+
+
+                <p>Therefore, the (multiple-valued) logarithmic function of a nonzero complex variable
+                    $z=re^{i\Theta}$ is defined by the formula
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}\label{log2}
+                    \log z=\ln r +i\left(\Theta + 2n\pi \right)\quad \quad(n\in \mathbb Z ).
+                    \end{eqnarray}
+                    </div>
+                    
+                </p>
+
+
+
+
+                <div class="practice">
+                    <p>
+                        <strong>Example 1:</strong> Calculate $\log z$ for $z=-1-\sqrt{3}i.$<br><br>
+
+                        <em>Solution:</em> If $z=-1-\sqrt{3}i,$ then $r=2$ and $\Theta=-\frac{2\pi}{3}.$ Hence
+                        <div class="scroll-wrapper">
+                            $$\log(-1-\sqrt{3}i)=\ln 2 +i\left(-\frac{2\pi}{3}+2n\pi\right)=\ln 2
+                        +2\left(n-\frac{1}{3}\right)\pi i$$
+                        </div>
+                        
+                        with $n\in \mathbb Z .$
+                    </p>
+                </div>
+
+                <p>
+                    The <em>principal value</em> of $\log z$ is the value obtained from equation (\ref{log2}) when $n =
+                    0$
+                    and is denoted by $\text{Log} \,z.$ Thus
+                    $$\text{Log}\, z=\ln r +i\Theta .$$
+                    The function $\text{Log}\, z$ is well defined and single-valued when $z\neq 0$ and that
+                    $$\log z=\text{Log}\, z+2n\pi i\quad (n\in \mathbb Z )
+                    $$
+                    This is reduced to the usual logarithm in calculus when $z$ is a positive real number.
+                </p>
+
+                <div class="practice">
+
+                    <p>
+                        <strong>Example 2:</strong> Calculate $\log \left(1\right)$ and $\log
+                        \left(-1\right).$<br><br>
+                        <em>Solution:</em> From expression (\ref{log2})
+                        $$\log \left(1\right)=\ln 1+i\left(0+2n\pi\right)=2n\pi i\quad \quad(n\in \mathbb Z )
+                        $$
+                        and
+                        $$\log \left(-1\right)=\ln 1+i\left(\pi+2n\pi\right)=\left(2n+1\right)\pi i\quad \quad(n\in
+                        \mathbb Z )
+                        $$
+                        Notice that $\text{Log}\, (1)=0$ and $\text{Log}\, (-1)=\pi i.$
+                    </p>
+
+                </div>
+
+
+                <p>
+                    Expression (\ref{log2}) is also equivalent to the following:
+                    \begin{eqnarray*}
+                    \log z&amp;=&amp;\ln |z| +i\,\textbf{arg} (z)\\
+                    &amp;=&amp;\ln |z| +i\,\textbf{Arg} (z)+2ni\,\pi \quad \quad(n\in \mathbb Z )
+                    \end{eqnarray*}
+                </p>
+
+
+                <p>
+                    Some basic properties of the function $\log z$ are the following:
+                <ol>
+                    <li> $\log \left(z_1 \,z_2\right)=\log z_1 + \log z_2$ </li>
+                    <li> $\log\left( \dfrac{z_1}{z_2}\right)=\log z_1 -\log z_2$</li>
+                    <li> There may hold $\text{Log}\,\left(z_1 \,z_2\right)\neq \text{Log}\, z_1 + \text{Log}\, z_2$
+                    </li>
+                </ol>
+                </p>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Branches of logarithms</h2>
+
+                <p>From definition (\ref{log2}) let $\theta = \Theta + 2n\pi$ ($n\in \mathbb Z$), so we can write
+                    \begin{eqnarray}\label{log30}
+                    \log z = \ln r +i\theta.
+                    \end{eqnarray}
+                </p>
+
+                <p>Now, let $\alpha$ be any real number. If we restrict the value of $\theta$ so that $\alpha &lt;
+                    \theta &lt; \alpha + 2n\pi$ , then the function
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}\label{log3}
+                    \log z=\ln r +i\theta \quad (r&gt; 0, \alpha &lt; \theta &lt; \alpha + 2\pi ),
+                    \end{eqnarray}
+                    </div>
+                    with components
+                    \begin{eqnarray*}
+                    u(r, \theta)=\ln r, \quad v(r,\theta)=\theta,
+                    \end{eqnarray*}
+                    is a <em>single-value</em> and continuous function in the stated domain.
+                </p>
+
+
+                <p>A <em>branch</em> of a multiple-valued function $f$ is any single-valued function $F$ that is
+                    analytic in some domain at each point $z$ of which the value $F(z)$ is one of the values of $f.$ The
+                    requirement of analyticity, of course, prevents $F$ from taking on a random selection of the values
+                    of $f.$
+
+
+                    Observe that for each fixed $\alpha,$ the single-valued function (\ref{log3}) is a branch of the
+                    multiple-valued function (\ref{log30}). The function
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}\label{log4}
+                    \text{Log } z=\ln r +i\Theta \quad (r&gt; 0, -\pi &lt; \theta &lt; \pi ),
+                    \end{eqnarray}
+                    </div>
+                    
+                    is called the principal branch.
+                </p>
+
+
+                <p> A <em>branch cut</em> is a portion of a line or curve that is introduced in order to define a branch
+                    $F$ of a multiple-valued function $f.$ Points on the branch cut for $F$ are <em>singular points</em>
+                    of $F,$ and any point that is common to all branch cuts of $f$ is called a <em>branch point</em>.
+                    The origin and the ray $\theta = \alpha$ make up the branch cut for the branch (\ref{log3}) of the
+                    logarithmic function. The branch cut for the principal branch (\ref{log4}) consists of the origin
+                    and the ray $= \pi.$ The origin is evidently a branch point for branches of the multiple-valued
+                    logarithmic function.</p>
+
+                <p>We can visualize the multiple-valued nature of $\log z$ by
+                    using <a href="http://mathworld.wolfram.com/RiemannSurface.html" target="_blank">Riemann
+                        surfaces</a>.
+                    The following interactive images show the real and imaginary
+                    components of $\log(z).$ </p>
+
+                <script src="js/mathcell.js"></script>
+
+                <br/>
+
+                <div class="mathcell" style="width: 100%; height: 450px">
+                    <script>
+
+                        var parent = document.currentScript.parentNode;
+
+                        var id = generateId();
+                        parent.id = id;
+
+                        MathCell(id, []);
+
+                        parent.update = function (id) {
+
+                            var pi = Math.PI;
+
+                            //Real component ln(sqrt(x x + y y))
+                            var Re = (x, y) => Math.log(Math.sqrt(x * x + y * y));
+
+                            var data = [];
+
+                            var s = parametric((u, v) => [u * Math.cos(v),
+                            u * Math.sin(v),
+                            Re(u * Math.cos(v), u * Math.sin(v))
+                            ],
+                                [0.0001, 3], [-pi, pi],
+                                {
+                                    color: '#80aaff',
+                                    opacity: 0.9
+                                }
+                            );
+
+
+                            data.push(s);
+
+                            var config = {
+                                type: 'threejs',
+                                frame: true,
+                                viewpoint: [1, -1, 1],
+                                zMin: -3,
+                                zMax: 3
+                            };
+
+                            evaluate(id, data, config);
+
+                        }
+
+                        parent.update(id);
+
+                    </script>
+                </div>
+                <div>
+                    <p  style="text-align: center;margin-top: -10px;"><em>Real component of $\log z$</em></p>
+                </div>
+
+                <br/>
+
+
+                <div class="mathcell" style="width: 100%; height: 450px">
+                    <script>
+
+                        var parent = document.currentScript.parentNode;
+
+                        var id = generateId();
+                        parent.id = id;
+
+                        MathCell(id, []);
+
+                        parent.update = function (id) {
+
+                            var pi = Math.PI;
+
+                            //Imaginary component arctan()
+                            var ImB = (x, y) => Math.atan2(y, x) + 2 * pi * 2;
+                            var ImA = (x, y) => Math.atan2(y, x) + 2 * pi;
+                            var Im0 = (x, y) => Math.atan2(y, x);
+                            var Ima = (x, y) => Math.atan2(y, x) - 2 * pi;
+                            var Imb = (x, y) => Math.atan2(y, x) - 2 * pi * 2;
+
+
+
+                            var data = [];
+
+                            var den = 1000;
+
+                            var sB = parametric((u, v) => [u * Math.cos(v),
+                            u * Math.sin(v),
+                            ImB(u * Math.cos(v), u * Math.sin(v))
+                            ],
+                                [0, 2], [-pi, pi - pi / den],
+                                {
+                                    color: '#cc0066',
+                                    opacity: 0.9
+                                }
+                            );
+
+                            var sA = parametric((u, v) => [u * Math.cos(v),
+                            u * Math.sin(v),
+                            ImA(u * Math.cos(v), u * Math.sin(v))
+                            ],
+                                [0, 2], [-pi, pi - pi / den],
+                                {
+                                    color: '#80aaff',
+                                    opacity: 0.9
+                                }
+                            );
+                            var s0 = parametric((u, v) => [u * Math.cos(v),
+                            u * Math.sin(v),
+                            Im0(u * Math.cos(v), u * Math.sin(v))
+                            ],
+                                [0, 2], [-pi, pi - pi / den],
+                                {
+                                    color: '#6666ff',
+                                    opacity: 0.9
+                                }
+                            );
+
+                            var sa = parametric((u, v) => [u * Math.cos(v),
+                            u * Math.sin(v),
+                            Ima(u * Math.cos(v), u * Math.sin(v))
+                            ],
+                                [0, 2], [-pi, pi - pi / den],
+                                {
+                                    color: '#00b3b3',
+                                    opacity: 0.9
+                                }
+                            );
+
+                            var sb = parametric((u, v) => [u * Math.cos(v),
+                            u * Math.sin(v),
+                            Imb(u * Math.cos(v), u * Math.sin(v))
+                            ],
+                                [0, 2], [-pi, pi - pi / den],
+                                {
+                                    color: '#b3b3b3',
+                                    opacity: 0.9
+                                }
+                            );
+
+                            data.push(sB);
+                            data.push(sA);
+                            data.push(s0);
+                            data.push(sa);
+                            data.push(sb);
+
+                            var config = {
+                                type: 'threejs',
+                                frame: true,
+                                viewpoint: [1, -1, 0.5],
+                                zMin: -16,
+                                zMax: 16
+                            };
+
+                            evaluate(id, data, config);
+
+                        }
+
+                        parent.update(id);
+
+                    </script>
+                </div>
+                <div >
+                    <p style="text-align: center;margin-top: -10px;"><em>Imaginary component of $\log z$: Each branch is
+                        identified with a different color.</em></p>
+                </div>
+
+                <p>Special care must be taken in using branches of the logarithmic function, especially since expected
+                    identities involving logarithms do not always carry over from calculus.</p>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h2>Final remark</h2>
+
+
+                <p>
+                    Notice that for $z\neq 0,$ we have
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}\label{exp001}
+                    e^{\log z}=z\quad \text{and}\quad \log(e^z) =z+2n\pi i
+                    \end{eqnarray}
+                    </div>
+                    with $n\in \mathbb Z .$
+                </p>
+
+
+                <div class="practice">
+                    <p>
+                        <strong>Example 3:</strong> Calculate $e^{\log z},$ and $\log \left(e^z\right)$ for
+                        $z=4i.$<br><br>
+
+                        <em>Solution:</em> If $z=4i,$ then $e^z=e^{4i}.$ Hence
+                        $$\log\left(e^{4i}\right)=4i +2n\pi i$$
+                        with $n\in \mathbb Z .$
+                        On the other hand, we have
+                        $$e^{\log\left(4i\right)}=4i.$$
+                    </p>
+                </div>
+
+                <br>
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <a href="riemann_surfaces.html" style="text-decoration: none;">
+        <p class="nextPage">Riemann Surfaces <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

@@ -1,0 +1,186 @@
+<section data-type="chapter" id="joukowsky-airfoil">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contents</p>
+        <ul>
+            <li><a href="#section1">The Joukowsky map</a></li>
+            <li><a href="#section2">Flow around the Joukowsky airfoil</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+
+    <main>
+        <article>
+
+            <h1>Joukowsky Airfoil</h1>
+            <hr>
+
+            <div id="section1">
+
+                <h2>The Joukowsky map</h2>
+
+                <p>A well known example of a conformal function is the <em>Joukowsky map</em>
+                    \begin{eqnarray}\label{jouk}
+                    w= z+ 1/z.
+                    \end{eqnarray}
+                    It was first used in the study of flow around airplane wings by the pioneering
+                    Russian aero and hydrodynamics researcher
+                    <a href="http://mathshistory.st-andrews.ac.uk/Biographies/Zhukovsky.html" target="_blank">Nikolai
+                        Zhukovskii</a> (Joukowsky).
+                </p>
+
+                <p>Since
+                <div class="scroll-wrapper">
+                    $$\frac{d}{dz}w=1-\frac{1}{z^2}=0\quad \text{if and only if}\quad z=\pm 1,$$
+                </div>
+                the function (\ref{jouk}) is conformal except at the critical
+                points $z = \pm 1$ as well as the singularity $z = 0,$ where it is
+                not defined.
+                </p>
+
+                <p>If $z = e^{i\theta}$
+                    lies on the unit circle, then
+                    $$w =e^{i\theta}+e^{-i\theta}=2\cos \theta,$$
+                    lies on the real axis, with $-2\leq w\leq 2.$ Thus,
+                    the Joukowsky map squashes the unit circle
+                    down to the real line segment $[-2, 2].$ The images of
+                    points outside the unit circle fill the
+                    rest of the $w$ plane, as do the images of the (nonzero) points
+                    inside the unit circle. Indeed,
+                    if we solve (\ref{jouk}) for $z,$ we have
+                    $$z=\frac{1}{2}\left(w\pm \sqrt{w^2-4}\right).$$
+                    We see that every $w$ except $\pm 2$ comes from two different
+                    points $z$; for $w$ not on the critical
+                    line segment $[-2, 2],$ one point (with the minus sign) lies
+                    inside and one (with the plus
+                    sign) lies outside the unit circle, whereas if $-2 \lt w \lt 2,$
+                    both points lie on the unit circle
+                    and a common vertical line.</p>
+
+                <p>Therefore, the Joukowski map
+                    defines a one-to-one conformal mapping from $| z | > 1,$ the exterior of the
+                    unit circle, onto the exterior of the line segment $[-2, 2],$ i. e.
+                    $\mathbb C \setminus [-2, 2].$
+                </p>
+
+                <p>In Figure 4 we can observe that the concentric circles $|z|= r > 1$
+                    are mapped to ellipses with foci at $\pm 2$ in the $w$-plane.
+                </p>
+
+                <figure>
+                    <img src="../images/chp06/map-circle.png" alt="MapJ" title="JMap"
+                        style="width:90%;">
+                    <figcaption>
+                        The Joukowsky map applied to $|z|=r \geq 1.$
+                    </figcaption>
+                </figure>
+
+                <p>The effect on circles not centered at the origin is more interesting.
+                    The image curves take in a wide variety of shapes.
+                    When the circle passes through the singular point $z=1,$
+                    then its image is no longer smooth, but has a cusp at $w=2$ and when
+                    the circle passes through $z=-1$ the
+                    cusp is at $w=-2.$
+                    Some of the image curves assume the shape of the famous
+                    cross-section through an idealized
+                    airplane wing or <em>airfoil</em>, also known as the <em>Joukowsky airfoil</em>.</p>
+
+                <p>
+                    You can explore the Joukowsky map in the applet below. Drag around the center of
+                    the circle. Drag sliders to apply the mapping or change the radius. Click button
+                    to see predefined values.
+                </p>
+
+                <div class="ggbElement" id="ggb-element"></div>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Flow around the Joukowsky airfoil</h2>
+
+                <p>Consider now the uniform flow around the unit circle with
+                    circulation $C$ and speed $U>0$ given by the complex potential
+                    \begin{eqnarray}\label{eq1}
+                    F(z)=Uz+\frac{U}{z}-\frac{i C}{2\pi}\log z.
+                    \end{eqnarray}
+                </p>
+
+
+                <p>We can use the linear transformation
+                    $$T(z)=-0.15+0.23i + 0.23\sqrt{13\cdot 2} z$$
+                    to map this flow around $|z|=1$ onto the
+                    flow around the circle $c_1$ with center $z_1=-0.15+0.23i$ and
+                    radius $r=0.23\sqrt{13\cdot 2}.$ </p>
+
+                <p>Finally, by applying the Joukowsky map
+                    (\ref{jouk}), we can obtain a uniform flow with circulation
+                    around the <em>Joukowsky airfoil</em>.
+                </p>
+
+                <p>The following simulation shows the uniform flow past the circular cylinder
+                    $c_1$ and its transformation to the <em>Joukowsky airfoil</em>.
+                    Drag the sliders to explore:</p>
+                <ul>
+                    <li>Slider U = speed.</li>
+                    <li>Slider C = circulation.</li>
+                    <li>Slider T = apply transformation.</li>
+                </ul>
+
+                <p>Press the <code>Trace</code> button to show <em>streamlines</em>.</p>
+
+                <div class="hide-small hide-medium">
+                    <iframe name="JoukAirfoil" src="../applets/p5js/joukowsky/index.html" width="800px" height="500px"
+                        style="border:none;" style="overflow:hidden;"></iframe>
+                    
+                    <div style="text-align: center;">
+                        <button onclick="var ifr=document.getElementsByName('JoukAirfoil')[0]; ifr.src=ifr.src;"
+                        style="cursor: pointer;font-weight: bold;">Reset</button>
+                    </div>
+                </div>
+
+                <div class="hide-large ">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+            </div>
+
+
+        </article>
+    </main>
+
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params = {
+            "width": 728,
+            "height": 531,
+            "material_id": "ukwamarf",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="bibliography.html" style="text-decoration: none;">
+        <p class="nextPage">Bibliography <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

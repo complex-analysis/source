@@ -1,0 +1,271 @@
+<section data-type="chapter" id="domain-coloring">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Retratos fase complejos</a></li>
+            <li><a href="#section2">Explora funciones complejas</a></li>
+            <li><a href="#section3">¡Advertencia!</a></li>
+            <li><a href="#section4">Galería de funciones</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Dominio coloreado</h1>
+
+            <hr>
+
+            <div id="section1">
+
+                <h2>Retratos fase complejos</h2>
+                <p id="enhanced-phase-portraits"> Una manera de visualizar funciones complejas
+                    $f:\mathbb{C}\to\mathbb{C}$ es por medio de retratos fase.
+                    A un número complejo se le puede asignar un colo dependiendo de su
+                    argumento, o fase. Los números positivos, por ejemplo,
+                    se puede colorear con rojo, mientras que los números negativos
+                    se pueden colorear con cian y los números con una parte imaginaria
+                    se pueden colorear de amarillo como se muestra en la Figura 1, la
+                    cual muestra un retrato fase para la función $f(z)=z.$</p>
+
+                <figure>
+                    <img src="../images/chp03/phaseportrait.png" alt="phase portrait for z"
+                        title="phase portrait for the function f(z)=z" style="width:50%;">
+                    <figcaption>
+                        Retrato fase de $f(z)=z.$
+                    </figcaption>
+                </figure>
+
+                <p>En su libro
+                    <a href="http://www.springer.com/de/book/9783034801799"> <em>Visual Complex Functions</em></a>,
+                    Elias Wegert emplea retratos fase con curvas de nivel
+                    de la fase y del módulo (<em>retratos fase mejorados</em>)
+                    para el estudio de la teoría de funciones complejas.
+                    Observa por ejemplo las Figuras 2 y 3 para el caso de la función
+                    $f(z)=z.$
+                </p>
+
+
+
+                <div class="figure-container">
+                    <div id="phase">
+                        <figure>
+                            <img src="../images/chp03/phase.png" alt="phase portrait for z"
+                                title="Contour lines of phase" style="width:100%;">
+                            <figcaption>
+                                Curvas de nivel de la fase.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div id="modulus">
+                        <figure>
+                            <img src="../images/chp03/modulus.png" alt="phase portrait for z"
+                                title="Contour lines of modulus" style="width:100%;">
+                            <figcaption>
+                                Curvas de nivel del módulo.
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                </div>
+
+                <p>
+                    Se dice que una función compleja $f$ tiene un cero en
+                    $z_0$ si $f(z_0)=0.$ Por otra parte, se dice que $z_0$ es un polo
+                    cuando el valor de $f(z_0)$ es indefinido.
+                    Con el uso de los retratos fase mejorados, los ceros y polos de
+                    una función compleja $f(z)$ se pueden localizar fácilmente
+                    en los puntos donde todos los colores coinciden. Las Figuras
+                    <a href="#F4">4</a> y <a href="#F5">5</a> muestran el retrato de
+                    fase mejorado de las fuciones
+                    $$f(z)=z \quad \text{y}\quad g(z)=1/z,$$ respectivamente.
+                    Observa el contraste entre las cuvas de nivel del módulo en cada caso.
+                </p>
+
+                <div class="figure-container">
+                    <div id="enhanced">
+                        <figure id="F4">
+                            <img src="../images/chp03/enhancedz.png" alt="phase portrait for z"
+                                title="Enhanced phase portrait for the function f(z)=z" style="width:100%;">
+                            <figcaption>
+                                Raíz en $z=0.$
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div id="enhanced2">
+                        <figure id="F5">
+                            <img src="../images/chp03/enhanced1z.png" alt="phase portrait for z"
+                                title="Enhanced phase portrait for the function g(z)=1/z" style="width:100%;">
+                            <figcaption>
+                                Polo en $z=0.$
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                </div>
+
+
+                <p> Consideremos ahora la función
+                    \begin{eqnarray}\label{eq1}
+                    f(z)=\frac{z-1}{z^2+z+1}
+                    \end{eqnarray}
+                    la cual tiene una raíz en $z_0=1$ y dos polos en
+                    $$z_{1}=\frac{-1 + \sqrt{3}\,i}{2} \quad \text{y} \quad z_{2}=\frac{-1 - \sqrt{3}\,i}{2}.$$
+                </p>
+
+                <p>La Figura 6 muestra el retrato fase mejorado de (\ref{eq1}) con
+                    las curvas de nivel del módulo. Nota el comportamiento de las curvas de
+                    nivel del módulo alrededor de la raíz (en el lado derecho)
+                    y en los polos (lado izquierdo). ¿Puedes ver la diferencia?</p>
+
+
+                <figure>
+                    <img src="../images/chp03/plotfz.jpg" alt="(z-1)(z^2+z+1)" style="width:55%;">
+                    <figcaption>
+                        Gráfica de $f(z)=(z-1)/(z^2+z+1)$ con las curvas de nivel del módulo.
+                    </figcaption>
+                </figure>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2 id="plotter">Explora funciones complejas</h2>
+
+                <p>Usa el siguiente applet para explorar
+                    retratos fase mejorados de funciones complejas.</p>
+
+
+                <br />
+
+
+
+                <div class="hide-small hide-medium">
+                    <div id="iframeContainer1" class="iframeContainer">
+                        <iframe name="Domain Coloring" src="../applets/p5js/dominio-coloreado/"
+                            style="border:1px solid black;width:800px;height:500px;" scrolling="no"></iframe>
+
+                    </div>
+                    <div style="text-align: center;">
+                        <button>
+                            <a href="../applets/p5js/domain-coloring/" target="_blank"
+                                style="color: black;font-weight: bold;outline: none;text-decoration: none; ">Fullscreen
+                            </a></button>
+
+                    </div>
+                </div>
+
+                <div class="hide-large">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h2>¡Advertencia!</h2>
+
+                <p> Si no imponemos restriccones adicionales, como
+                    continuidad o diferenciabilidad,
+                    los conjuntos isométricos de funciones complejas
+                    pueden ser arbitrarios. Pero esto no sucede para
+                    funciones <em>analíticas</em>, las cuales son el objeto
+                    de mayor interes en este texto.</p>
+
+
+                <p>En realidad, funciones analíticas están (casi)
+                    determinadas de forma única por su retrato fase simple, pero
+                    esto no sucede para funciones en general.
+                    Por ejemplo, las funciones $f$ (analítica) y $g$ (no analítica)
+                    definidas como
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{example}
+                    f(z)=\frac{z-1}{z^2+z+1}, \qquad g(z)=(z-1)\left(\overline{z}^2+\overline{z}+1\right)
+                    \end{eqnarray}
+                </div>
+                tienen el mismo retrato fase simple (excepto en sus ceros y polos)
+                cuando en realidad son completamente diferentes.
+                </p>
+
+
+                <p>Dado que los retratos de fase simples no siempre muestran suficiente
+                    información para explorar funciones complejas generales, recomiendo
+                    el uso de sus versiones mejoradas con curvas de nivel de módulo y fase
+                    en tales casos. La Figura 7 muestra dos de estos retratos de las
+                    funciones $f$ (izquierda) y $g$ (derecha) definidas en (\ref{example}).
+                </p>
+
+                <br />
+
+                <div class="hide-small hide-medium">
+                    <iframe name="Same phase" src="../applets/p5js/samephase/index.html" width="800px" height="400px"
+                        style="border:none;" style="overflow:hidden;"></iframe>
+                    <br>
+                    <figcaption>
+                        Mueve el deslizador para cambiar los diferentes
+                        retratos fase mejorados <br> de $f$ (izquierda) y $g$ (derecha).
+                    </figcaption>
+
+                </div>
+
+                <div class="hide-large">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+                <p>Una distinción notable entre los dos retratos es la forma de los mosaicos que forman
+                    una teselación del plano complejo. 
+                    En la imagen de la izquierda, la mayoría de estos mosaicos son casi cuadrados y tienen 
+                    esquinas en ángulo recto. En contraste, muchos mosaicos en el retrato fase de $g$ son 
+                    alargados y sus ángulos difieren significativamente de $\pi/2$ - en algunos puntos,
+                    las curvas de nivel del módulo y la fase son incluso mutuamente tangentes.</p>
+
+            </div>
+
+            <hr>
+
+            <div id="section4">
+
+                <h2>Galería de funciones</h2>
+
+                <p>
+                    Si deseas explorar más funciones complejas representadas con 
+                    el dominio coloreado, entonces visita 
+                    <a href="https://www.dynamicmath.xyz/domain-coloring/" target="_blank">Domain coloring
+                        <i class="fas fa-external-link-alt"></i></a>,
+                        donde podrás encontrar tamién herramientas interactivas
+                        para explorar una gran variedad de funciones.
+                </p>
+
+                <figure>
+                    <img src="../images/chp03/gallery.jpg" alt="Gallery" style="width:100%;">
+                    <figcaption>
+                        Galería de funciones.
+                    </figcaption>
+                </figure>
+
+                <br />
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <a href="funcion_exponencial_compleja.html" style="text-decoration: none;">
+        <p class="nextPage">La Función Exponencial Compleja <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

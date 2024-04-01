@@ -1,0 +1,239 @@
+<section data-type="chapter" id="geometric-interpretation">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contents</p>
+        <ul>
+            <li><a href="#section1">Addition and Subtraction</a></li>
+            <li><a href="#section2">Multiplication</a></li>
+            <li><a href="#section3">Stretching and rotation</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Geometric Interpretation</h1>
+            <h1 style="font-size:1.8em;text-align: center;margin-top: -20px;"><span>of the Arithmetic Operations</span>
+            </h1>
+
+            <hr>
+
+            <div id="section1">
+
+                <h2>Addition and Subtraction</h2>
+
+                <p>Geometrically, addition of two complex numbers $Z_1$ and $Z_2$ can be visualized as
+                    addition of the vectors by using the <em>parallelogram law</em>. The vector sum
+                    $Z_1+Z_2$ is represented by the diagonal of the parallelogram formed by the two
+                    original vectors.</p>
+
+                <p>The easiest way to represent the difference $Z_1-Z_2$ is to think in terms of
+                    adding a negative vector $Z_1 + \left(-Z_2\right).$ The negative vector is the same vector
+                    as its positive counterpart, only pointing in the opposite direction.</p>
+
+                <p>Use the following applet to explore this geometric interpretation. Activate the boxes below to
+                    show the addition or subtraction. You can also drag the points $Z_1$ and $Z_2$ around.
+                </p>
+
+                <div class="ggbElement" id="ggb-element-01"></div>
+
+                <div class="practice">
+                    <p><strong>Exercise 1:</strong> Can you think about a geometric interpretation of the addition
+                        of three complex numbers? In general, what would be a geometric interpretation of the addition
+                        of
+                        $n$ complex numbers?</p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Multiplication</h2>
+
+
+                <div class="w3-resposive">
+                    <p>In the previous section we defined the multiplication of two complex numbers $Z_1 $ and $Z_2$ as
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        Z_1 Z_2 &amp;=&amp; \left( x_1 + i y_1 \right) \left( x_2 + i y_2 \right)\\
+                        &amp;=&amp; (x_1x_2-y_1y_2) + i(x_1y_2+x_2y_1).
+                        \end{eqnarray*}
+                    </div>
+
+                    In this case, to appreciate what happens geometrically we need to consider the polar form of
+                    $Z_1 $ and $Z_2.$ That is
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        Z_1 &amp;=&amp; r_1 \left( \cos \phi_1 + i \sin \phi_1 \right) \\
+                        Z_2 &amp;=&amp; r_2 \left( \cos \phi_2 + i \sin \phi_2 \right)
+                        \end{eqnarray*}
+                    </div>
+
+
+                    Then the product can be written in the form
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        Z_1 Z_2 &amp;=&amp; r_1 r_2 \big[ \left(\cos \phi_1 \cos\phi_2 - \sin \phi_1 \sin \phi_2\right)
+                        \big.\\
+                        &amp;+&amp; \big. i\left(\sin \phi_1 \cos\phi_2 + \cos \phi_1 \sin \phi_2\right)\big].
+                        \end{eqnarray*}
+                    </div>
+
+                    Now by means of the addition theorems of the sine and cosine this expression can be simplified
+                    to
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        Z_1 Z_2 &amp;=&amp; r_1 r_2 \big[ \cos \left( \phi_1 +\phi_2 \right) + i \sin \left( \phi_1
+                        +\phi_2 \right)\big].
+                        \end{eqnarray*}
+                    </div>
+
+                    Thus the product $Z_1Z_2$ has the modulus $r_1r_2$ and the argument $\phi_1+\phi_2.$
+                    </p>
+                </div>
+
+
+                <p>In the following applet, you can appreciate what happens to the argument of the product.
+                    Drag the points $Z_1$ and $Z_2$ around and observe the behaviour of the angles.
+                    Then drag the slider below.</p>
+
+                <div class="ggbElement" id="ggb-element-02"></div>
+
+                <div class="practice">
+                    <p><strong>Exercise 2:</strong>
+                        Consider now
+                        \begin{eqnarray*}
+                        Z_1 &amp;=&amp; r_1 \left( \cos \phi_1 + i \sin \phi_1 \right) \\
+                        Z_2 &amp;=&amp; r_2 \left( \cos \phi_2 + i \sin \phi_2 \right)
+                        \end{eqnarray*}
+                        such that $Z_2\neq 0.$ Find the polar representation of $Z_1/Z_2.$
+                        What is the geometric interpretation of this expression?
+                    </p>
+                </div>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+
+                <h3>Multiplication of complex numbers as stretching (squeezing) and rotation</h3>
+
+                <p>In the applet below a set of points are defined randomly on the complex plane.
+                    Then each point is multiplied by a given complex number $z.$
+                    On the right-side screen, drag around the point $z$ and analyze the behaviour
+                    of the points (⭕) multiplied by $z$ and try to answer the
+                    following questions:
+                <ul>
+                    <li>What happens when $z$ is inside, or outside, the unit circle?</li>
+                    <li>What happens if $z$ moves only around the unit circle?</li>
+                </ul>
+
+                <strong>Note: </strong>You can also study the behaviour of the points (⚫) multiplied by $1/z$ by
+                activating
+                the box <code>Multiply by 1/z</code>.
+                </p>
+
+                <div class="ggbElement" id="ggb-element-03"></div>
+
+
+                <p>As you already have noticed, the geometric interpretation of multiplication of complex numbers is
+                    stretching
+                    (or squeezing) and rotation of vectors in the plane.</p>
+
+                <p>In the previous applet, with the option <code>Multiply by z</code>, set <code>n = 1</code> by
+                    dragging the
+                    slider to the left side.
+                    In this case, the applet shows the three complex numbers
+                    $$z_0,\, z \,\text{ and }\, z_1 = z_0\cdot z,$$
+                    represented as vectors.
+                    When $z_0$ and $z$ are non zero, then
+                <ul>
+                    <li>the modulus of $z_1$ is equal to $|z_0 \cdot z|,$ and</li>
+                    <li>the argument of $z_1$ is equal to $\text{Arg }(z_0+z).$</li>
+                </ul>
+                If $|z| &gt; 1,$ we deal with stretching. If $|z| &lt; 1,$ it is a case of squeezing.</p>
+
+                <div class="practice">
+                    <p><strong>Exercise 3:</strong>
+                        Use the same applet, with the option <code>Multiply by 1/z</code>, to investigate
+                        what happens when we multiply by $1/z.$
+                        Set <code>n = 1</code> by dragging the slider to the left side to
+                        show the three complex numbers
+                        $$z_0, \,z \,\text{ and }\, z_2 = z_0\cdot \frac{1}{z}.$$
+                        What happens to the modulus and argument of $z_2$?
+                    </p>
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </article>
+    </main>
+
+
+    <!-- GeoGebra -->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params01 = {
+            "width": 791,
+            "height": 520,
+            "material_id": "yf3vghuw",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let params02 = {
+            "width": 666,
+            "height": 556,
+            "material_id": "hqj7cumq",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let params03 = {
+            "width": 791,
+            "height": 469,
+            "material_id": "nefcpuam",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let applet01 = new GGBApplet(params01, true);
+        let applet02 = new GGBApplet(params02, true);
+        let applet03 = new GGBApplet(params03, true);
+        window.addEventListener("load", () => {
+            applet01.inject('ggb-element-01');
+            applet02.inject('ggb-element-02');
+            applet03.inject('ggb-element-03');
+        });
+    </script>
+
+    <a href="principal_argument.html" style="text-decoration: none;">
+        <p class="nextPage">The Principal Argument <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

@@ -1,0 +1,252 @@
+<section data-type="chapter" id="flow-around-a-circle">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Flujo uniforme alrededor del cículo</a></li>
+            <li><a href="#section2">Flujo uniforme con circulación</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+
+    <main>
+        <article>
+
+            <div id="section1">
+
+                <h1>Flujo Uniforme Alrededor <br> de un Círculo</h1>
+                <hr>
+
+                <p>Consideremos un flujo uniforme con velocidad $U,$ dirección con respecto al eje $x,$
+                    con potencial complejo $F(z)=Uz.$ Si agregamos un obstáculo
+                    circular impermeable, definido como $|z|=a$ por ejemplo,
+                    entonces el flujo se verá afectado como se muestra
+                    en la imagen de abajo.
+                    El desafío aquí es calcular el flujo perturbado.
+                </p>
+
+                <div class="hide-small" style="text-align: center;">
+                    <iframe name="Uniform-cirlce" src="../applets/p5js/uniform-circle/index.html" width="600px"
+                        height="400px" style="border:none;" style="overflow:hidden;"></iframe>
+                    <br>
+                    <div style="text-align: center;">
+                        <button onclick="var ifr=document.getElementsByName('Uniform-cirlce')[0]; ifr.src=ifr.src;"
+                            style="cursor: pointer;font-weight: bold;">Reset</button>
+                    </div>
+                </div>
+
+
+                <div class="hide-medium hide-large">
+                    <img src="../images/chp06/flow-around-circle.png" alt="Flow around circle"
+                        title="Flow around circle" style="width:100%;">
+                </div>
+
+
+
+                <p>Aquí podemos usal el resultado bien conocido en
+                    dinámica de fluidos establecido por el matemático
+                    Inglés
+                    <a href="http://mathshistory.st-andrews.ac.uk/Biographies/Milne-Thomson.html" target="_blank">L. M.
+                        Milne-Thompson</a>:
+                </p>
+
+
+                <div class="theorem">
+                    Supongamos que tenemos un potencial complejo
+                    $F(z)$ tal sus singularidades se encuentran en $|z|\gt a.$
+                    Entonces el potencial
+                    \begin{eqnarray}\label{circle-theorem}
+                    w = F(z) + \overline{F\left(\frac{a^2}{\overline{z}}\right)}
+                    \end{eqnarray}
+                    (donde la barra denota el conjugado complejo) tiene las mismas singularidades
+                    que $F(z)$ en $|z|\gt a$
+                    y el círculo $|z|=a$ es una línea de flujo.
+                </div>
+
+
+                <div class="proof">
+                    Sea $F(z)$ un potencial complejo
+                    tal que todas sus singularidades ocurren solo en la región
+                    $|z|\gt a$ (con $a>0$) y define
+                    \begin{eqnarray}\label{circle-01}
+                    w = F(z) + \overline{F\left(\frac{a^2}{\overline{z}}\right)}.
+                    \end{eqnarray}
+                    Notemos que si $|z|\gt a,$ entonces $\big|a^2/\,\overline{z}\big|\lt a.$ De esta forma,
+                    dado que $F(z)$ no tiene singularidades en $|z|\leq a,$
+                    se sigue que el segundo término de (\ref{circle-01}) tampoco tiene singularidades en
+                    $|z|\gt a.$ Esto significa que $F$ y $w$ tienen singularidades en $|z|\gt a.$
+
+                    <p>
+                        Ahora estamos interesados en conocer
+                        lo que sucede en la frontera circular $|z|=a.$
+                        En este caso tenemos que $\overline{z} \cdot z = a^2.$
+                        Es decir
+                        $$z= \frac{a^2}{\overline{z} }.$$
+                        De esta manera,
+                        $$\big. w \big|_{|z|=a}= F(z)+ \overline{F\left(\frac{a^2}{\overline{z}}\right)} = F(z) +
+                        \overline{F\left(z\right)} = 2 \text{Re}\left(f(z)\right),$$
+                        la cual es completamente real. Por lo tanto en la frontera $|z|=a$
+                        $$\psi = \text{Im}\, w = 0.$$
+                        Esto demuestra que el círuclo $|z|=a$ es una línea de flujo.
+                    </p>
+                </div>
+
+                <p>Notemos que el potencial complejo $F(z)=Uz$ satisface la hipótesis
+                    del Teorema del Círculo. Entonces podemos obtener el potencial complejo
+                    del flujo unforme alrededor del círculo al sustituir
+                    $F(z)=Uz$ en la ecuación (\ref{circle-theorem}):
+                    \begin{eqnarray}\label{potential}
+                    w = Uz + \overline{\frac{Ua^2}{\overline{z}}} = Uz + \frac{Ua^2}{z}.
+                    \end{eqnarray}
+                </p>
+
+                <p>Consecuentemente, la función de flujo es justamente la componente
+                    imaginaria de (\ref{potential}), es decir
+                    \begin{eqnarray*}
+                    \psi = Uy\left(1- \frac{a^2}{x^2+y^2} \right).
+                    \end{eqnarray*}
+                    y podemos obervar que el círculo $x^2+y^2=a^2$ es de hecho una línea de flujo,
+                    con $\psi=0.$ El flujo resultante se muestra en la Figura 2 con $a=1.$
+                </p>
+
+                <figure>
+                    <img src="../images/chp06/flow-c.png" alt="Uniform flow" title="Uniform flow around circle"
+                        style="width:60%;">
+                    <figcaption>
+                        Flujo uniforme alrededor de un círculo.
+                    </figcaption>
+                </figure>
+
+                <p>Es probable que hayas notado que (\ref{potential}) tiene una singularidad en $z=0.$
+                    Este tipo de singularidad se conoce como un <em>doblete</em> y corresponde a la función
+                    $Ua^2/z.$ La singularidad en el origen está en el interior del
+                    obstáculo y de esta manera no afecta el flujo externo.
+                    El patrón de las líneas de flujo, incluyendo el doblete dentro del círculo,
+                    se muestra en la Figura 3.
+                </p>
+
+                <figure>
+                    <img src="../images/chp06/doublet_Fotor.png" alt="Doublet" title="Doublet" style="width:60%;">
+                    <figcaption>
+                        Líneas de flujo causadas por un doblete en un flujo uniforme.
+                    </figcaption>
+                </figure>
+
+                <div class="practice">
+                    <p><strong>Ejercicio:</strong> Demuestra que las componentes del vector velocidad
+                        $\mathbf V = (u, v)$ para el flujo uniforme alrededor del círculo
+                        están definidas como
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        u = U\left(1 - a^2\frac{x^2-y^2}{\left(x^2+y^2\right)^2}\right),\quad v= -2 U^{2} a^{2} \frac{ x
+                        y}{ \left(x^{2} + y^{2} \right)^{2}}
+                        \end{eqnarray*}
+                    </div>
+                    donde $U$ es la velocidad y $a$ es el radio.
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Flujo uniforme alrededor el círculo con circulación</h2>
+
+                <p>Si agregamos un vótice al potencial complejo defindo en (\ref{potential}),
+                    obtenemos un flujo uniforme alrededor un círuclo con circulación:
+                    \begin{eqnarray}\label{circulation}
+                    w = Uz + \frac{Ua^2}{z} - \frac{iC}{2\pi}\log z,
+                    \end{eqnarray}
+                    donde $C\in \mathbb R$ representa la <em>circulación</em> alrededor del círculo.
+                </p>
+
+
+                <p>En este caso, la función de flujo es
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \psi = U y \left( 1 - \frac{a^2}{x^2+y^2} \right) - \frac{C}{4\pi} \log\left(x^2+y^2\right).
+                    \end{eqnarray*}
+                </div>
+                Notemos que el círculo $x^2+y^2=a^2$ todavía sigue siendo una línea de flujo, con $\psi = - (C/2\pi)\log
+                a.$
+                Cualquier punto de estancamiento en el flujo satisface la ecuación
+                $$0 = U - \frac{Ua^2}{z^2} - \frac{iC}{2\pi z},$$
+                la cual se puede re-escribir como la ecuación cuadrática
+                $$z^2-2i\gamma a z - a^2 = 0, \quad \text{with}\quad \gamma =\frac{C}{4\pi Ua}.$$
+                Las raíces de esta ecuación son
+                $$\frac{z}{a} = i\gamma \pm \sqrt{1-\gamma^2}.$$
+                </p>
+
+
+                <p>
+                    De esta manera cuando $\gamma = 0,$ no hay circulación y los puntos de
+                    estancamiento son $z =\pm a.$ Cuando $\gamma$ incrementa,
+                    la ciruclación será anti horaria causa que los puntos de estancamiento
+                    se mueven hacia arriba alrededor del círculo.
+                    Cuando toma el valor de 1, los dos puntos de estancamiento
+                    coinciden en la parte superior del cilindro $z = ia.$
+                    Si $\gamma > 1,$ entonces un punto de estancamiento
+                    se mueve hacia el flujo; mientras que el otro punto se encuentra dentro del círculo. </p>
+
+                <p>Explora todos los casos en el applet a continuación, el cual muestra el flujo y un círculo de
+                    radio 1. Arrastra los controles deslizantes $ U $ y $ C $ para cambiar la velocidad y la
+                    circulación, respectivamente.
+                </p>
+
+                <div class="hide-small" style="text-align: center;">
+                    <iframe name="circulation" src="../applets/p5js/uniform-circle-circulation/index.html" width="700px"
+                        height="500px" style="border:none;" style="overflow:hidden;"></iframe>
+                    <br>
+                    <div style="text-align: center;">
+                        <button onclick="var ifr=document.getElementsByName('circulation')[0]; ifr.src=ifr.src;"
+                            style="cursor: pointer;font-weight: bold;">Reset</button>
+
+                        <!--<a href="../applets/p5js/joukowsky/index.html" class="w3-btn w3-ripple w3-grey w3-hover-text-white" target="_blank">Open other tab</a>
+        
+        <a href="../applets/p5js/joukowsky/joukowsky.zip" class="w3-btn w3-ripple w3-grey w3-hover-text-white" target="_blank"> Download <i class="fa fa-download w3-hover-text-blue" aria-hidden="true"></i> </a>-->
+                    </div>
+                </div>
+
+                <div class="hide-large hide-medium">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+
+
+                <div class="practice">
+                    <p><strong>Ejercicio:</strong> Demuestra que las componentes del vector velocidad
+                        $\mathbf V = (u, v)$ para el flujo uniforme alrededor de un círculo
+                        con circulación están dadas por
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        u &=& U\left(1 - a^2\frac{x^2-y^2}{\left(x^2+y^2\right)^2}\right) -
+                        \frac{C}{2\pi}\frac{y}{x^2+y^2},\\
+                        v &=& -2 U^{2} a^{2} \frac{ x y}{ \left(x^{2} + y^{2} \right)^{2}} +
+                        \frac{C}{2\pi}\frac{x}{x^2+y^2}
+                        \end{eqnarray*}
+                    </div>
+                    donde $U$ es la velocidad, $a$ es el radio y $C$ es la circulación.
+                    </p>
+                </div>
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <a href="aleron_joukowsky.html" style="text-decoration: none;">
+        <p class="nextPage">Alerón de Joukowsky <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

@@ -1,0 +1,468 @@
+<section data-type="chapter" id="taylor-series">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Para funciones reales</a></li>
+            <li><a href="#section2">Para funciones complejas</a></li>
+            <li><a href="#section3">Exploración dinámica</a></li>
+            <li><a href="#section4">Series de Maclaurin</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <!-- Cindy.js -->
+    <script type="text/javascript" src="../applets/cindyjs/assets/Cindy.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/CindyGL.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/symbolic.js"></script>
+
+    <main>
+        <article>
+
+            <h1>Series de Taylor</h1>
+
+            <hr>
+
+            <div id="section1">
+
+                <h2>Para funciones reales</h2>
+
+                <p>Sea $a\in \mathbb R$ y $f(x)$ una función función infinitamente
+                    diferenciableen un intervalo $I$ que contengaal número $a.$
+                    Entonces la serie de Taylor unidimensional de $f$ alrededor de $a$ está dada por
+                <div class="scroll-wrapper">
+                    \[
+                    f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f^{(3)}(a)}{3!}(x-a)^3+\cdots
+                    \]
+                </div>
+                la cual se puede re-escribir en su forma compacta:
+                <div class="scroll-wrapper">
+                    \[
+                    f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n.
+                    \]
+                </div>
+                </p>
+
+                <p>
+                    Recordemos que, en análisis real, el la serie de Taylor nos da una aproximación
+                    de una función $k$-veces differenciable
+                    al rededor de un punto dado por un polinomio de Taylor de orden $k.$</p>
+
+
+                <p>Por ejemplo, la mejor aproximación lineal de $f(x)$ es
+                    $$f(x)\approx f(a)+f'(a)(x-a).$$
+                    Esta aproximación se acerca a $f(x)$ con una línea que pasa por $x=a$
+                    la cual concuerda con la pendiente de $f$ en $a.$
+                </p>
+
+                <p>Para obtener una mejor aproximación podemos agregar
+                    otros términos en la expansión. Por ejemplo, la mejor aproximación
+                    cuadrática es
+                    $$f(x)\approx f(a)+f'(a)(x-a)+\frac12 f''(a)(x-a)^2.$$</p>
+
+
+
+                <p>El siguiente applet muestra las sumas parciales de la serie de Taylor
+                    para una función dada. Arrastra el control deslizante para mostrar más
+                    términos de la serie. Arrastra el punto <strong>a</strong> o cambia la función.
+                </p>
+
+                <!-- ctl=play button; sfsb=fullscreen button-->
+
+                <div class="ggbElement" id="ggb-element"></div>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Versión para funciones complejas</h2>
+
+                <p>
+                    Supongamos que una función $f$ es analítica en un disco $|z -z_0|&lt; R,$
+                    con centro en $z_0$ y radio $R.$ Entonces $f (z)$ tiene una
+                    representación en series de potencias
+                    \begin{eqnarray}\label{seriefunction}
+                    f(z)=\sum_{n=0}^{\infty} a_n(z-z_0)^n,\quad |z-z_0|&lt;R,
+                    \end{eqnarray}
+                    donde
+                    \begin{eqnarray}
+                    a_n=\frac{f^{(n)}(z_0)}{n!},\quad n=0,1,2,\ldots
+                    \end{eqnarray}
+                    Esto es, la serie (\ref{seriefunction}) converge a $f (z)$
+                    cuando $z$ se encuentra dentro del disco $|z -z_0|&lt; R_0.$
+                </p>
+
+
+                <p>
+                    Cada serie de potencias (\ref{seriefunction}) tiene un radio de convergencia.
+                    Análogo al concepto de intervalo de converencia
+                    para las series de potencias de variable real,
+                    una serie de potencias complejas (\ref{seriefunction}) tiene un círculo
+                    de convergencia, el cual es el círuclo con centro en $z_0$
+                    de mayor radio $R \gt 0$
+                    para el cual (\ref{seriefunction}) converge en cada punto dentro del círculo $|z-z_0|=R.$
+                    Una serie de potencias converge absolutamente
+                    en todos los puntos $z$ dentro de su círculo de convegencia,
+                    es decir, para toda $z$ tal que $|z - z_0| \lt R,$ y diverge en todos los puntos
+                    $z$ exteriores al círculo, esto es, para toda $z$ tal que $|z-z_0| \gt R.$
+                    El radio de convergencia puede ser:
+                </p>
+
+                <ol>
+                    <li>$R = 0$ (en cuyo caso (\ref{seriefunction}) converge solo en su centro $z = z_0$),</li>
+                    <li>$R$ un número finito positivo (en cuyo caso (\ref{seriefunction}) converge en todo el interior
+                        del círculo $|z − z_0| = R),$ o</li>
+                    <li>$R = \infty$ (en cuyo caso (\ref{seriefunction}) converge para todo $z$).</li>
+                </ol>
+
+                <p>
+                    El radio de convergencia se puede calcular usando el criterio del cociente. Por ejemplo,
+                    si:
+                </p>
+
+                <ol>
+                    <li>$\displaystyle \lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n}\right| = L\neq 0,$ el radio
+                        de
+                        convergencia es $R=\dfrac{1}{L}$;</li>
+                    <li>$\displaystyle \lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n}\right|= 0,$ el radio de
+                        convergencia es $R=\infty$;</li>
+                    <li>$\displaystyle \lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n}\right|= \infty,$ el radio
+                        de convergencia es $R=0.$</li>
+                </ol>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h2>Exploración Dinámica</h2>
+
+                <p>
+                    En el lado izquierdo del applet a continuación,
+                    se muestra un retrato de fase de una función compleja.
+                </p>
+
+                <p>
+                    En el
+                    lado derecho, puedes ver la aproximación de la función a través
+                    de sus polinomios de Taylor en el punto base azul $z_0.$
+
+                    Se pueden modificar la función compleja, el punto base $z_0,$
+                    el orden del polinomio (deslizador vertical) y el zoom (deslizador horizontal).
+                </p>
+
+                <div class="hide-small hide-medium">
+                    <div id="applet">
+
+                        <script id="csinit" type="text/x-cindyscript">
+					f(z):=(z-1)/(z^2+z+1);
+			hsvToRGB(h, s, v) := (
+				regional(j, p, q, t, f);
+
+				h = (h-floor(h))*6;
+
+				j = floor(h);
+				f = h - j;
+
+				p = 1 - s;
+				q = 1 - s*f;
+				t = 1 - s*(1-f);
+
+				if(j == 0, [1, t, p],
+				if(j == 1, [q, 1, p],
+				if(j == 2, [p, 1, t],
+				if(j == 3, [p, q, 1],
+				if(j == 4, [t, p, 1],
+				if(j == 5, [1, p, q]))))))*v
+			);
+
+			color(z) := ( //what color should be given to a complex number z?
+				regional(n, grey1, grey2);
+				n = 12;
+				z = log(z)/2/pi;
+
+				zfract = n*z - floor(n*z); //value of n*z in C mod Z[i]
+
+				grey1 = im(zfract);
+				grey2 = re(zfract);
+
+				hsvToRGB(im(z), 1., .5+.5*re(sqrt(grey1*grey2)))
+			);
+
+			n = 5;
+			
+			lastf = "";
+			
+			zoom = 1;
+			lzoom = zoom;
+
+		</script>
+
+                        <script id="csdraw" type="text/x-cindyscript">
+
+		//if(Input.text!=lastf & Input.text!="",
+		//	parse("f(z) :=" + Input.text);
+		//	lastf = Input.text;
+		//);
+        
+		factorial(n) := if(n==0, 1, n*factorial(n-1));
+		
+		coeff = autodiff(f(z), [complex(A*zoom)], n)_1;
+		forall(0..n, k, coeff_(k+1)=coeff_(k+1)/factorial(k));
+		
+		t(z) := coeff * apply(0..n, k, (z-complex(A*zoom))^k);
+		
+		colorplot(
+			z = zoom*complex(#);
+			color(t(z));
+			,
+			(-2,-2),(2,2)
+		);
+		
+		colorplot(
+			z = zoom*(complex(#)+4);
+			color(f(z));
+			,
+			(-6,-2),(-2,2)
+		);
+		
+		//drawtext((-5.9,1.7), "$f(z) =$");
+        
+        //Draw background for z_0
+        shape1 = polygon([(-2,1.7), (-0.25,1.7), (-0.25,2), (-2,2)]);
+        fill(shape1,color->(0.8,0.8,0.8));
+        draw(shape1, color->(0.8,0.8,0.8));
+
+		// Draw info of z_0
+		drawtext((-1.95,1.8), "$z_0=(" + round(zoom * A.x  * 100)/100 + " , " + round( zoom * A.y * 100)/100 + ")$", color->(0,0,0));
+        
+
+		//Draw  background for n
+		shape2 = polygon([(1.35,2), (2,2), (2,1.75), (1.35,1.75)]);
+        fill(shape2,color->(0.8,0.8,0.8));
+        draw(shape2, color->(0.8,0.8,0.8));
+
+		// Slider n
+        linesize(1.2);
+		draw((1.8,-1.5),(1.8,1.65), color->[0,0,0]);
+		N.x = 1.8;
+		n = round(15*(N.y+1.65));
+		n = max(1, n);
+		N.y = n/15-1.65;
+
+		drawtext((1.4,1.82),"$n = " + n + "$", color->(0,0,0));
+        
+        //drawtext((-5.9,1.7), "$f(z) =$", color->(0.98,0.98,0.98));
+        //\textcolor{<color>}{<text>}
+        //drawtext((-1.98,1.75), "$\sum_{k=0}^{"+n+"} a_k (z-z_0)^k$", color->(0,0,0));
+		
+		// Line to divide Graphic views
+		linesize(1.2);
+		draw((-2,-3),(-2,3), color->[0,0,0]);
+		
+		// Draw text for Zoom
+        drawtext((A.x+0.06,A.y+0.06),"$z_0$", color->(0.98,0.98,0.98));
+		drawtext((-5.55,-1.85), "Zoom$", color->(1,1,1));
+		drawtext((-5.54,-1.85), "Zoom$", color->(0,0,0), size->19.0);
+        
+		// Draw Slider for Zoom 
+		draw((-5,-1.8),(1,-1.8), color->[0,0,0]);
+		Zoom.y = -1.8;
+		Zoom.x = max(Zoom.x, -5);
+		Zoom.x = min(Zoom.x, 1);
+		
+		zoom = exp(.5 * (Zoom.x + 3));
+		
+		if(lzoom!=zoom,
+			A.xy = A.xy * lzoom / zoom;
+		);
+		lzoom = zoom;
+		
+		</script>
+
+                        <div id="CSCanvas" style="border:2px solid black"></div>
+
+
+                        <div style="margin-top:5px; display: flex; justify-content: space-between; width: 800px;">
+                            <div><span style="font-size:18px">f(z) = </span><input type="text" id="inp"
+                                    value="(z-1)/(z^2+z+1)" onkeypress="typ(event, this)" size="43"
+                                    style="font-size:18px"></div>
+                            <div><a href="../applets/cindyjs/taylorseries/" target="_blank" title="Open Tab"><i
+                                        class="fas fa-expand"></i></a></div>
+                        </div>
+
+                        <script type="text/javascript">
+                            var cdy = CindyJS({
+                                canvasname: "CSCanvas",
+                                scripts: "cs*",
+                                geometry: [{
+                                    name: "A",
+                                    type: "Free",
+                                    pos: [0, 0],
+                                    color: [0, 0.9, 1],
+                                    size: 7
+                                },
+                                {
+                                    name: "N",
+                                    type: "Free",
+                                    pos: [1, -1.8],
+                                    color: [1, 1, 1],
+                                    size: 8
+                                },
+                                {
+                                    name: "Zoom",
+                                    type: "Free",
+                                    pos: [-3, -.3],
+                                    color: [1, 1, 1],
+                                    size: 8
+                                },
+                                    //{name: "Input", type: "EditableText", pos: [-5.9,1.7], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.784, 0.0], fillalpha: 0.5, minwidth: 100, text: "1/(z^2+1)"}
+                                ],
+                                animation: {
+                                    autoplay: true
+                                },
+                                ports: [{
+                                    id: "CSCanvas",
+                                    width: 800,
+                                    height: 400,
+                                    transform: [{
+                                        visibleRect: [-6, -2, 2, 2]
+                                    }]
+                                }],
+                                use: ["CindyGL", "katex"]
+                            });
+                            var typ = function (e, b) {
+                                var chCode = e.which ? e.which : e.keyCode;
+                                if (chCode == 13) {
+                                    console.log("*************");
+                                    console.log(b.value);
+                                    cdy.evokeCS('f(z) := (' + b.value + '); forcerecompile();');
+                                }
+                            }
+
+                            var sel = function (e, b) {
+                                document.getElementById("inp").value = b.value;
+                                cdy.evokeCS('f(z) := (' + b.value + '); forcerecompile();');
+                            }
+                        </script>
+
+                        <div style="margin-top: -10px;">
+                            <p>También puedes seleccionar una función de la siguiente lista:<br>
+                                <select id="sel" onchange="sel(event, this)" style="width:12em;">
+                                    <option value="(z-1)/(z^2+z+1)">(z-1)/(z^2+z+1)</option>
+                                    <option value="1/z">1/z</option>
+                                    <option value="z^(1/2)">Raíz cuadrada</option>
+                                    <option value="log(z)">Logarítmo</option>
+                                    <option value="sin(z)">Seno</option>
+                                    <option value="0-i*log(i*z+(1-z^2)^(1/2))">Arcsene</option>
+                                    <option value="sin(z)/cos(z)">Tangente</option>
+                                    <option value="i/2*log((i+z)/(i-z))">Arctangente</option>
+                                    <option value="exp(z)">Exponencial</option>
+                                    <option value="(exp(z)-exp(0-z))/2">Seno hiperbólico</option>
+                                    <option value="((exp(z)-exp(0-z))/2)/((exp(z)+exp(0-z))/2)">Tangente hiperbólica
+                                    </option>
+                                </select>
+                            </p>
+                        </div>
+
+                    </div>
+                    <!--end applet-->
+
+                </div>
+                <!--end hidesmall-->
+
+                <div class="hide-large">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section4">
+
+                <h2>Series de Maclaurin</h2>
+
+                <p>Una serie de Taylor con centro en $z_0=0$
+                    \[
+                    f(z) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!}z^n
+                    \]
+                    se le conoce por el nombre de <em>serie de Maclaurin</em>.
+                </p>
+
+                <p>
+                    Algunas series de Maclaurin importantes son:
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \displaystyle \frac{1}{1-z}&=& \sum_{n=0}^{\infty} z^n, \quad |z|\lt 1; \\
+                    \displaystyle e^z &=& \sum_{n=0}^{\infty} \frac{z^n}{n!}, \quad |z|\lt \infty;\\
+                    \displaystyle \text{sen}\, z &=& \sum_{n=0}^{\infty} (-1)^n\frac{z^{2n+1}}{(2n+1)!}, \quad |z|\lt \infty;\\
+                    \displaystyle \cos z &=& \sum_{n=0}^{\infty} (-1)^n \frac{z^{2n}}{(2n)!}, \quad |z|\lt \infty;\\
+                    \displaystyle \text{senh}\, z &=& \sum_{n=0}^{\infty} \frac{z^{2n+1}}{(2n+1)!}, \quad |z|\lt \infty;\\
+                    \displaystyle \cosh z &=& \sum_{n=0}^{\infty} \frac{z^{2n}}{(2n)!}, \quad |z|\lt \infty;
+                    \end{eqnarray*}
+                </div>
+
+                </p>
+
+
+                <div class="practice">
+                    <p><strong>Ejercicio:</strong> Encuentra la serie de Maclaurin de la función
+                        \[
+                        f(z)=\frac{z}{z^4+9}
+                        \]
+                        y calcula su radio de convergencia.
+                    </p>
+                </div>
+
+
+
+                <p style="font-size: 0.8em"><strong>Nota:</strong> Este applet fue scrito originalmente por <a
+                    href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> usando<a
+                    href="https://cindyjs.org/">CindyJS</a>. El código fuente se encuentra en <a
+                    href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/cindyjs/taylorseries">GitHub.</a>
+                </p>
+
+            </div>
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+    <script>
+        let params = {
+            "width": 790,
+            "height": 487,
+            "material_id": "weaav49b",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="series_de_laurent.html" style="text-decoration: none;">
+        <p class="nextPage">Series de Laurent <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

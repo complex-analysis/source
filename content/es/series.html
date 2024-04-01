@@ -1,0 +1,366 @@
+<section data-type="chapter" id="series">
+
+    <!-- Starts main content -->
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Convergencia de sucesiones</a></li>
+            <li><a href="#section2">Convergencia de series</a></li>
+            <li><a href="#section3">Exploración geometrica de series</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br>
+
+    <div class="hide-small hide-medium">
+        <iframe src="../applets/p5js/series-exp/" width="800px" height="400px" style="border:none;"
+            style="overflow:hidden;"></iframe>
+    </div>
+
+    <div class="hide-large" style=" display: block;margin-left: auto; margin-right: auto;width: 80%;">
+        <img width="100%" src="../images/chp05/spiral.jpg" alt="partial sums" title="Spiral">
+    </div>
+
+    <main>
+        <article>
+
+            <h1>Series</h1>
+            <hr>
+
+            <div id="section1">
+
+                <h2>Convergencia de sucesiones</h2>
+
+
+                <p>Una sucesión infinita de números complejos $\left\{z_1,z_2,z_3 \ldots\right\}$
+                    tiene un límite $z$ si, para cada número positivo $\varepsilon,$
+                    existe un entero positivo $n_0$ tal que
+                    \begin{eqnarray}\label{seq}
+                    \left|z_n-z\right|&lt; \varepsilon \quad \text{siempre que}\quad n &gt; n_0.
+                    \end{eqnarray}
+                </p>
+
+
+                <p>Geométricamente, esto significa que para valores suficientemente grandes de $n,$
+                    los puntos $z_n$ se encuentran dentro de una
+                    $\varepsilon$ vecindad de $z$ (Figura 1). Dado que podemor
+                    elegir $\varepsilon$ tan pequeña como deseamos, se sigue que los
+                    puntos $z_n$ se acercan arbitrariamente a $z$ mientras su índices incrementan.
+                    Notemos que el valor de $n_0$ requerido, en general,
+                    depende del valor de $\varepsilon.$</p>
+
+
+                <figure>
+                    <img src="../images/chp05/sequence.gif" alt="Geometric interpretation"
+                        title="Geometric interpretation" style="width:70%;">
+                    <figcaption>
+                        Interpretación geométrica.
+                    </figcaption>
+                </figure>
+
+                <p>La sucesión $\left\{z_n\right\}_{n=1}^{\infty}$ puede tener a lo más un límite.
+                    Esto es, un límite $z$ es único
+                    si existe. Cuando este límite existe, se dice que la sucecsión <em>converge</em> a $z$;
+                    y escribimos
+                    \begin{eqnarray*}
+                    \lim_{n\rightarrow \infty} z_n=z
+                    \end{eqnarray*}
+                    Si la sucesión no tiene límite, entonces <em>diverge</em>.</p>
+
+                <div class="theorem">
+                    Supongamos que $z_n=x_n+iy_n$ ($n=1,2,3,\ldots $)
+                    y
+                    $z=x+iy.$ Entonces
+                    \begin{eqnarray}\label{teoseq01}
+                    \lim_{n\rightarrow \infty} z_n=z
+                    \end{eqnarray}
+                    si y sólo si
+                    \begin{eqnarray}\label{teoseq02}
+                    \lim_{n\rightarrow \infty} x_n=x\quad \text{y}\quad \lim_{n\rightarrow \infty} y_n=y.
+                    \end{eqnarray}
+                </div>
+
+
+                <details>
+                    <summary><b>Demostración</b>
+                    </summary>
+                    <p>Para demostrar este teorema, primero asumimos que se cumplen las condiciones (\ref{teoseq02}).
+                        Es decir, existe para cada $\varepsilon>0,$ enteros positivos $n_1$ y $n_2$ tales que
+                        \[
+                        |x_n-x|&lt;\frac{\varepsilon}{2}\quad \text{siempre que} \quad n&gt;n_1
+                        \]
+                        y
+                        \[
+                        |y_n-y|&lt;\frac{\varepsilon}{2}\quad \text{siempre que} \quad n&gt;n_2.
+                        \]
+                        Por lo tanto so $n_0$ es el mayor de los dos enteros $n_1$ y $n_2,$
+                        \[
+                        |x_n-x|&lt;\frac{\varepsilon}{2}\quad \text{y} \quad |y_n-y|&lt;\frac{\varepsilon}{2} \quad
+                        \text{simpre que} \quad n &gt; n_0.
+                        \]
+                        Dado que
+                        \[
+                        |(x_n+iy_n)-(x+iy)|=|(x_n-x)+(y_n-y)|\leq |x_n-x|+|y_n-y|,
+                        \]
+                        entonces
+                        \[
+                        |z_n-z|&lt; \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \quad \text{siempre que} \quad n &gt;
+                        n_0.
+                        \]
+                        Por lo tanto se cumple la condición (\ref{teoseq01}).</p>
+
+                    <p>En cambio, si comenzamos con la condición (\ref{teoseq01}),
+                        sabemos que para cada número positivo $\varepsilon,$
+                        existe un entero positivo $n_0$ tal que
+                        \[
+                        |(x_n+iy_n)-(x+iy)|&lt;\varepsilon \quad \text{siempre que} \quad n&gt;n_0.
+                        \]
+                        Sin embargo
+                        \[
+                        |x_n-x|\leq |(x_n-x)+(y_n-y)|=|(x_n+iy_n)-(x+iy)|
+                        \]
+                        y
+                        \[
+                        |y_n-y|\leq |(x_n-x)+(y_n-y)|=|(x_n+iy_n)-(x+iy)|.
+                        \]
+                        Consecuentemente
+                        \[
+                        |x_n-x|&lt;\varepsilon \quad \text{y} \quad |y_n-y|&lt;\varepsilon \quad \text{siempre que}
+                        \quad n &gt; n_0.
+                        \]
+                        Por lo tanto, se satisfacen las condiciones (\ref{teoseq02}) $\blacksquare$
+                    </p>
+                </details>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Convergencia de series</h2>
+
+
+                <p>Una serie infinita
+                    \begin{eqnarray}\label{series01}
+                    \sum_{n=1}^{\infty}z_n=z_1+z_2+z_3+\cdots
+                    \end{eqnarray}
+                    de números complejos converge a la suma $S$ si la sucesión
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{partialsum}
+                    \sum_{n=1}^{N}z_n=z_1+z_2+z_3+\cdots +z_N\quad(N=1,2,3,\ldots)
+                    \end{eqnarray}
+                </div>
+                de sumas parciales converge a $S$; y escribimos
+                $$\sum_{n=1}^{\infty}z_n=S.$$
+                Dado que una sucesión puede tener a lo más un límite,
+                una serie puede tener a lo más una suma.
+                Cuando una serie no converge, decimos que es <em>divergente</em>.
+                </p>
+
+
+                <div class="theorem">
+                    Supongamos que $z_n=x_n+iy_n$ ($n=1,2,3,\ldots $) y
+                    $S=X+iY.$ Entonces
+                    \begin{eqnarray}\label{teo01}
+                    \sum_{n=1}^{\infty} z_n=S
+                    \end{eqnarray}
+                    si y sólo si
+                    \begin{eqnarray}\label{teo02}
+                    \sum_{n=1}^{\infty} x_n=X\quad \text{y}\quad \sum_{n=1}^{\infty} y_n=Y.
+                    \end{eqnarray}
+                </div>
+
+
+
+                <details>
+                    <summary><b>Demostración</b>
+                    </summary>
+
+                    <br>
+
+                    <p>Para demostrar este teorema, primero escribimos las sumas parciales (\ref{partialsum}) como
+                        \begin{eqnarray}\label{teo03}
+                        S_N = X_N+iY_N,
+                        \end{eqnarray}
+                        donde
+                        \[
+                        X_N = \sum_{n=1}^{N}x_n \quad \text{y}\quad Y_N = \sum_{n=1}^{N}y_n.
+                        \]
+                        Ahora el enunciado (\ref{teo01}) es verdadero si y sólo si
+                        \begin{eqnarray}\label{teo04}
+                        \lim_{N\rightarrow \infty} S_N = S;
+                        \end{eqnarray}
+                        y, en vista de la relación (\ref{teo03}) y el Teorema 1, el límite (\ref{teo04})
+                        existe si y sólo si
+                        \begin{eqnarray}\label{teo05}
+                        \lim_{N\rightarrow \infty} X_N=X\quad \text{y}\quad \lim_{N\rightarrow \infty} Y_N=Y.
+                        \end{eqnarray}
+                        Por lo tanto, los límites (\ref{teo05}) implican (\ref{teo01}), y viceversa.
+                        Dado que $X_N=X$ y $Y_N=Y$ son sumas parciales de las series (\ref{teo02}),
+                        el teorema queda demostrado. $\blacksquare$</p>
+                </details>
+
+                <br>
+
+                <p>Este teorema es de bastante utilidad para demostrar
+                    un número de propiedades familiares de cursos de cálculo que
+                    también se cumplen con números complejos.</p>
+
+                <p><strong>Propiedad 1:</strong> Si una serie de números complejos converge,
+                    el $n$-ésimo término converge a zero cuando
+                    $n$ tiende a infinito.</p>
+
+                De la <strong>Propiedad 1</strong> se sigue que los términos de
+                una serie convergente están acotados.
+                Esto es, cuando la serie (\ref{series01}) converge, existe una constante positiva
+                $M$ tal que
+                $$|z_n| \leq M \; \text{ para cada entero positivo } n.$$
+
+                <p>
+                    Otra propiedad importante de series de números complejos
+                    que proviene de los cursos de cálculo es la siguiente.</p>
+
+                <p><strong>Propiedad 2:</strong> La convergencia absoluta de una serie
+                    de números complejos implica la convergencia de esa serie.
+                </p>
+
+
+                <p>Recordemos que la serie (\ref{series01}) es <em>absolutamente convergente</em>
+                    si la serie
+                    \begin{eqnarray*}\label{series02}
+                    \sum_{n=1}^{\infty}|z_n|=\sum_{n=1}^{\infty}\sqrt{x^2_n+y^2_n}\quad \quad(z_n=x_n+iy_n)
+                    \end{eqnarray*}
+                    de números reales $\sqrt{x^2_n+y^2_n}$ converge.
+                </p>
+
+
+                <p>Para establecer el hecho de que la suma de una serie es un número $S,$
+                    es conveniente definir el
+                    <em>residuo</em> $\rho_N$ después de $N$ términos, usando las sumas parciales:
+                    \begin{eqnarray*}\label{series03}
+                    \rho_N=S-S_N
+                    \end{eqnarray*}
+                    De esta forma $S=S_N+\rho_N.$ Ahora, dado que $|S_N-S|=|\rho_N-0|,$
+                    entonces <em>una serie converge a un número $S$ si y sólo si
+                        la sucesión de residuos tiende a cero</em>.
+                    <!-- We will make  use of this observation later in our treatment of <em>power series</em>, which are of the form
+$$\sum_{n=1}^{\infty}a_n(z-z_0)^n$$
+where $z_0$ and the coefficients $a_n$ are complex constants and $z$ is any point in a stated region containing $z_0.$ In such series, involving a variable $z,$ we denote <em>sums</em>, <em>partial sums</em>, and <em>remainders</em> by $S(z),$ $S_N(z)$ and $\rho_N(z),$ respectively. -->
+                </p>
+
+                <div class="practice">
+                    <p><strong>Ejemplo:</strong> Con la ayuda de los residuos, es fácil verificar que
+                        \begin{eqnarray*}
+                        \sum_{n=0}^{\infty}z^n=\frac{1}{1-z}\quad\text{whenever}\quad |z|&lt; 1
+                        \end{eqnarray*}
+                        Para esto necesitamos recordad la identidad
+                        $$1+z+z^2+\cdots+z^n=\frac{1-z^{n+1}}{1-z}$$
+                        para escribir las sumas parciales
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}
+                        S_N(z)=\sum_{n=0}^{\infty}z^n=1+z+z^2+\cdots+z^{N-1}\quad\quad(z\neq 1)
+                        \end{eqnarray}
+                    </div>
+                    como
+                    $$S_N(z)=\frac{1-z^N}{1-z}.$$
+                    Si
+                    $$S(z)=\frac{1}{1-z}$$
+                    entonces
+                    $$\rho_N(z)=S(z)-S_N(z)=\frac{z^N}{1-z}\quad\quad(z\neq 1).$$
+                    De esta forma
+                    $$\left|\rho_N\right|=\frac{|z|^N}{|1-z|}\rightarrow 0\quad\text{only when}\quad |z|&lt;1.$$
+                    En este caso, es claro que los residuos
+                    $\rho_N$ tienden a cero cuando $|z|&lt;1$ pero no cuando
+                    $|z|\geq 1.$
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h2>Exploración geométrica de la serie geométrica</h2>
+
+                <p>La serie introducida en el ejemplo anterior
+                    \begin{eqnarray*}
+                    \sum_{n=0}^{\infty}z^n=\frac{1}{1-z}\quad\text{siempre que}\quad |z|&lt; 1
+                    \end{eqnarray*}
+                    es conocida como la <em>serie geométrica</em>.
+                </p>
+
+                <p>Usa el siguiente applet para explorar esta serie. Arrastra
+                    el punto $ z $ alrededor. Observa lo que pasa cuando esta
+                    adentro, afuera o en la frontera del círculo unitario.
+                    Arrastra el control deslizante para mostrar la suma parcial.</p>
+
+
+                <div class="ggbElement" id="ggb-element"></div>
+
+                <details>
+                    <summary><strong>Code</strong></summary>
+
+                    <p>Puedes usar el siguiente script en <a href="https://www.geogebra.org/classic"
+						target="_blank">GeoGebra</a>
+					para explorar tú mismo y hacer tu propia versión. El símbolo <code>#</code> indica comentarios.</p>
+
+                    <pre><code>#Número complejo
+Z = 0.72 + ί * 0.61
+
+#Círculo de radio 1
+c = Circle((0,0), 1)
+
+#Número de términos de la serie parcial 
+n = Slider(0, 250, 1, 1, 150, false, true, false, false)
+SetValue(n, 250)
+
+#Define la sucesión z^n
+S = Join({0 + ί * 0, 1 + ί * 0}, Sequence(Z^j, j, 1, n))
+
+#Define la suma parcial
+SP = Sequence(Sum(S, j), j, 1, n + 2)
+
+#Finalmente une los puntos de la suma parcial con segmentos
+L = Sequence(Segment(Element(SP, j), Element(SP, j + 1)), j, 1, n + 1)
+</code></pre>
+                </details>
+
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+    <script>
+        let params = {
+            "width": 776,
+            "height": 548,
+            "material_id": "e9zzzqnu",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="series_de_taylor.html" style="text-decoration: none;">
+        <p class="nextPage">Series de Taylor <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

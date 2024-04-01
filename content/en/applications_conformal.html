@@ -1,0 +1,66 @@
+<section data-type="chapter" id="applications-conformal-mappings">
+
+    <!-- Starts main content -->
+
+    <br>
+
+
+    <iframe src="../applets/p5js/flowfield/index.html" width="100%" height="300px" 
+    scrolling="no" style="border: 1px solid black; overflow: hidden;"></iframe>
+
+
+    <main>
+        <article>
+
+
+            <h1>Applications of <br/>Conformal Mappings</h1>
+
+
+            <hr>
+
+            <h2>Hydrodynamics</h2>
+
+            <p>If we have a (steady-state) incompressible, nonviscous fluid, we are interested
+                in finding its velocity field $$\mathbf V (x,y)= \left(u(x,y), v(x,y)\right).$$
+                From vector analysis we know that 'incompressible' means that the divergence
+                $\text{div}\,\mathbf V =0.$ (We say $\mathbf V$ is <em>divergence free.</em>)
+                We assume that $\mathbf V$ is also a <em>potential flow</em> and hence is circulation
+                free; that is $\mathbf V = \text{grad } \phi $ for some $\phi$ called the <em>velocity
+                    potential.</em> Thus $\phi$ is harmonic because $$\nabla^2\phi = \text{div } \text{grad }\phi =
+                \text{div } \mathbf V=0.$$
+                Thus when we solve for $\phi$ we can obtain $\mathbf V$ by taking $\mathbf V = \text{grad } \phi$. That
+                is
+                \begin{eqnarray*}
+                u=\frac{\partial \phi }{\partial x},\quad v=\frac{\partial \phi }{\partial y}.
+                \end{eqnarray*}
+            </p>
+
+            <p>The conjugate $\psi$ of the harmonic function $\phi$ (which will exist on any simple
+                connected region) is called the <em>stream function</em>, and the analytic function
+                $$F=\phi +i\psi$$ is called the <em>complex potential</em>. </p>
+
+            <p>The stream function must satisfy
+                \begin{eqnarray*}
+                u=\frac{\partial \psi }{\partial y},\quad v=-\frac{\partial \psi }{\partial x}.
+                \end{eqnarray*}
+                Finally, lines of constant $\psi$
+                have $\mathbf V$ as their tangents, so lines of constant $\psi$ may be interpreted as
+                the <i>lines along which particles of fluid move</i>; hence the name stream function.</p>
+
+            <figure>
+                <img src="../images/chp06/stream.png" alt="Streamlines" title="Streamlines" style="width:65%;">
+                <figcaption>
+                    Streamlines.
+                </figcaption>
+            </figure>
+
+
+        </article>
+    </main>
+
+    <a href="complex_potential_basic_examples.html" style="text-decoration: none;">
+        <p class="nextPage">Complex Potential <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

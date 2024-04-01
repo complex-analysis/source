@@ -1,0 +1,258 @@
+<section data-type="chapter" id="julia">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">El conjuto de Julia</a></li>
+            <li><a href="#section2">La conexión entre los conjuntos de Mandelbrot &amp; Julia</a></li>
+            <li><a href="#section3">Otras lecturas sugeridas</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <div id="section1">
+
+                <h1>El Conjuto de Julia</h1>
+                <hr>
+
+                <p>
+                    En la sección anterior mostramos cómo se puede generar
+                    el conjunto de Mandelbrot usando la expresión
+                    \[z_{n + 1} = z_ {n}^2 + z_0. \]
+                    Este es un caso particular de la ecuación de recurrencia cuadrática
+                    \begin{eqnarray} \label{julia}
+                    z_{n + 1} = z_ {n}^2 + c
+                    \end{eqnarray}
+                    con $ c $ un número complejo fijo.
+                    El conjunto que obtenemos con esta ecuación se conoce como conjunto de Julia.
+                    De hecho, hay un conjunto de Julia diferente para casi cada $ c .$
+                </p>
+
+                <p>
+                    De manera similar a como hicimos para el conjunto de Mandelbrot,
+                    obtenemos una secuencia de números complejos
+                    $ z_n $ con $ n = 0,1,2, \ldots .$ Nuevamente, se dice que los puntos $ z_n $
+                    forman la órbita de $ z_0 ,$
+                    y el conjunto de Julia se define de la siguiente manera:
+                </p>
+
+                <div class="practice">
+                    <p>Si la órbita $z_n$ no tiende a infinito, el valor inicial $z_0$ pertenece
+                        al <em>Conjunto de Julia</em>.</p>
+                </div>
+
+                <p>
+                    El conjunto de Julia lleva el nombre del matemático francés <a
+                        href="https://en.wikipedia.org/wiki/Gaston_Julia" target="_ blank">Gaston Julia</a>
+                    quien investigó sus propiedades en 1915 y culminó con su famoso artículo en 1918:
+                    <a href="http://sites.mathdoc.fr/JMPA/PDF/JMPA_1918_8_1_A2_0.pdf" target="_blank">
+                        <em>Mémoire sur l'itération des fonctions rationnelles</em></a>.
+                    Si bien el conjunto de Julia ahora está asociado con el polinomio cuadrático en (\ref{julia}),
+                    Julia estaba interesado en las propiedades iterativas de una expresión más general, a saber
+                    \[z^4 + \frac{z^3} {z-1} + \frac{z^2}{z^3 + 4 z^2 + 5} + c. \]
+                    Los conjuntos de Julia, definidos por la ecuación (\ref{julia}), pueden tomar todo tipo de
+                    formas, y un pequeño cambio en $ c $ puede cambiar enormemente el conjunto de Julia.
+                    En 1979, con la ayuda de la computadora, B. B. Mandelbrot estudió los conjuntos de Julia
+                    e intentó clasificar todas las formas posibles y se le ocurrió una nueva forma: el Conjunto de
+                    Mandelbrot.
+                </p>
+
+                <p> Explora los conjuntos de Julia en el siguiente subprograma.
+                    Acerca o aleja la imagen en diferentes regiones. Cambiar el número de
+                    iteraciones y observa lo que sucede con la trama.
+                    Mueve el mouse y observa los diferentes conjuntos de Julia correspondientes
+                    al valor de $ c .$
+                </p>
+
+                <div class="hide-small hide-medium" style="text-align: center;">
+
+                    <div id="iframeContainer1" class="iframeContainer">
+                        <iframe name="Julia" src="../applets/p5js/julia-content/es.html" width="770px" height="590px"
+                            style="border:none;" style="overflow:hidden;" scrolling="no"></iframe>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; width: 800px;">
+                        <div><strong>Teclado:</strong></div>
+                        <div><strong>+</strong> (Zoom In)</div>
+                        <div><strong>-</strong> (Zoom Out)</div>
+                        <div><strong>R</strong> (Reset vista) </div>
+                        <div><strong>I</strong> (Info &amp; Frame)</div>
+
+                    </div> <br />
+                    <!--
+        <p class="w3-text-grey w3-medium"><strong>+:</strong> Zoom In &nbsp; &nbsp; &nbsp; <strong>-:</strong> Zoom Out &nbsp; &nbsp; &nbsp; <strong>R</strong>=Reset view &nbsp; &nbsp; &nbsp;  <strong>I</strong>=Information &amp; Frame</p>-->
+
+                    <div style="text-align: center;margin-top: -20px;">
+                        <button onclick="var ifr=document.getElementsByName('Julia')[0]; ifr.src=ifr.src;"
+                            style="cursor: pointer;font-weight: bold;">Reset</button>
+                        &nbsp;&nbsp;
+                        <button>
+                            <a style="color: black;font-weight: bold;outline: none;text-decoration: none; "
+                                href="../applets/p5js/julia/es.html" target="_blank">
+                                Fullscreen
+                            </a>
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <div class="hide-large">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>La conexión entre los conjuntos de <br>Mandelbrot y Julia</h2>
+
+                <p>
+                    Debido a la definición del conjunto de Mandelbrot,
+                    existe una estrecha correspondencia entre la geometría
+                    del conjunto de Mandelbrot en un punto dado y
+                    la estructura del conjunto de Julia correspondiente. En otras
+                    palabras, el conjunto de Mandelbrot forma
+                    una especie de índice del conjunto de Julia.
+                    Un conjunto de Julia puede ser conexo
+                    o disconexo, y esto depende de los valores de $ c $ elegidos
+                    dentro del conjunto de Mandelbrot. Cuando los valores de
+                    $c$ están dentro del conjunto de Mandelbrot, los conjuntos de
+                    Julia son conexos, mientras que para valores
+                    en el exterior los conjuntos de Julia son disconexos.
+                    Los conjuntos disconexos a
+                    menudo se denominan <em>polvo</em>,
+                    y consisten en puntos individuales sin
+                    importar la resolución en la que se miren.
+                </p>
+
+                <p>
+                    Explora la relación entre los conjuntos de Mandelbrot y
+                    Julia en el siguiente applet. Mueve el mouse sobre el
+                    conjunto de Mandelbrot para observar diferentes conjuntos de Julia.
+                    Acerca o aleja la imagen en diferentes regiones.
+                    Abre el menú Controles para cambiar el número de iteraciones
+                    o elije un valor específico de $c.$
+                </p>
+
+                <div class="hide-small hide-medium">
+
+
+                    <div id="iframeContainer2" class="iframeContainer">
+                        <iframe name="Julia-Mandelbrot" src="../applets/p5js/julia-mandelbrot-content/es.html"
+                            width="800px" height="400px" style="border:none;" style="overflow:hidden;"
+                            scrolling="no"></iframe>
+                    </div>
+
+
+                    <div class="w3-text-grey " style="display: flex; justify-content: space-between; width: 800px;">
+                        <div><strong>Control keys:</strong></div>
+                        <div><strong>+</strong> (Zoom In)</div>
+                        <div><strong>-</strong> (Zoom Out)</div>
+                        <div><strong>R</strong> (Reset view)</div>
+                        <div><strong>I</strong> (Info &amp; Frame)</div>
+                    </div>
+
+
+                    <div style="text-align: center;margin-top: 10px;">
+                        <button onclick="var ifr=document.getElementsByName('Julia-Mandelbrot')[0]; ifr.src=ifr.src;"
+                            class="w3-btn w3-ripple w3-light-grey"
+                            style="cursor: pointer;font-weight: bold;">Reset</button>
+                        &nbsp;&nbsp;
+                        <button>
+                            <a style="color: black;font-weight: bold;outline: none;text-decoration: none; "
+                                href="../applets/p5js/julia-mandelbrot/es.html" target="_blank">
+                                Fullscreen</a>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="hide-large">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+                <p><strong>Nota:</strong> Este applet fue incluido recientemente en algunas de las animaciones del
+                    siguiente video de <a href="https://www.quantamagazine.org/" target="_blank">Quanta Magazine</a>:
+                </p>
+
+                <div style="text-align: center;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/u9GAnW8xFJY?si=Bl5y5qsAaNBD4qr3"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+
+                </div>
+
+                <p><strong>Artículo:</strong> <a
+                        href="https://www.quantamagazine.org/the-quest-to-decode-the-mandelbrot-set-maths-famed-fractal-20240126/"
+                        target="_blank">The Quest to Decode the Mandelbrot Set, Math's Famed Fractal <i
+                            class="fas fa-external-link-alt"></i></a></p>
+
+
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h2>Otras lecturas sugeridas</h2>
+
+                <p>Los applets en esta sección fueron hechos con <a href="https://p5js.org">p5.js</a> y el código fuente
+                    se puede encontrar en los siguientes enlaces:</p>
+                <ul>
+                    <li><a href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/p5js/julia"
+                            target="_blank">Julia set</a></li>
+                    <li><a href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/p5js/julia-mandelbrot"
+                            target="_blank">Julia-Mandelbrot relationship</a></li>
+                </ul>
+
+                <p>Si deseas aprender a programarlo, te recomiendo este tutorial:</p>
+                <ul>
+                    <li><a href="https://thecodingtrain.com/CodingChallenges/022-juliaset.html" target="_blank">Coding
+                            Challenge: Julia set</a>
+                    </li>
+                </ul>
+
+                <p>Finalmente, te recomiendo dos de las introducciones ampliamente conocidas
+                    acerca de los conjuntos de Mandelbrot y Julia:
+                <ul>
+                    <li>
+                        <a href="https://www.springer.com/gp/book/9783540158516" target="_blank">The Beauty of
+                            Fractals</a>
+                        by Heinz-Otto Peitgen &amp; Peter H. Richter, Munich: Springer-Verlang, 1986.
+                    </li>
+                    <li>
+                        <a href="https://link.springer.com/book/10.1007/978-1-84996-486-9" target="_blank">The Colours
+                            of
+                            Infinity,</a> by Nigel Lesmoir-Gordon (ed), London: Springer-Verlang, 2010.
+                    </li>
+                </ul>
+                Ambos libros abordan otros fascinantes fractales y contienen muchas imágenes espectaculares.
+                </p>
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <a href="aplicaciones_conformal.html" style="text-decoration: none;">
+        <p class="nextPage">Aplicaciones de Mapeos Conformes <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

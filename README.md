@@ -16,7 +16,9 @@ Your contributions help me to maintain this site and, crucially, ensure it remai
 
 # Translations
 
-Currently there are versions in [English](https://complex-analysis.com) and [Spanish](https://complex-analysis.com/es.html). 
+I made the versions in [English](https://complex-analysis.com) and [Spanish](https://complex-analysis.com/es.html). 
+Currentyl [Ruan Passos](https://www.linkedin.com/in/ruan-passos-8177331a5/) is working on a portugues version.
+
 If you are interested in making a translation to another language,
 let me know. Send me a message at <a href="mailto:jcponcemath@gmail.com">jcponcemath@gmail.com</a> 
-to get instructions on how to make a translation. Thanks!
+to get instructions on how to make a translation. ∞ Thanks!

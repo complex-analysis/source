@@ -163,8 +163,8 @@
                     Pero
                     <div class="scroll-wrapper">
                         \begin{eqnarray*}
-                    |u-u_0|&=&|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|,\\
-                    |v-v_0|&=&|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|
+                    |u-u_0|&\leq &|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|,\\
+                    |v-v_0|&\leq &|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|
                     \end{eqnarray*}
                     </div>
                     y
@@ -258,9 +258,9 @@
             <p class="theorem" id="limits-properties">
                 
                 Supongamos que 
-                \begin{eqnarray*}
+                \begin{eqnarray}
                 \lim_{z\rightarrow z_0}f(z)=w_1\quad \text{y}\quad \lim_{z\rightarrow z_0}g(z)=w_2\label{limithypo}
-                \end{eqnarray*}
+                \end{eqnarray}
                 Entonces
                 \begin{eqnarray}
                 \lim_{z\rightarrow z_0}\big[c\cdot f(z)\big] &=& c\cdot \lim_{z\rightarrow z_0} f(z) \text{ with } c\in\C, \label{limitconst}\\
@@ -268,7 +268,7 @@
                 \lim_{z\rightarrow z_0}\big[f(z)g(z)\big]&=&w_1w_2;\label{limitmult}
                 \end{eqnarray}
                 y, si $w_2\neq 0,$
-                \begin{eqnarray}
+                \begin{eqnarray}\label{limitdiv}
                 \lim_{z\rightarrow z_0}\frac{f(z)}{g(z)}&=&\frac{w_1}{w_2}.
                 \end{eqnarray}
             </p>
@@ -375,7 +375,7 @@
                 </p>
 
                 <p>
-                    Las propiedades (\ref{limitconst}) y (\ref{limitsum}) se dejan como ejercicio al lector. $\quad \blacksquare$
+                    Las propiedades (\ref{limitconst}) y (\ref{limitdiv}) se dejan como ejercicio al lector. $\quad \blacksquare$
                 </p>
 
             </details>

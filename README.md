@@ -1,6 +1,8 @@
 # Source HTML files
 
-This repository contains the source html files for the website [complex-analysis.com](https://complex-analysis.com)
+This repository contains the source html files for the website [complex-analysis.com](https://complex-analysis.com) 
+
+For suggestions, reporting typos or errors, please use this [LINK](https://github.com/complex-analysis/complex-analysis.github.io/issues).
 
 # ❤️ Support this project to keep it alive!
 

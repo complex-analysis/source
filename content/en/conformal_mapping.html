@@ -82,7 +82,7 @@
           \text{arg}\left(z_2'\right)-\text{arg}\left(z_1'\right)
           \end{eqnarray}
           in the interval $[0,\pi],$ provided that we can rotate $z_1'$
-          counterclockwise about $0$ through the angle $\theta$ onto
+          counterclockwise about $z_0$ through the angle $\theta$ onto
           $z_2'.$ In the case that a clockwise rotation is needed,
           then $-\theta$ is the value of (\ref{theta-angle}) in
           the interval $(-\pi, 0).$ In either case, we see that
@@ -262,7 +262,7 @@
 
           <p>
             We may assume, by renumbering $C_1$ and $C_2$ if necessary, that
-            $z_1'=z_1'(t_0)$ can be rotated counterclockwise about $0$ through the
+            $z_1'=z_1'(t_0)$ can be rotated counterclockwise about $z_0$ through the
             angle $\theta$ onto $z_2'=z_2'(t_0).$ Then, using (\ref{theta-angle}), we know that
             \[
             \theta = \text{arg}\left(z_2'\right)-\text{arg}\left(z_1'\right)
@@ -316,7 +316,7 @@
             <strong>Remark 2:</strong>
             The previous theorem establishes that
             a mapping is conformal at $z_0$ if $f$ is analytic and $f'(z_0)\neq 0.$
-            Such transformation is actually conformal at each point in some
+            Such transformation is actually conformal  at each point in some
             neighborhood of $z_0.$ This is because it must be analytic in a
             neighborhood of $z_0$; and since its derivative $f'$ is continuous
             in that neighborhood, there is also a neighborhood
@@ -493,6 +493,38 @@
           </p>
         </div>
 
+        <p>
+          In the applet below you can explore the effect of 
+          some mappings over a region. In particular, the applet
+          starts with a squared defined as $S=[-0.5,0.5]\times[-0.5,-1.5].$ 
+          First, select a mapping and observe how the region $S$ 
+          is transformed.
+          Then, modify this region by dragging the corner 
+          points of the square. 
+          What do you notice? What do you wonder? 
+        </p>
+
+        <div class="ggbElement" id="ggb-element-2"></div>
+
+
+        <br/>
+
+        <div class="practice">
+          <strong>Exercise 1:</strong>
+          Based on your observations from the previous applet, 
+          can you determine which mappings are not conformal in 
+          $S=[-0.5,0.5]\times[-0.5,-1.5]$?
+        </div>
+
+
+        <div class="practice">
+          <strong>Exercise 2:</strong>
+          Use Theorem 1 to show that $f(z)=\sin z$ is a conformal 
+          mapping for every $z\in\C$ such that $z\neq (2n+1)\pi/2$ with 
+          $n=0,\pm 1, \pm 2,\ldots.$ You can use the previous applet
+          to explore the behaviour of this function on these points.
+        </div>
+
       </div>
 
 
@@ -542,23 +574,23 @@
       "enableShiftDragZoom": false,
       "showResetIcon": true
     };
-    /*
+    
     let params2 = {
-        "width": 719,
-        "height": 449,
-        "material_id": "??",
+        "width": 675,
+        "height": 473,
+        "material_id": "tmnebrfq",
         "borderColor": "888888",
         "playButton": true,
         "showFullscreenButton": true,
-        "enableShiftDragZoom": false,
+        "enableShiftDragZoom": true,
         "showResetIcon": true
     };
-    */
+    
     let ggbApplet1 = new GGBApplet(params1, true);
-    //let ggbApplet2 = new GGBApplet(params2, true);
+    let ggbApplet2 = new GGBApplet(params2, true);
     window.addEventListener("load", () => {
       ggbApplet1.inject('ggb-element-1');
-      //ggbApplet2.inject('ggb-element-2');
+      ggbApplet2.inject('ggb-element-2');
     });
   </script>
   <!--GeoGebra embeding ends-->

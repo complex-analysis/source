@@ -10,11 +10,12 @@
             <li><a href="#section1">Contour integral</a></li>
             <li><a href="#section2">Numerical evaluation Exp 1</a></li>
             <li><a href="#section3">Numerical evaluation Exp 2</a></li>
-            <li><a href="#section4">Antiderivatives</a></li>
+            <li><a href="#section4">Properties</a></li>
+            <li><a href="#section5">Antiderivatives</a></li>
             <!-- Add more sections as needed -->
         </ul>
     </div>
-
+ 
     <br><br>
 
     <main>
@@ -273,6 +274,196 @@
 
             <div id="section4">
 
+                <h2>Properties</h2>
+
+                <p>
+                    All the following familiar properties of integrals can be proved directly 
+                    from the definition given in (\ref{integral-real-cv}). 
+                    If $w(t)= u(t)+iv(t)$ and $s(t)= \upsilon(t)+i \nu(t)$ 
+                    are complex-valued functions of a real variable $t$ continuous 
+                    on an interval $[a,b],$ then
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    \int_a^b k \, w(t)\, dt &=& k \int_a^b w(t)\,dt, \quad k\text{ is a complex contant,}\\
+                    \int_a^b \big[ w(t) + s(t)\big] \,dt &=&  \int_a^b  w(t)\,dt +  \int_a^b  s(t) \,dt,\\
+                    \int_a^b w(t)  \,dt &=&  \int_a^c  w(t)\,dt +  \int_c^b  w(t) \,dt \quad c\in[a,b], \\
+                    \int_a^b w(t)  \,dt &=&  -\int_b^a  w(t)\,dt.
+                    \end{eqnarray}
+                </div>
+
+                <p>
+                    From definition (\ref{contour-integral}), and the properties just mentioned above, 
+                    it also follows immediatly that
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    \int_{C} z_0 \, f(z) \, dz &=& z_0 \int_{C} f(z) \, dz, \quad z_0 \text{ is a complex contant,}\\
+                    \int_{C} \big[ f(z) + g(z) \big] \, dz &=& \int_{C} \, f(z) \, dz + \int_{C}  g(z) \, dz \\
+                    \end{eqnarray}
+                </div>
+
+                <p>
+                    Now consider the contour defined for the integral (\ref{contour-integral}).
+                    The contour $-C$ consists of the same set of points but with the order
+                    reversed so that the new contour extends from $z_2$ to $z_1,$ as shown in Figure 3.
+                </p>
+
+                <figure>
+                    <img src="../images/chp04/reversed-contour.svg" alt="Reversed contour" title="Reversed contour" style="width:60%;">
+                        <figcaption>
+                            The contour $-C$  extends from $z_2$ to $z_1.$
+                        </figcaption>
+                </figure>
+
+                <p>
+                    The contour $-C$ has a parametric representation $z=z(-t)$ with $-b\leq t \leq -a.$
+                    Hence
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \int_{-C} f(z) \, dz = \int_{-b}^{-a} f\left[z(-t)\right]\frac{d}{dt}z(-t)\,dt = -\int_{-b}^{-a} f\left[z(-t)\right]z'(-t)\,dt.
+                    \end{eqnarray*}
+                </div>
+                <p>
+                    In we use the substition $\tau = -t$ in the last integral, then
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \int_{-C} f(z) \, dz = -\int_{a}^{b} f\left[z(\tau)\right]z'(\tau)\,dt.
+                    \end{eqnarray*}
+                </div>
+                <p>
+                    Hence, we obtain the following property 
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    \int_{-C} f(z) \, dz = -\int_{C} f(z)\, dz.
+                    \end{eqnarray}
+                </div>
+
+                <p> 
+                    Consider now a path $C,$ parametrized by $z(t)$ for $t\in[a,b],$
+                    that consists of a contour $C_1$
+                    from $z_1$ to $z_2$ followed by a contour $C_2$ from 
+                    $z_2$ to $z_3,$ the initial point of $C_2$ being the final point of $C_1.$
+                    Then
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{sum-paths}
+                    \int_{C} f(z) \, dz = \int_{C_1} f(z) \, dz  + \int_{C_2} f(z) \, dz.
+                    \end{eqnarray}
+                </div>
+
+                <figure>
+                    <img src="../images/chp04/sum-contours.svg" alt="Sum of contours" title="Sum of contours" style="width:60%;">
+                        <figcaption>
+                            $C= C_1 + C_2.$
+                        </figcaption>
+                </figure>
+
+                <div class="practice">
+                    <p>
+                        <strong>Exercise 4:</strong>
+                        
+                        Use the properties for integrals of functions $w(t)$ to prove 
+                        (\ref{sum-paths}).
+                    </p>
+                </div>
+
+                <p>
+                    Finally we introduce an inequality involving contour integrals that is
+                    extremely important in various applications. Consider 
+                    $C$ a smooth curve parametrized by $z(t)=x(t)+ iy(t)$ with $t\in [a,b].$ 
+                    Suppose that the components $x'(t)$ and $y'(t)$ of the derivative 
+                    \[
+                    z'(t) = x'(t) + iy'(t)
+                    \]
+                    are continuos on the entire interval $[a,b].$
+                    Then the real-valued function 
+                    \[
+                    \left|z'(t)\right| =\sqrt{\left[x'(t)\right]^2+ \left[y'(t)\right]^2}
+                    \]
+                    is integrable on $[a,b].$ According to the definition of arc length 
+                    from calculus, the <em>length of</em> $C$ is the number 
+                    \[
+                    L = \int_a^b \left|z'(z)\right|\,dt. 
+                    \]
+                </p>
+
+                <p>
+                    If $C$ is a contour of lenght $L$ and $f$ is a piecewise continuous 
+                    function on $C,$ and $M$ is a nonnegative contant such that
+                    $\left|f(z)\right|\leq M$ for all points $z$ on $C$ at which $f(z)$ 
+                    is defined, then
+                    \begin{eqnarray}\label{ML-inequality}
+                    \left|\int_C f(z)\, dz\right|\leq ML
+                    \end{eqnarray}
+                </p>
+
+                <p>
+                    
+                    Note that since $C$ is a contour and $f$ is piecewise continuous on $C,$ a number 
+                    $M$ appearing in  the inequality $\left|f(z)\right|\leq M$ will always exist.
+                    The reason is that the real-valued function $\left|f\big(z(t )\big)\right|$ is continuous on the 
+                    closed bounded interval $[a,b]$ when $f$ is continuous on $C;$ and this
+                    function always reaches a maximum value $M$ on that interval. 
+                    Therefore $|f (z)|$ has a maximum value on $C$ when $f$ is continuous on it. 
+                    This is also true when $f$ is piecewise continuous on $C.$
+                </p>
+                <p>
+                    The property (\ref{ML-inequality}) is often used in the theory 
+                    of complex integration and is sometimes referred to as the 
+                    <strong>ML-inequality</strong>.
+                </p>
+
+                <div class="practice">
+
+                    <p>
+                        <strong>Example 3:</strong>
+                        Let $C$ be the contour of the circle $|z|=2$ from $z_1=2$ to $z_2=2i$
+                        that lies in the first quadrant, as shown in Figure 5. We can use inequality (\ref{ML-inequality}) 
+                        to show that 
+                        \[
+                        \left|\int_C \frac{dz}{z^2-1}\right|\leq \frac{\pi}{3}.
+                        \]
+                        without evaluating the integral. 
+                    </p>
+
+                    <figure>
+                        <img src="../images/chp04/integral-example-3-ml-inequality.svg" alt="ML-inequality example" title="ML-inequality example" style="width:50%;">
+                            <figcaption>
+                                Circle $|z|=2$ from $z_1=2$ to $z_2=2i.$
+                            </figcaption>
+                    </figure>
+
+                    <p>
+                        Note that if $z$ is a point of $C,$ then
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        \left|z^2-1\right|\geq \left|\left|z^2\right|- 1\right|= \left|\left|z\right|^2- 1\right| = \left|4- 1\right|=3
+                        \end{eqnarray*}
+                    </div>
+                    <p>
+                        Thus
+                        \[
+                         \left|\frac{1}{z^2-1}\right| = \frac{1}{ \left|z^2- 1\right|}\leq \frac{1}{3}
+                        \]
+                        Also the length of $C$ is $\dfrac{1}{4}(4\pi).$ Thus, if we take $M=\dfrac{1}{3}$ and 
+                        $L= \pi,$ we find that 
+                        \[
+                        \left|\int_C \frac{dz}{z^2-1}\right|\leq ML =  \frac{\pi}{3}.
+                        \]
+                    </p>
+                </div>
+                
+            </div>
+
+            <hr>
+
+            <div id="section5">
+
                 <h2>Antiderivatives</h2>
 
                 <p>
@@ -324,19 +515,18 @@
                     If the function $f(z)$ satisfies the hypothesis of <strong>Theorem 1</strong>, then for all
                     contours $C$ lying in $D$ beginning at $z_1$ and ending at $z_2$ we have expression (\ref{FTC}).
                     Hence the result demonstrates that the integral is independent of path. This fact is illustrated in
-                    Figure 3.
+                    Figure 6.
                 </p>
 
                 <figure>
-                    <img  src="../images/chp04/equalpath.jpg" alt="Piecewise smooth curve"
-                        title="Piecewise smooth curve" style="width:50%;">
+                    <img src="../images/chp04/path-independence.svg" alt="Path independence" title="Path independence" style="width:60%;">
                     <figcaption>
                         Independent paths forming closed curve
                     </figcaption>
                 </figure>
 
                 <p>
-                    Considering Figure 3, we have
+                    Considering Figure 6, we have
                     $$\int_{C_1} f\left(z\right)dz=\int_{C_2} f\left(z\right)dz$$
                     because
                     <div class="w3-responsive">

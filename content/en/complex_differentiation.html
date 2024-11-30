@@ -346,15 +346,16 @@
                         of the two families. Observe also that the curves $u(x, y) = 0$ and
                         $v(x, y) = 0$ intersect at the origin but are not, however, orthogonal to each other.
                     </p>
-                    <br />
                     <figure>
                         <img src="../images/chp02/ortho-curves.jpg" alt="Orthogonal level curves"
-                            title="Piecewise smooth curve" style="width:60%;">
+                            title="Orthogonal level curves" style="width:65%;">
                         <figcaption>
                             Orthogonal level curves of the real and imaginary components of $f(z) =
-                            z^2.$
+                            z^2.$ 
+                            <a href="https://www.desmos.com/calculator/dqhfeamiea" target="_blank">Interactive graph <i class="fas fa-external-link-alt"></i></a>
                         </figcaption>
                     </figure>
+                    <br/>
                 </div>
 
             </div>
@@ -479,6 +480,35 @@
                     
                         Consequently, the Cauchy-Riemann equations are not satisfied <em>anywhere</em>.
                     </p>
+                </div>
+
+                <p> 
+                    Another useful property what we will use later is the following:
+                </p>
+
+                <div class="theorem" id="derivative-zero">
+                    If $f'(z)=0$ everywhere in a domain $D,$
+                    then $f(z)$ is constant throughout $D.$
+                </div>
+
+                <div class="proof">
+                    Let $z_1,z_2\in D.$ Let $c(t):[a,b]\to \C$ be a path joining 
+                    $z_1$ to $z_2.$ That is, $c(a)=z_1$ and $c(b)=z_2.$  
+                    Using the chain rule we have 
+                    \[
+                    \frac{d}{dt}f\left(c(t)\right) = f'\left(c(t)\right)\cdot c'(t) = 0,
+                    \]
+                    since $f'(z)=0$ everywhere in $D.$ 
+                    If $f(z) = u(x,y)+iv(x,y),$ we have that 
+                    <div class="scroll-wrapper">
+                    \[
+                    \frac{d }{dt}u\left(c(t)\right) = 0,\quad \text{and}\quad  \frac{d }{dt}v\left(c(t)\right)=0.
+                    \]
+                    </div>
+                    From calculus, this implies that $u\left(c(t)\right)$ 
+                    and $v\left(c(t)\right)$ are constant functions of $t.$ 
+                    By comparing the values at $t=a$ and $t=b$ we conclude that 
+                    $f(z_1) = f(z_2).$ Therefore, $f$ is constant throughout $D.$
                 </div>
 
             </div>

@@ -15,40 +15,40 @@
             <hr>
 
             <p>
-                Sea $f$ una función definida en todos los puntos 
-                $z$ en alguna vecindad borrada $z_0.$ 
-                Cuando decimos que el límite de $f(z)$ cuando $z$ 
-                se aproxima a  $z_0$ es un número $w_0,$ o que
+                Sea $f$ una función definida en todos los puntos
+                $z$ en alguna vecindad borrada $z_0.$
+                Cuando decimos que el límite de $f(z)$ cuando $z$
+                se aproxima a $z_0$ es un número $w_0,$ o que
                 \begin{eqnarray}\label{limit001}
                 \lim_{z\rightarrow z_0}f(z)=w_0
                 \end{eqnarray}
-                significa que el punto $w = f (z)$ se puede hacer 
-                arbitrariamente cercano a $w_0$ si elegimos el punto 
+                significa que el punto $w = f (z)$ se puede hacer
+                arbitrariamente cercano a $w_0$ si elegimos el punto
                 $z$ lo suficientemente cercano a $z_0$ pero distinto de él.
             </p>
 
             <p>
-                Formalmente, la expresión  (\ref{limit001})
+                Formalmente, la expresión (\ref{limit001})
                 significa que para cada (suficientemente pequeño)
-                $\varepsilon>0,$ existe 
+                $\varepsilon>0,$ existe
                 $\delta>0$ tal que
-                <div class="scroll-wrapper">
-                    \begin{eqnarray}\label{limitcondition}
+            <div class="scroll-wrapper">
+                \begin{eqnarray}\label{limitcondition}
                 \left|f (z) - w_0\right| \lt \varepsilon \quad \text{whenever}\quad 0 \lt \left|z - z_0\right| \lt
                 \delta
                 \end{eqnarray}
-                </div>
-                
+            </div>
+
             </p>
 
             <p>
-                Considerando el mapeo $w = f (z),$ todos los puntos 
-                interiores al círculo $|z - z_0| = \delta$ con  $z_0$ 
+                Considerando el mapeo $w = f (z),$ todos los puntos
+                interiores al círculo $|z - z_0| = \delta$ con $z_0$
                 borrado son mapeados a los puntos en el interior del círculo
-                $|w - w_0| = \varepsilon,$ ver Figura 1. 
+                $|w - w_0| = \varepsilon,$ ver Figura 1.
                 el límite existirá sólo si en el caso cuando $z$
-                se aproxima a 
-                $z_0$ (esto es, $z \rightarrow z_0$) en cualquier 
+                se aproxima a
+                $z_0$ (esto es, $z \rightarrow z_0$) en cualquier
                 <strong>dirección arbitraria</strong>;
                 entonces esto implica que
                 $w \rightarrow w_0.$
@@ -62,7 +62,7 @@
                 </figcaption>
             </figure>
 
-            <br/>
+            <br />
 
 
             <div class="theorem">
@@ -70,40 +70,41 @@
 
             </div>
             <div class="proof">
-                Supongamos que $\lim_{z\rightarrow z_0}f(z)=w_0$ y $\lim_{z\rightarrow z_0}f(z)=w_1$ 
-                con $w_0\neq w_1.$ 
-                Sea  $2\varepsilon =|w_0-w_1|,$ de tal forma que  $\varepsilon >0.$
-                Existe un  $\delta>0$ tal que  $0\lt|z-z_0|\lt\delta$ implica
-                $|f(z)-w_0|\lt\varepsilon$ y $|f(z)-w_1|\lt\varepsilon.$ 
+                Supongamos que $\lim_{z\rightarrow z_0}f(z)=w_0$ y $\lim_{z\rightarrow z_0}f(z)=w_1$
+                con $w_0\neq w_1.$
+                Sea $2\varepsilon =|w_0-w_1|,$ de tal forma que $\varepsilon >0.$
+                Existe un $\delta>0$ tal que $0\lt|z-z_0|\lt\delta$ implica
+                $|f(z)-w_0|\lt\varepsilon$ y $|f(z)-w_1|\lt\varepsilon.$
                 Elegimos un punto
-                $z$ diferente de $z_0$ (porque $f$  está definida en una vecindad borrada de 
+                $z$ diferente de $z_0$ (porque $f$ está definida en una vecindad borrada de
                 $z_0$). Entonces, usando la desigualdad del triángulo,
                 $$|w_0-w_1|\leq |w_0-f(z)|+|f(z)-w_1|\lt2\varepsilon.$$
-                Pero esto es una contradicción. Por lo tanto $w_0=w_1.$ 
+                Pero esto es una contradicción. Por lo tanto $w_0=w_1.$
             </div>
 
 
             <div class="practice">
-                <p><strong>Ejemplo 1:</strong> Demuestra que 
+                <p><strong>Ejemplo 1:</strong> Demuestra que
                     $$\lim_{z\rightarrow z_0}z^2=z_0^2.$$
                 </p>
                 <p>
                     <strong>Discusión:</strong>
                     Consideremos $\delta = 1.$ Así que $0\lt\left| z-z_0\right|\lt\delta=1$ implica
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left| z^2-z_0^2\right|&=&\left| z-z_0\right|\left| z+z_0\right|\\&\lt&\left|
                     z-z_0+2z_0\right|\\&\lt& \left| z-z_0\right|+2\left|z_0\right|\\
                     &\lt&1+2\left|z_0\right|.
                     \end{eqnarray*}
-                    </div>
-                    
-                    Ahora, si $\delta=\dfrac{\varepsilon}{1+2\left|z_0\right|},$ entonces $0\lt\left| z-z_0\right|\lt\delta$
-                    implica que 
-                    $$\left| z^2-z_0^2\right|\lt 1+2\left|z_0\right|\lt\varepsilon.$$
-                    Esto significa que
-                    $$\left| z^2-z_0^2\right|\lt\varepsilon \quad\text{siempre y cuando}\quad 0\lt\left| z-z_0\right|\lt\delta$$
-                    donde $\delta=\min\left\{1,\dfrac{\varepsilon}{1+2\left|z_0\right|}\right\}.$
+                </div>
+
+                Ahora, si $\delta=\dfrac{\varepsilon}{1+2\left|z_0\right|},$ entonces $0\lt\left| z-z_0\right|\lt\delta$
+                implica que
+                $$\left| z^2-z_0^2\right|\lt 1+2\left|z_0\right|\lt\varepsilon.$$
+                Esto significa que
+                $$\left| z^2-z_0^2\right|\lt\varepsilon \quad\text{siempre y cuando}\quad 0\lt\left|
+                z-z_0\right|\lt\delta$$
+                donde $\delta=\min\left\{1,\dfrac{\varepsilon}{1+2\left|z_0\right|}\right\}.$
                 </p>
                 <p>
                     Ahora podemos proceder a escribir la prueba formalmente.
@@ -144,86 +145,82 @@
                 \end{eqnarray}
             </div>
 
+            <div class="proof">
 
-            <details>
-                <summary><b>Demostración</b>
-                </summary>
-
-                <p>
-                    Primero, supongamos que el límite (\ref{limitpart01}) es cierto.
-                    Entonces, para cada número positivo $\varepsilon,$ existe un número positivo
-                    $\delta$ tal que
-                    \begin{eqnarray}\label{limpart05}
-                    |(u + iv) -(u_0 + iv_0)| \lt \varepsilon
-                    \end{eqnarray}
-                    siempre que
-                    \begin{eqnarray}\label{limpart06}
-                    0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta
-                    \end{eqnarray}
-                    Pero
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                Primero, supongamos que el límite (\ref{limitpart01}) es cierto.
+                Entonces, para cada número positivo $\varepsilon,$ existe un número positivo
+                $\delta$ tal que
+                \begin{eqnarray}\label{limpart05}
+                |(u + iv) -(u_0 + iv_0)| \lt \varepsilon
+                \end{eqnarray}
+                siempre que
+                \begin{eqnarray}\label{limpart06}
+                0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta
+                \end{eqnarray}
+                Pero
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     |u-u_0|&\leq &|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|,\\
                     |v-v_0|&\leq &|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|
                     \end{eqnarray*}
-                    </div>
-                    y
-                    <div class="scroll-wrapper">
-                        $$|(x+iy)-(x_0+iy_0)|=|(x-x_0)+i(y-y_0)|=\sqrt{(x-x_0)^2+(y-y_0)^2}$$
-                    </div>
-                    Por lo que se sigue de las desigualdades (\ref{limpart05}) y (\ref{limpart06}) que
-                    <div class="scroll-wrapper">
-                        $$|u-u_0|\lt\varepsilon\quad \text{y}\quad |v-v_0|\lt\varepsilon$$
-                    </div>
-                    siempre que
-                    <div class="scroll-wrapper">
-                        $$0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta$$
-                    </div>
-                    lo cual prueba que los límites (\ref{limitpart02}) se satisfacen.
-                </p>
+                </div>
+                y
+                <div class="scroll-wrapper">
+                    $$|(x+iy)-(x_0+iy_0)|=|(x-x_0)+i(y-y_0)|=\sqrt{(x-x_0)^2+(y-y_0)^2}$$
+                </div>
+                Por lo que se sigue de las desigualdades (\ref{limpart05}) y (\ref{limpart06}) que
+                <div class="scroll-wrapper">
+                    $$|u-u_0|\lt\varepsilon\quad \text{y}\quad |v-v_0|\lt\varepsilon$$
+                </div>
+                siempre que
+                <div class="scroll-wrapper">
+                    $$0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta$$
+                </div>
+                lo cual prueba que los límites (\ref{limitpart02}) se satisfacen.
+
 
                 <p>
                     Ahora, supongamos que los límites (\ref{limitpart02}) son ciertos y deseamos
                     obtener el límite (\ref{limitpart01}).
-                    Los límites (\ref{limitpart02}) nos dicen que 
+                    Los límites (\ref{limitpart02}) nos dicen que
                     para cada número positivo $\varepsilon,$ existe números positivos
-                     $\delta_1$
-                    y  $\delta_2$ tales que
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray}\label{limpart03}
+                    $\delta_1$
+                    y $\delta_2$ tales que
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{limpart03}
                     |u-u_0|\lt \frac{\varepsilon}{2}\quad\text{whenever}\quad
                     0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta_1
                     \end{eqnarray}
-                    </div>
-                    y
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray}\label{limpart04}
+                </div>
+                y
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{limpart04}
                     |v - v_0| \lt \frac{\varepsilon}{2}\quad\text{whenever}\quad
                     0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta_2
                     \end{eqnarray}
-                    </div>
-                    
-                    Sea $\delta$ un número positivo cualquiera menor que $\delta_1$ and $\delta_2.$ 
-                    Dado que 
-                    <div class="scroll-wrapper">
-                        $$|(u + iv) - (u_0 + iv_0)| = |(u - u_0) + i(v - v_0)| \leq |u - u_0| + |v - v_0|$$
-                    </div>
-                    y
-                    <div class="scroll-wrapper">
-                        $$\sqrt{(x-x_0)^2+(y-y_0)^2}=|(x-x_0)+i(y-y_0)|\leq |(x+iy)-(x_0+iy_0)|$$
-                    </div>
-                    se sigue de las expresiones (\ref{limpart03}) y (\ref{limpart04}) que
-                    <div class="scroll-wrapper">
-                        $$|(u + iv) -(u_0 + iv_0)| \lt\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$$
-                    </div>
-                    siempre que
-                    <div class="scroll-wrapper">
-                        $$0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta.$$
-                    </div>
-                    Esto es, el límite (\ref{limitpart01}) se satisface, 
-                    y esto completa la demostración del teorema. $\quad \blacksquare$
+                </div>
+
+                Sea $\delta$ un número positivo cualquiera menor que $\delta_1$ and $\delta_2.$
+                Dado que
+                <div class="scroll-wrapper">
+                    $$|(u + iv) - (u_0 + iv_0)| = |(u - u_0) + i(v - v_0)| \leq |u - u_0| + |v - v_0|$$
+                </div>
+                y
+                <div class="scroll-wrapper">
+                    $$\sqrt{(x-x_0)^2+(y-y_0)^2}=|(x-x_0)+i(y-y_0)|\leq |(x+iy)-(x_0+iy_0)|$$
+                </div>
+                se sigue de las expresiones (\ref{limpart03}) y (\ref{limpart04}) que
+                <div class="scroll-wrapper">
+                    $$|(u + iv) -(u_0 + iv_0)| \lt\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$$
+                </div>
+                siempre que
+                <div class="scroll-wrapper">
+                    $$0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta.$$
+                </div>
+                Esto es, el límite (\ref{limitpart01}) se satisface,
+                y esto completa la demostración del teorema.
                 </p>
-            </details>
+            </div>
 
 
             <br />
@@ -235,7 +232,7 @@
                 </p>
                 <p>
                     <strong>Solución:</strong>
-                    Supongamos que el límite existe. 
+                    Supongamos que el límite existe.
                     Entonces podemos calcularlo considerando que el punto $z = x+iy$
                     se aproxime al origen de cualquier manera. Sin embargo, cuando
                     $z = x+i0$ es un punto diferente de cero en el eje real
@@ -245,7 +242,7 @@
                 </p>
                 <p>
                     De esta manera, si $z$ se aproxima al origen por el eje real,
-                    encontramos que el límite es $1.$ Por otra parte, 
+                    encontramos que el límite es $1.$ Por otra parte,
                     si nos aproximamos por el eje imaginario encontramos que el límite es
                     $-1,$ lo cual es una contradicción porque el límite es único.
                     Por lo tanto concluimos que el límite
@@ -256,14 +253,15 @@
             </div>
 
             <p class="theorem" id="limits-properties">
-                
-                Supongamos que 
+
+                Supongamos que
                 \begin{eqnarray}
                 \lim_{z\rightarrow z_0}f(z)=w_1\quad \text{y}\quad \lim_{z\rightarrow z_0}g(z)=w_2\label{limithypo}
                 \end{eqnarray}
                 Entonces
                 \begin{eqnarray}
-                \lim_{z\rightarrow z_0}\big[c\cdot f(z)\big] &=& c\cdot \lim_{z\rightarrow z_0} f(z) \text{ with } c\in\C, \label{limitconst}\\
+                \lim_{z\rightarrow z_0}\big[c\cdot f(z)\big] &=& c\cdot \lim_{z\rightarrow z_0} f(z) \text{ with }
+                c\in\C, \label{limitconst}\\
                 \lim_{z\rightarrow z_0}\big[f(z)+g(z)\big]&=&w_1+w_2,\label{limitsum}\\
                 \lim_{z\rightarrow z_0}\big[f(z)g(z)\big]&=&w_1w_2;\label{limitmult}
                 \end{eqnarray}
@@ -274,86 +272,83 @@
             </p>
 
 
-            <details>
-                <summary><b>Demostración</b>
-                </summary>
+            <div class="proof">
 
-                <p>
-                    Para demostrar la propiedad (\ref{limitsum}), 
-                    debemos mostrar que para cada $\varepsilon >0$ podemos encontrar
-                    $\delta >0$ tal que
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                Para demostrar la propiedad (\ref{limitsum}),
+                debemos mostrar que para cada $\varepsilon >0$ podemos encontrar
+                $\delta >0$ tal que
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right|\lt\varepsilon \quad \text{when}\quad
                     0\lt\left| z-z_0\right|\lt\delta
                     \end{eqnarray*}
-                    </div>
-                    Por hipótesis, dada $\varepsilon >0$  podemos encontrar  $\delta_1 >0$ y $\delta_2>0$ tales que
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                </div>
+                Por hipótesis, dada $\varepsilon >0$ podemos encontrar $\delta_1 >0$ y $\delta_2>0$ tales que
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left| f(z)-w_1\right|\lt\varepsilon/2 \quad \text{when}\quad 0\lt\left| z-z_0\right|\lt\delta_1
                     \\
                     \left| g(z)-w_2\right|\lt\varepsilon/2 \quad \text{when}\quad 0\lt\left| z-z_0\right|\lt\delta_2
                     \end{eqnarray*}
-                    </div>
-                    
-                    Entonces tenemos
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                </div>
+
+                <p>Entonces tenemos
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right| &=&\left|
                     \left(f(z)-w_1\right)+\left(g(z)+w_2\right)\right| \\ &\leq &\left| f(z)-w_1\right|+\left|
                     g(z)-w_2\right|\\
                     &\leq & \varepsilon/2+\varepsilon/2=\varepsilon
                     \end{eqnarray*}
-                    </div>
-                    
-                    Por lo cual,
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                </div>
+
+                Por lo cual,
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right|\lt\varepsilon \quad \text{cuando}\quad
                     0\lt\left| z-z_0\right|\lt\delta
                     \end{eqnarray*}
-                    </div>
-                    donde $\delta$ se elige como el menor entre $\delta_1$ y $\delta_2.$
+                </div>
+                donde $\delta$ se elige como el menor entre $\delta_1$ y $\delta_2.$
                 </p>
 
                 <p>
-                    Ahora para demostrar la propiedad (\ref{limitmult}). 
+                    Ahora para demostrar la propiedad (\ref{limitmult}).
                     Primero, usando la desigualdad del triángulo, escribimos
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left|f(z)g(z) - w_1w_2\right|& \leq & \left|f(z)g(z) - f(z)w_2\right| + \left|f(z)w_2 -
                     w_1w_2\right|\\
                     &=& \left|f(z)\right|\left|g(z) - w_2\right|+ \left|f(z) - w_1\right|\left|w_2\right|
                     \end{eqnarray*}
-                    </div>
-                    
-                    Para estimar cada término, elegimos  $\delta_1\gt 0$
-                    de tal forma que $0\lt \left|z-z_0\right|\lt \delta_1$ implica
-                    $\left|f(z)- w_1\right|\lt 1,$ y de esta manera
-                    $\left|f(z)\right|\lt \left|w_1\right|+1,$ dado que 
-                    $$\left|f(z) - w_1\right|\geq \left|f(z)\right|- \left| w_1\right|.$$
-                    Dados $\varepsilon\gt 0,$ tomemos $\delta_2$ y $\delta_3$ tales que
-                    $0\lt \left|z-z_0\right|\lt \delta_2$ implica
-                    $$\left|f(z)-w_1\right|\lt \frac{\varepsilon}{2\left(|w_2|+1\right)}$$
-                    y
-                    $0\lt \left|z-z_0\right|\lt \delta_3$ implica
-                    $$\left|g(z)-w_2\right|\lt \frac{\varepsilon}{2\left(|w_1|+1\right)}.$$
-                    De esta forma podemos elegir  $\delta = \min\left\{\delta_1,\delta_2,\delta_3\right\}.$
-                    Si $0\lt \left|z-z_0\right|\lt \delta,$ entonces
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                </div>
+
+                Para estimar cada término, elegimos $\delta_1\gt 0$
+                de tal forma que $0\lt \left|z-z_0\right|\lt \delta_1$ implica
+                $\left|f(z)- w_1\right|\lt 1,$ y de esta manera
+                $\left|f(z)\right|\lt \left|w_1\right|+1,$ dado que
+                $$\left|f(z) - w_1\right|\geq \left|f(z)\right|- \left| w_1\right|.$$
+                Dados $\varepsilon\gt 0,$ tomemos $\delta_2$ y $\delta_3$ tales que
+                $0\lt \left|z-z_0\right|\lt \delta_2$ implica
+                $$\left|f(z)-w_1\right|\lt \frac{\varepsilon}{2\left(|w_2|+1\right)}$$
+                y
+                $0\lt \left|z-z_0\right|\lt \delta_3$ implica
+                $$\left|g(z)-w_2\right|\lt \frac{\varepsilon}{2\left(|w_1|+1\right)}.$$
+                De esta forma podemos elegir $\delta = \min\left\{\delta_1,\delta_2,\delta_3\right\}.$
+                Si $0\lt \left|z-z_0\right|\lt \delta,$ entonces
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left|f(z)g(z) - w_1w_2\right|& \leq & \left|f(z)\right|\left|g(z) - w_2\right|+ \left|f(z) -
                     w_1\right|\left|w_2\right|\\
                     &\lt & \frac{\varepsilon}{2\left(|w_1|+1\right)}\left|f(z)\right| +
                     \frac{\varepsilon}{2\left(|w_2|+1\right)}\left|w_2\right|\\
                     &\lt & \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
                     \end{eqnarray*}
-                    </div>
-                    
-                    Por lo tanto, $\lim_{z\rightarrow z_0}\big[f(z)g(z)\big]=w_1w_2$ queda demostrado.
+                </div>
 
-                    <!--
+                Por lo tanto, $\lim_{z\rightarrow z_0}\big[f(z)g(z)\big]=w_1w_2$ queda demostrado.
+
+                <!--
                          with the aid of <strong>Theorem 2</strong>.
                     Considering the following
                     \begin{eqnarray*}
@@ -375,10 +370,9 @@
                 </p>
 
                 <p>
-                    Las propiedades (\ref{limitconst}) y (\ref{limitdiv}) se dejan como ejercicio al lector. $\quad \blacksquare$
+                    Las propiedades (\ref{limitconst}) y (\ref{limitdiv}) se dejan como ejercicio al lector.
                 </p>
-
-            </details>
+            </div>
 
 
 

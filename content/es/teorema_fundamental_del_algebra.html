@@ -1,0 +1,319 @@
+<section data-type="chapter" id="fundamental-theorem-of-algebra">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+ 
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>El Teorema Fundamental <br/>del Álgebra</h1>
+
+            <hr>
+
+            <p>
+              Consideremos el polynomio
+            </p>
+            <div class="scroll-wrapper">
+              \begin{eqnarray}\label{example-001}
+              p(z) = z^8-2z^7+2z^6-4z^5+2z^4-2z^3-5z^2+4z-4
+              \end{eqnarray}
+            </div>
+
+            <p>
+              El <strong>Teorema Fundamental del Álgebra</strong> establece que:
+              <em>Cada polinomio no constante con coeficientes complejos
+                tiene una raíz en los números complejos.</em>
+            </p>
+
+            <figure>
+              <img src="../images/chp04/poly-001.jpg" alt="Polynomial of degree 8" title="Polynomial of degree 8" style="width:550px;">
+              <figcaption>
+                  Retrato de fase mejorado de $p(z),$ con curvas de nivel de $\abs{p(z)}.$
+                  <a href="https://complex-analysis.com/applets/p5js/domain-coloring/?expression=el44LTJ6XjcrMnpeNi00el41KzJ6XjQtMnpeMy01el4yKzR6LTQ=" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+              </figcaption>
+             </figure>
+
+             <p>
+              La Figura 1 muestra un <a href="dominio_coloreado.html">retrato de fase mejorado</a>, con 
+              curvas de nivel del módulo, del polinomio definido en (\ref{example-001}). 
+              Lo primero que se nota en esta imagen es que, efectivamente, el 
+              Teorema Fundamental del Álgebra se cumple para $p(z).$ 
+              Recuerda que podemos identificar fácilmente las raíces, o ceros, de funciones complejas 
+              utilizando retratos de fase mejorados. Solo necesitamos buscar los puntos 
+              donde todos los colores se encuentran. En la Figura 1, podemos ver claramente que hay 
+              seis puntos donde todos los colores se encuentran, lo que significa que 
+              $p(z)$ tiene 6 raíces. 
+              <strong>¿Por qué $p(z),$ un polinomio de grado ocho, tiene solo seis raíces?</strong> 
+              La razón es que dos de las raíces son <em>raíces dobles</em> 
+              (también decimos que su <em>multiplicidad es dos</em>), 
+              y este hecho también es evidente en la imagen. Las <em>raíces simples</em> se encuentran en 
+              \[
+              -1, \;\; 2, \;\; \frac{-1\pm i \sqrt{7}}{2},
+              \]
+              y las raíces dobles están en 
+              \[
+              \frac{1\pm i \sqrt{3}}{2}.
+              \]
+              El siguiente applet muestra todas las raíces. Además, puedes 
+              apreciar su multiplicidad, la cual está indicada por el número 
+              de veces que los colores se repiten. Por ejemplo, en las raíces dobles, 
+              los <a href="https://en.wikipedia.org/wiki/Hue" target="_blank">colores del matiz</a> 
+              se repiten dos veces, mientras que en las raíces simples 
+              se repiten solo una vez. Activa las 
+              casillas para resaltar las raíces.
+            </p>
+
+            <div class="ggbElement" id="ggb-element-1" ></div>
+            
+            <br/>
+
+            <p>
+              Otra propiedad fascinante del polinomio 
+              $p(z)$ se puede visualizar de la siguiente manera. 
+              Considera un círculo centrado en el origen con radio 
+              $r,$ elegido de manera que todas las raíces de $p(z)$ 
+              se encuentren dentro de este círculo. Cuando este círculo es transformado por 
+              $p(z),$ su imagen se convierte en una curva cerrada que se envuelve 
+              alrededor del origen exactamente ocho veces. 
+              Este comportamiento se ilustra en el applet a continuación.
+              A la izquierda, se muestran las raíces de 
+              $p(z)$ y el círculo. 
+              A la derecha, puedes ver la correspondiente 
+              imagen del círculo, mostrando claramente el efecto de envolvimiento. 
+              Simplemente arrastra el control deslizante de abajo.
+            </p>
+            
+
+
+            <div class="ggbElement" id="ggb-element-2" ></div>
+
+
+            <br/>
+           
+
+           <hr>
+
+           
+            <h2>Demostración y notas históricas</h2>
+
+            <p>
+              La <a href="formula_integral_de_cauchy.html#cauchy-inequality">desigualdad de Cauchy</a> 
+              se puede usar para demostrar el siguiente resultado, nombrado en honor al matemático Francés
+              <a href="https://en.wikipedia.org/wiki/Joseph_Liouville" target="_blank">Joseph Liouville</a>:
+            </p>
+
+            <div class="theorem">
+              <span  style="font-style: normal!important;font-weight: bold!important;">(Teorem de Liouville)</span>
+              Las únicas funciones enteras acotadas son constantes.
+            </div>
+
+            <div class="proof">
+              Supongamos que $f$ es entera y acotada, es decir, $\abs{f(z)}\lt M$ para todo $z.$ 
+              Entonces, para cualquier punto $z_0,$ la desigualdad de Cauchy nos da 
+              \[
+              \abs{f'(z)}\leq \frac{M_r}{r}.
+              \]
+              Al hacer $r$ arbitrariamente grande, podemos hacer $\abs{f'(z)}$ 
+              tan pequeño como queramos. 
+              Esto significa que $f'(z_0)= 0$ para todos los puntos 
+              $z_0$ en el plano complejo. Por lo tanto, según 
+              <a href="diferenciacion_compleja.html#derivative-zero" target="_blank">el Teorema 3</a> 
+              en la sección de Diferenciación Compleja, $f$ debe ser constante.
+            </div>
+
+            <p>
+              Ahora con el Teorema de Liouville podemos demostrar fácilmente:
+            </p>
+            <div class="theorem">
+              <span style="font-style: normal!important; font-weight: bold!important;">(Teorema Fundamental del Álgebra)</span>
+              Todo polinomio 
+              \[
+              p(z)= a_n z^n+ a_{n-1}z^{n-1}+\cdots + a_1z+ a_0\quad (a_n\neq 0)
+              \]
+              de grado $n\geq 1$ tiene al menos un cero.
+            </div>
+            
+            <div class="proof">
+              Demostraremos esta afirmación por contradicción. 
+              Supongamos que $p(z)$ <em>no</em> es cero para ningún valor de $z,$ 
+              entonces
+              \[
+              f(z) = \frac{1}{p(z)}
+              \]
+              es una función entera. 
+              Dado que $\abs{p(z)}\to \infty$ cuando 
+              $\abs{z}\to \infty,$ existen $M$ y $R\gt 0$ tales que 
+              $\abs{p(z)}\gt M$ si $\abs{z}\gt R.$ 
+              Esto implica que para $\abs{z}\gt R,$ 
+              \[
+              \abs{f(z)} = \abs{\frac{1}{p(z)}} \lt \frac{1}{M}.
+              \]
+              Ahora, $f$ es continua en la región $\abs{z}\leq R,$ la cual es cerrada y acotada. 
+              Según el <a href="continuidad.html#bounded-function" target="_blank">Teorema 3</a>, en la sección de Continuidad, 
+              $f$ también está acotada para $\abs{z}\leq R.$ 
+              Por lo tanto, $f(z)$ está acotada en todo el plano complejo. 
+              El Teorema de Liouville implica entonces que $f(z)$ es constante, 
+              y, en consecuencia, $p(z)$ también es constante.   
+              Pero esto es una contradicción. Concluimos que debe 
+              existir al menos un número $z$ para el cual $p(z) = 0.$
+            </div>
+            
+            <p>
+              Se deduce de la manera habitual que cualquier polinomio $p(z)$ de grado 
+              $n,$ con coeficientes complejos, puede expresarse como un 
+              producto de términos lineales:
+              \begin{eqnarray}\label{factorized}
+              p(z) = c\left(z-\alpha_1\right)\left(z-\alpha_2\right)\cdots \left(z-\alpha_n\right),
+              \end{eqnarray}
+              donde $c$ y $\alpha_k$ $(k=1,2,\ldots, n)$ son constantes complejas. 
+              Por supuesto, algunas de las constantes $\alpha_k$ en 
+              la expresión (\ref{factorized}) pueden 
+              aparecer más de una vez, y es claro que $p(z)$ no puede tener 
+              más de $n$ ceros distintos.
+            </p>
+
+            <p>
+              Según B. Fine &amp; G. Rosenberger 
+              [<a href="#fine1997">7</a>, Capítulo 1], 
+              el Teorema Fundamental del Álgebra fue mencionado por primera vez por Peter 
+              Roth de Núremberg en 1608. Sin embargo, también se le atribuye a Albert Girard, 
+              quien enunció el resultado en 1629. 
+              Más tarde, René Descartes proporcionó una formulación más clara en 1637, 
+              distinguiendo entre raíces reales e imaginarias. 
+              La primera demostración publicada del teorema fue presentada por Jean 
+              le Rond d'Alembert en 1746, aunque contenía lagunas significativas. 
+              La primera demostración ampliamente aceptada fue presentada por Carl Friedrich Gauss 
+              en su tesis doctoral de 1797, publicada en 1799 [<a href="#gauss1799">8</a>]. 
+              Curiosamente, los investigadores modernos señalan que la demostración original de Gauss 
+              tiene tantas lagunas como la de d'Alembert 
+              (ver, por ejemplo, [<a href="#stillwell1989">12</a>, <a href="#velleman2015">14</a>]). 
+              No obstante, Gauss produjo tres demostraciones más rigurosas: 
+              dos publicadas en 1816 y una versión final, esencialmente una 
+              refinación de su primera demostración, presentada en 1849 [<a href="#gauss1850">9</a>].
+            </p>
+            
+
+            <div class="practice">
+              <p>
+                <strong>Esquema de la demostración original de Gauss:</strong>
+                Dado que $p(z)$ es un número complejo para cualquier $z\in \C$ y dado que 
+                $z=x+iy$ con $x,y\in \R,$ tenemos que 
+                \[
+                p(z) = u(x,y) + i v(x,y).
+                \]
+                Las ecuaciones $u(x,y)=0$ y $v(x,y)=0$ representan entonces curvas en el plano 
+                $\R^2.$ Mediante un análisis cuidadoso de las posibles funciones 
+                $u(x,y),$ $v(x,y)$ para un polinomio complejo $p(z),$ Gauss demostró 
+                que las curvas $u(x,y)=0$ y $v(x,y)=0$ deben tener una solución común $(x_0, y_0).$
+                El número complejo $z_0= x_0+iy_0$ es entonces la raíz de $p(z).$
+              </p>
+            </div>
+
+            <p>
+              Por ejemplo, la Figura 2 muestra las curvas $u(x,y)=0$ y $v(x,y)=0$ para nuestro polinomio inicial 
+              $p(z) = z^8-2z^7+2z^6-4z^5+2z^4-2z^3-5z^2+4z-4.$
+            </p>
+
+            
+
+            <figure>
+              <img src="../images/chp04/fta-gauss.svg" alt="Real and imaginary components of a polynomial" title="Real and imaginary components of a polynomial" style="width:70%">
+              <figcaption>
+                Las curvas $u(x,y)=0$ (Rojo) y $v(x,y)=0$ (Azul) de $p(z).$  
+                Las raíces están representadas por los puntos $Z_k$.
+              </figcaption>
+            </figure>
+
+            <!--
+              <figure>
+              <img src="../images/chp04/gauss-original.jpg" alt="Real and imaginary components of a fifth degree polynomial" title="Real and imaginary components of a fifth degree polynomial" style="width:60%">
+              <figcaption>
+                  Gauss' original picture made for a special equation of 
+                  fifth degree.
+              </figcaption>
+            </figure>
+            -->
+            <p>
+              Aunque se argumenta que las primeras demostraciones de Gauss del 
+              Teorema Fundamental del Álgebra también incluían algunas lagunas, 
+              aún muestran de manera intuitiva por qué cualquier polinomio complejo 
+              debe tener una raíz. 
+              Hoy en día, existen muchas demostraciones conocidas de este teorema, 
+              incluidas demostraciones que utilizan métodos de álgebra abstracta, análisis y topología. 
+              Las referencias incluyen muchos artículos y libros con demostraciones 
+              de este teorema; por ejemplo, [<a href="#fine1997">7</a>] 
+              por sí solo contiene 11 demostraciones.
+            </p>
+
+            <br/>
+
+
+            <hr>
+
+            <h2>Referencias</h2>
+
+            <ol class="bbtex-list">
+              <li>Abian, A. (1986). A new proof of the fundamental theorem of algebra, <em>Caribbean J. Math.</em> <strong>5</strong>, no. 1, 9-12. <a href="https://link.springer.com/chapter/10.1007/BFb0121246" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Bennish, J. (1992). Another proof of the fundamental theorem of algebra, <em>Amer. Math. Monthly</em>, <strong>99</strong>, 426. <a href="https://doi.org/10.2307/30037388" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Boas, Jr., R. P. (1935). A proof of the fundamental theorem of algebra, <em>Amer. Math. Monthly</em>, <strong>42</strong>, 501-502. <a href="https://doi.org/10.2307/2300477" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Boas, Jr., R. P. (1964). Yet another proof of the fundamental theorem of algebra, <em>Amer. Math. Monthly</em>, <strong>71</strong>, 180. <a href="https://doi.org/10.2307/2311751" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Byl, J. (1999). A simple proof of the fundamental theorem of algebra, <em>Internat. J. Math. Ed. Sci. Tech.</em> <strong>30</strong>, no. 4, 602-603.</li>
+              <li>Fefferman, C. (1967). An easy proof of the fundamental theorem of algebra,  <em>Amer. Math. Monthly</em>, <strong>74</strong>, 854-855. <a href="https://doi.org/10.2307/2315823" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="fine1997">Fine, B. &amp; Rosenberger. G. (1997). <em>The Fundamental Theorem of Algebra</em>. New York: Springer-Verlag Inc. <a href="https://link.springer.com/book/10.1007/978-1-4612-1928-6" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="gauss1799">Gauss, C. F. (1799). <em>Demonstratio nova theorematis omnem functionem algebraicum rationalem integram unius variabilis in factores reales primi vel secundi gradus resolvi posse,</em> Helmstedt dissertation, reprinted in <strong>Werke</strong>, Vol. 3, 1-30. <a href="https://archive.org/details/werkecarlf03gausrich/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="gauss1850">Gauss, C. F. (1850). Beiträge zur Theorie der algebraischen Gleichungen". <em>Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen,</em> <strong>4:</strong> 34-35. <a href="https://gdz.sub.uni-goettingen.de/id/PPN235999628?tify=%7B%22pages%22%3A%5B77%5D%2C%22pan%22%3A%7B%22x%22%3A0.452%2C%22y%22%3A1.019%7D%2C%22view%22%3A%22info%22%2C%22zoom%22%3A0.456%7D" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Redheffer, R. M. (1964). What! Another note just on the fundamental theorem of algebra? <em>Amer. Math. Monthly</em>, <strong>71</strong>, 180-185. <a href="https://doi.org/10.2307/2311752" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Sen, A. (2000). Fundamental theorem of algebra—yet another proof, <em>Amer. Math. Monthly</em>, <strong>107</strong>, 842-843. <a href="https://doi.org/10.2307/2695742" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="stillwell1989">Stillwell, J. (1989).  <em>Mathematics and its History</em>. New York: Springer-Verlag.  <a href="https://link.springer.com/book/10.1007/978-1-4899-0007-4" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Velleman, D. J. (1997). Another proof of the fundamental theorem of algebra,   <em>Math. Mag.</em> <strong>70</strong>(1997), 216-217. <a href="https://doi.org/10.1080/0025570X.1997.11996539" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="velleman2015">Vellemen, D. J. (2015). The Fundamental Theorem of Algebra: A Visual Approach, <em>The Mathematical Intelligencer,</em> Vol. 37, pp. 12-21. <a href="https://link.springer.com/article/10.1007/s00283-015-9572-7" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+            </ol>
+          
+            <br>
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+    <script>
+        let params1 = {
+            "width": 770,
+            "height": 477,
+            "material_id": "wckedtxs",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let params2 = {
+            "width": 782,
+            "height": 448,
+            "material_id": "r3jf9s8g",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+       
+        let ggbApplet1 = new GGBApplet(params1, true);
+        let ggbApplet2 = new GGBApplet(params2, true);
+        window.addEventListener("load", () => {
+            ggbApplet1.inject('ggb-element-1');
+            ggbApplet2.inject('ggb-element-2');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="series.html" style="text-decoration: none;">
+        <p class="nextPage">Series<i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>

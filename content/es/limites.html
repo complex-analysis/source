@@ -77,34 +77,38 @@
                 $|f(z)-w_0|\lt\varepsilon$ y $|f(z)-w_1|\lt\varepsilon.$
                 Elegimos un punto
                 $z$ diferente de $z_0$ (porque $f$ está definida en una vecindad borrada de
-                $z_0$). Entonces, usando la desigualdad del triángulo,
-                $$|w_0-w_1|\leq |w_0-f(z)|+|f(z)-w_1|\lt2\varepsilon.$$
-                Pero esto es una contradicción. Por lo tanto $w_0=w_1.$
+                $z_0$). Entonces, usando la desigualdad del triángulo, tenemos que
+                <div class="scroll-wrapper">
+                    $$2 \epsilon =  |w_0-w_1| =  |w_0 - f(z) + f(z) - w_1| \leq |w_0-f(z)|+|f(z)-w_1|\lt2\varepsilon.$$
+                </div>
+                Pero esto es una contradicción. Por lo tanto $w_0=w_1.$ 
             </div>
 
 
             <div class="practice">
-                <p><strong>Ejemplo 1:</strong> Demuestra que
+                <p><strong>Ejemplo 1:</strong> Demuestra que 
                     $$\lim_{z\rightarrow z_0}z^2=z_0^2.$$
                 </p>
                 <p>
                     <strong>Discusión:</strong>
-                    Consideremos $\delta = 1.$ Así que $0\lt\left| z-z_0\right|\lt\delta=1$ implica
-                <div class="scroll-wrapper">
+                    Consideremos $\delta \leq 1.$ Así que $0\lt\left| z-z_0\right|\lt\delta$ implica
+                    </p><div class="scroll-wrapper">
                     \begin{eqnarray*}
-                    \left| z^2-z_0^2\right|&=&\left| z-z_0\right|\left| z+z_0\right|\\&\lt&\left|
-                    z-z_0+2z_0\right|\\&\lt& \left| z-z_0\right|+2\left|z_0\right|\\
-                    &\lt&1+2\left|z_0\right|.
+                    \left| z^2-z_0^2\right|&amp;=&amp;\left| z-z_0\right|\left| z+z_0\right|\\
+                     &amp;\lt&amp; \delta \left| z+z_0\right|\\
+                     &amp;\lt&amp; \delta \left| z-z_0+2z_0\right|\\
+                    &amp;\lt&amp; \delta \big( \left| z-z_0\right|+2\left|z_0\right|\big) \\
+                    &amp;\lt&amp;\delta \big(1+2\left|z_0\right|\big).
                     \end{eqnarray*}
-                </div>
-
-                Ahora, si $\delta=\dfrac{\varepsilon}{1+2\left|z_0\right|},$ entonces $0\lt\left| z-z_0\right|\lt\delta$
-                implica que
-                $$\left| z^2-z_0^2\right|\lt 1+2\left|z_0\right|\lt\varepsilon.$$
-                Esto significa que
-                $$\left| z^2-z_0^2\right|\lt\varepsilon \quad\text{siempre y cuando}\quad 0\lt\left|
-                z-z_0\right|\lt\delta$$
-                donde $\delta=\min\left\{1,\dfrac{\varepsilon}{1+2\left|z_0\right|}\right\}.$
+                    </div>
+                    
+                    Tomemos el mínimo entre $\delta =1 $ or $\delta=\dfrac{\varepsilon}{1+2\left|z_0\right|}.$ 
+                    Por lo que $0\lt\left| z-z_0\right|\lt\delta$
+                    implica que 
+                    $$\left| z^2-z_0^2\right|\lt\varepsilon.$$
+                    Esto significa que
+                    $$\left| z^2-z_0^2\right|\lt\varepsilon \quad\text{siempre y cuando}\quad 0\lt\left| z-z_0\right|\lt\delta$$
+                    donde $\delta=\min\left\{1,\dfrac{\varepsilon}{1+2\left|z_0\right|}\right\}.$
                 </p>
                 <p>
                     Ahora podemos proceder a escribir la prueba formalmente.
